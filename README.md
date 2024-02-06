@@ -3,7 +3,7 @@
 **使用方式**:
 
 ```bash
-pnpm install
+npm install
 ```
 
 **部署方式**:
