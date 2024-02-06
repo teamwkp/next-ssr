@@ -6,8 +6,16 @@
 pnpm install
 ```
 
+部署方式:
+
+直接推送代码,vercel 自动部署
+
+测试地址:
+https://next-ssr-opal-eight.vercel.app
+
 icon 地址:https://heroicons.com/
 https://unpkg.com/browse/@heroicons/react@2.1.1/24/outline/
+
 使用方式:
 
 ```js
