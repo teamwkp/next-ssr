@@ -8,6 +8,7 @@ import { useTranslation } from "react-i18next"
 import LanguageChanger from "./LanguageChanger"
 import { Button } from "antd"
 import { ShoppingOutlined } from "@ant-design/icons"
+import styles from "./Navbar.module.scss"
 
 const Navbar = () => {
   const { t } = useTranslation()
@@ -36,7 +37,7 @@ const Navbar = () => {
             key={link.key}
             className="group relative regular-14 text-gray-50 flexCenter cursor-pointer"
           >
-            {t(link.key)}
+            <span>{t(link.key)}</span>
             <div className="absolute w-0 h-[2px] bg-[#262629] transition-all left-0 bottom-0 group-hover:w-full"></div>
           </Link>
         ))}

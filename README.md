@@ -1,12 +1,12 @@
 ### nextjs + tailwindcss
 
-使用方式:
+**使用方式**:
 
 ```bash
 pnpm install
 ```
 
-部署方式:
+**部署方式**:
 
 直接推送代码,vercel 自动部署
 
@@ -31,4 +31,11 @@ function MyComponent() {
 }
 ```
 
-UI:antd
+**UI**
+ant design
+
+**css**
+
+- 方式一:module.scss
+- 方式二: global.css
+- 方式三:tailwindcss
