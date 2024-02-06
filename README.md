@@ -39,3 +39,4 @@ ant design
 - 方式一:module.scss
 - 方式二: global.css
 - 方式三:tailwindcss
+- 方式四:style-components
