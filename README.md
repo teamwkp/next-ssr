@@ -40,3 +40,19 @@ ant design
 - 方式二: global.css
 - 方式三:tailwindcss
 - 方式四:style-components
+
+**动效**
+react-awesome-reveal
+使用方式:
+
+```js
+import { Fade } from "react-awesome-reveal"
+
+function App() {
+  return (
+    <Fade>
+      <p>I am an animated text</p>
+    </Fade>
+  )
+}
+```
