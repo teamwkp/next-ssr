@@ -11,10 +11,6 @@ import { ShoppingOutlined } from "@ant-design/icons"
 import styles from "./Navbar.module.scss"
 import styled from "styled-components"
 
-const Title = styled.div`
-  color: #bf4f74;
-`
-
 const Navbar = () => {
   const { t } = useTranslation()
   return (
@@ -42,9 +38,7 @@ const Navbar = () => {
             key={link.key}
             className="group relative regular-14 text-gray-50 flexCenter cursor-pointer"
           >
-            <Title>
-              <span>{t(link.key)}</span>
-            </Title>
+            <span>{t(link.key)}</span>
             <div className="absolute w-0 h-[2px] bg-[#262629] transition-all left-0 bottom-0 group-hover:w-full"></div>
           </Link>
         ))}
