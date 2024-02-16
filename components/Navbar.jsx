@@ -18,7 +18,7 @@ const Navbar = () => {
       style={{
         transition: "top 0.3s",
       }}
-      className="fixed top-0 flexBetween padding-container w-full z-30 h-[64px] bg-white"
+      className="fixed top-0 translate-x-[-50%] left-[50%] flexBetween max-container padding-container w-full z-30 h-[64px] bg-white"
     >
       <Link href="/">
         <Image
