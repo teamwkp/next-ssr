@@ -1,5 +1,5 @@
 function Aftersales() {
-  return <div>Aftersales</div>
+  return <div >Aftersales</div>
 }
 
-export default Aftersaless
+export default Aftersales
