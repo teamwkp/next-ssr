@@ -14,9 +14,19 @@ const Home = () => {
             <div>服务于全球超百万骑行运动爱好者</div>
           </div>
         </div>
-        <div className="img w"></div>
+        <div className="absolute right-[92px]">
+          <img src="/top-banner.png" alt="" />
+        </div>
       </div>
-      <div className="video-container"></div>
+      <div className="h-[742px] bg-no-repeat bg-center rounded-2xl mt-[48px] flex justify-center items-center" style={{ backgroundImage: "url('/video-bg.png')" }}>
+        <div className="space-y-[10px] text-center">
+          <div className="font-bold text-[40px]">iGPSPORT</div>
+          <div className="text-[24px] text-[#0E0606]">记录精彩骑迹  为骑行运动而生</div>
+          <div className="pt-[20px]">
+            <img className="mx-auto cursor-pointer" src="/play-video.png" alt="" />
+          </div>
+        </div>
+      </div>
       <div className="grid grid-cols-1 lg:grid-cols-2  gap-[24px] mt-[48px]">
         <div className="h-[356px] bg-[#F2F3FA] rounded-2xl flex items-center bg-no-repeat bg-right-bottom" style={{ backgroundImage: "url('/mbxl-bg.png')" }}>
           <div className="ml-[47px] text-center space-y-[10px]">
