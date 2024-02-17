@@ -55,10 +55,10 @@ const Home = () => {
       </div>
       <div className="rounded-2xl h-[530px] relative bg-[#F2F3FA] mt-[48px]" style={{ backgroundImage: "url('/sport-bg.png')"}}>
         <div className="absolute rounded-2xl w-[100%] h-[100%] z-10  flex items-center" style={{background: "rgba(0,0,0,.6)"}}>
-          <div className="ml-[128px] space-y-[24px] w-[344px]">
+          <div className="ml-[128px] space-y-[24px] lg:w-[344px]">
             <div className="font-bold text-[42px] text-center text-white">专业数据分析APP</div>
             <div className="text-white text-[18px]">记录您的每一次骑行活动。在活动记录中有摘要数据、详细数据以及多样的图表分析，帮助您分析自己的每次运动表现。</div>
-            <div className="flex justify-between">
+            <div className="flex lg:flex-row flex-col justify-between">
               <img className="w-[166px] h-[52px] cursor-pointer" src="/app_store.png" alt="app_store" />
               <img className="w-[166px] h-[52px] cursor-pointer" src="/goole_play.png" alt="goole_play" />
             </div>
@@ -68,7 +68,7 @@ const Home = () => {
           <img className="h-[530px]" src="/swiper.png" alt="swiper" />
         </div>
       </div>
-      <div className="rounded-2xl text-white h-[528px] relative mt-[48px] flex items-center" style={{background: "linear-gradient(75deg, #111111, #4A4A4C)"}}>
+      <div className="rounded-2xl text-white h-[528px] relative mt-[48px] flex items-center" style={{background: "linear-gradient(75deg, #131313, #4A4A4C)"}}>
         <div className="ml-[128px] w-[388px]">
           <div className="font-bold text-[42px]">听听他们的声音</div>
           <div className="py-[15px]">
