@@ -1,10 +1,14 @@
 "use client"
 import { motion } from "framer-motion"
-import { Swiper, SwiperSlide } from "swiper/react"
+import { Swiper, SwiperSlide, useSwiper } from "swiper/react"
 import {  Autoplay } from 'swiper/modules'
 
 import 'swiper/css';
 const Home = () => {
+  const swiper = useSwiper();
+  const swtichSlide = () => {
+    console.log(swiper)
+  }
   return (
     <div className="media-container mx-auto">
       <div className="bg-[#F2F2FA] w-full mt-[100px] h-[200px] flex items-center rounded-2xl relative">
@@ -108,8 +112,8 @@ const Home = () => {
             </Swiper>
           </div>
           <div className="flex mt-[24px] space-x-[20px]"> 
-            <img className="size-[40px] cursor-pointer opacity-80 hover:opacity-100" src="/left-icon.png" onClick={() => toggleSlide()} />
-            <img className="size-[40px] cursor-pointer opacity-80 hover:opacity-100" src="/right-icon.png" onClick={() => toggleSlide()}  />
+            <img className="size-[40px] cursor-pointer opacity-80 hover:opacity-100" src="/left-icon.png" onClick={() => swtichSlide()} />
+            <img className="size-[40px] cursor-pointer opacity-80 hover:opacity-100" src="/right-icon.png" onClick={() => swtichSlide()}  />
           </div>
         </div>
         <div className="absolute w-[400px] h-[400px] right-[100px] z-10">
