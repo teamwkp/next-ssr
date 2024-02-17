@@ -1,5 +1,9 @@
+"use client"
 import { motion } from "framer-motion"
+import { Swiper, SwiperSlide } from "swiper/react"
+import {  Autoplay } from 'swiper/modules'
 
+import 'swiper/css';
 const Home = () => {
   return (
     <div className="media-container mx-auto">
@@ -64,8 +68,19 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className="absolute z-20 right-[80px] flex">
-          <img className="h-[530px]" src="/swiper.png" alt="swiper" />
+        <div className="absolute w-[450px] z-20 right-[80px] flex">
+          <Swiper
+            modules={[Autoplay]}
+            slidesPerView={1}
+            autoplay={true}
+            >
+            <SwiperSlide className="w-full">
+              <img className="h-[530px]" src="/swiper.png" alt="swiper" />
+            </SwiperSlide>
+            <SwiperSlide className="w-full">
+              <img className="h-[530px]" src="/swiper.png" alt="swiper" />
+            </SwiperSlide>
+          </Swiper>
         </div>
       </div>
       <div className="rounded-2xl text-white h-[528px] relative mt-[48px] flex items-center" style={{background: "linear-gradient(75deg, #131313, #4A4A4C)"}}>
@@ -74,16 +89,42 @@ const Home = () => {
           <div className="py-[15px]">
             <img src="/yinhao.png" alt="" />
           </div>
-          <div>十年赛场征战，我对专业装备的要求近乎严苛，iGPSPORT的GPS码表已成为我最信任的骑行伙伴之一。</div>
-          <div className="mt-[30px]">- 孔文生</div>
-          <div className="mt-[5px] text-[12px]">知名男车手</div>
-          <div className="flex mt-[24px] space-x-[20px]">
-            <img className="size-[40px] cursor-pointer" src="/left-icon.png" />
-            <img className="size-[40px] cursor-pointer" src="/right-icon.png" />
+          <div className="swiper" id="swiper2">
+            <Swiper
+              modules={[Autoplay]}
+              slidesPerView={1}
+              autoplay={true}
+              >
+              <SwiperSlide className="w-full">
+                <div>十年赛场征战，我对专业装备的要求近乎严苛，iGPSPORT的GPS码表已成为我最信任的骑行伙伴之一。</div>
+                <div className="mt-[30px]">- 孔文生</div>
+                <div className="mt-[5px] text-[12px]">知名男车手</div>
+              </SwiperSlide>
+              <SwiperSlide className="w-full">
+                <div>十年赛场征战，我对专业装备的要求近乎严苛，iGPSPORT的GPS码表已成为我最信任的骑行伙伴之一。</div>
+                <div className="mt-[30px]">- 孔文生</div>
+                <div className="mt-[5px] text-[12px]">知名男车手</div>
+              </SwiperSlide>
+            </Swiper>
+          </div>
+          <div className="flex mt-[24px] space-x-[20px]"> 
+            <img className="size-[40px] cursor-pointer opacity-80 hover:opacity-100" src="/left-icon.png" onClick={() => toggleSlide()} />
+            <img className="size-[40px] cursor-pointer opacity-80 hover:opacity-100" src="/right-icon.png" onClick={() => toggleSlide()}  />
           </div>
         </div>
-        <div className="absolute right-[145px] z-10">
-          <img className="size-[365px]" src="/avatar.png" />
+        <div className="absolute w-[400px] h-[400px] right-[100px] z-10">
+          <div className="absolute size-[55px] bg-[#ccc] rounded-full  top-[35px] left-[55px] animate-spin ">
+          </div>
+          <div className="absolute size-[100px] bg-[#ccc] rounded-full top-[10px] left-[270px] animate-spin  ">
+          </div>
+          <div className="absolute size-[50px] bg-[#ccc] rounded-full top-[210px] left-[310px] animate-spin  ">
+          </div>
+          <div className="absolute size-[60px] bg-[#ccc] rounded-full top-[310px] left-[230px] animate-spin  ">
+          </div>
+          <div className="absolute size-[100px] bg-[#ccc] rounded-full top-[230px] left-[0px] animate-spin  ">
+          </div>
+          <div className="absolute size-[160px] bg-[#ccc] rounded-full top-[120px] left-[130px]">
+          </div>
         </div>
       </div>
     </div>
