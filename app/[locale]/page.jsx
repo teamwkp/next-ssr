@@ -1,3 +1,5 @@
+import { motion } from "framer-motion"
+
 const Home = () => {
   return (
     <div className="media-container mx-auto">
@@ -12,7 +14,7 @@ const Home = () => {
             <div>服务于全球超百万骑行运动爱好者</div>
           </div>
         </div>
-        <div className="img"></div>
+        <div className="img w"></div>
       </div>
       <div className="video-container"></div>
     </div>
