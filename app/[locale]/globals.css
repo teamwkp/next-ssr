@@ -162,3 +162,47 @@ body {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+
+/* 头像动画 */
+.avatar-animation {
+  animation: avatar-animation 20s linear infinite;
+}
+
+@keyframes avatar-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.active-avatar-animation {
+  animation: active-avatar-animation 3s linear infinite;
+}
+
+@keyframes active-avatar-animation {
+  0% {
+    transform: scale(1);
+    box-shadow:  0px 0px 0px #444
+  }
+  25% {
+    transform: scale(0.9);
+    box-shadow:  0px 0px 10px #ff4b2f
+  }
+  50% {
+    transform: scale(1);
+    box-shadow:  0px 0px 8px #444
+  }
+  75% {
+    transform: scale(1.1);
+    box-shadow:  0px 0px 8px #ff4b2f
+  }
+  100% {
+    transform: rotate(1);
+    box-shadow:  0px 0px 8px #444
+  }
+}
