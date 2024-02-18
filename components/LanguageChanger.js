@@ -1,3 +1,5 @@
+"use client"
+
 import { useRouter } from "next/navigation"
 import { usePathname } from "next/navigation"
 import { useTranslation } from "react-i18next"
@@ -126,14 +128,15 @@ export default function LanguageChanger() {
   }
 
   return (
-    <>
-      <Dropdown
-        menu={{ items, onClick }}
-        placement="bottomLeft"
-        arrow={{ pointAtCenter: true }}
-      >
-        {currentLanguage()}
-      </Dropdown>
-    </>
+    <Dropdown
+      menu={{
+        items,
+        onClick,
+      }}
+      placement="bottomLeft"
+      arrow={{ pointAtCenter: true }}
+    >
+      <a onClick={(e) => e.preventDefault()}>{currentLanguage()}</a>
+    </Dropdown>
   )
 }
