@@ -27,10 +27,10 @@ const Home = () => {
         </div>
       </div>
       <div className="h-[742px] bg-no-repeat relative rounded-2xl mt-[48px] overflow-hidden">
-        <video className="w-full h-full object-fill" autoPlay src="https://xiaoyueyue.com.cn/video.mp4" muted></video>
+        <video className="w-full h-full object-fill" muted loop autoPlay src="https://xiaoyueyue.com.cn/video.mp4"></video>
         <div className="space-y-[10px] text-center absolute w-full h-full z-[99px] top-0 left-0 flex flex-col items-center justify-center text-white">
-          <div className="font-bold text-[40px]">iGPSPORT</div>
-          <div className="text-[24px]">记录精彩骑迹  为骑行运动而生</div>
+          <div className="font-bold text-[40px] tracking-[4px]">iGPSPORT</div>
+          <div className="text-[24px] tracking-[2px]">记录精彩骑迹  为骑行运动而生</div>
           <div className="pt-[20px]">
             <img className="mx-auto cursor-pointer" src="/play-video.png" alt="" />
           </div>
