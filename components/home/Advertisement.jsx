@@ -42,30 +42,30 @@ function Advertisement() {
         </Swiper>
 
         <div className="flex mt-[24px] space-x-[20px]">
-          <img className="size-[40px] cursor-pointer" src="/left-icon.png" />
-          <img className="size-[40px] cursor-pointer" src="/right-icon.png" />
+          <Image width={40} height={40} className="cursor-pointer" src="/left-icon.png" alt="" />
+          <Image width={40} height={40} className="cursor-pointer" src="/right-icon.png" alt="" />
         </div>
       </div>
       <div className="absolute w-[400px] h-[400px] right-[100px] z-10">
           <div className="w-full h-full  avatar-animation">
             <div className="absolute size-[55px] bg-[#ccc] rounded-full  top-[35px] left-[55px]">
-              <img className="rounded-full w-full h-full" src="/sport-bg.png" alt="" />
+              <Image width={55} height={55} className="cursor-pointer rounded-full" src="/zh_cn.png"  alt="" />
             </div>
-            <div className="absolute size-[100px] bg-[#ccc] rounded-full top-[10px] left-[270px]  ">
-              <img className="rounded-full w-full h-full" src="/sport-bg.png" alt="" />
+            <div className="absolute size-[100px] bg-[#ccc] rounded-full top-[10px] left-[270px]">
+              <Image width={100} height={100} className="cursor-pointer rounded-full" src="/zh_cn.png" alt="" />
             </div>
-            <div className="absolute size-[50px] bg-[#ccc] rounded-full top-[210px] left-[310px] ">
-              <img className="rounded-full w-full h-full" src="/sport-bg.png" alt="" />
+            <div className="absolute size-[50px] bg-[#ccc] rounded-full top-[210px] left-[310px]">
+              <Image width={50} height={50} className="cursor-pointer rounded-full" src="/zh_cn.png" alt="" />
             </div>
-            <div className="absolute size-[60px] bg-[#ccc] rounded-full top-[310px] left-[230px] ">
-              <img className="rounded-full w-full h-full" src="/sport-bg.png" alt="" />
+            <div className="absolute size-[60px] bg-[#ccc] rounded-full top-[310px] left-[230px]">
+              <Image width={60} height={60} className="cursor-pointer rounded-full" src="/zh_cn.png" alt="" />
             </div>
             <div className="absolute size-[100px] bg-[#ccc] rounded-full top-[230px] left-[0px] ">
-              <img className="rounded-full w-full h-full" src="/sport-bg.png" alt="" />
+              <Image width={100} height={100} className="cursor-pointer rounded-full" src="/zh_cn.png" alt="" />
             </div>
           </div>
           <div className="absolute size-[160px] bg-[#ccc] rounded-full top-[120px] left-[130px] active-avatar-animation">
-            <img className="rounded-full w-full h-full" src="/sport-bg.png" alt="" />
+            <Image width={160} height={160} className="cursor-pointer rounded-full" src="/zh_cn.png" alt="" />
           </div>
         </div>
     </div>
