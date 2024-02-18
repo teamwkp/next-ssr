@@ -56,3 +56,5 @@ function App() {
   )
 }
 ```
+
+framer-motion
