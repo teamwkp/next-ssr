@@ -35,12 +35,12 @@ const Home = async ({ params: { locale } }) => {
           </div>
         </div>
         <div
-          className="h-[742px] bg-no-repeat bg-center rounded-2xl mt-[48px] flex justify-center items-center"
-          style={{ backgroundImage: "url('/video-bg.png')" }}
+          className="h-[742px] bg-no-repeat bg-center rounded-2xl mt-[48px] overflow-hidden relative"
         >
-          <div className="space-y-[10px] text-center">
-            <div className="font-bold text-[40px]">iGPSPORT</div>
-            <div className="text-[24px] text-[#0E0606]">
+          <video src="https://30265801.s21v.faiusr.com/58/ABUIABA6GAAgw8jgnAYotPyGqAY.mp4" autoPlay muted loop className="w-full h-full object-fill"></video>
+          <div className="absolute w-full h-full z-[99] top-0 text-white flex flex-col justify-center items-center">
+            <div className="font-bold tracking-[2px] stroke-text">iGPSPORT</div>
+            <div className="text-[24px]">
               记录精彩骑迹 为骑行运动而生
             </div>
             <div className="pt-[20px] w-[32px] mx-auto">

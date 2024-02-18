@@ -1,10 +1,3 @@
-"use client"
-
-import { Swiper, SwiperSlide } from "swiper/react"
-import { Autoplay, EffectFade } from "swiper/modules"
-import "swiper/css"
-import "swiper/css/effect-fade"
-
 import Image from "next/image"
 
 function DataApp() {
@@ -44,23 +37,7 @@ function DataApp() {
             </div>
         </div>
         <div className="absolute z-20 h-[517px] w-[606px] right-[-60px] flex">
-            <Swiper
-                modules={[Autoplay, EffectFade]}
-                effect={"fade"}
-                fadeEffect={{
-                    crossFade: true,
-                }}
-                autoplay={{
-                    delay: 3000,
-                    disableOnInteraction: false,
-                }}
-                >
-                {dataList.map((k, i) => (
-                    <SwiperSlide className="h-[517px]" key={i}>
-                        <Image height={606} width={517} src="/swiper.png" alt="swiper" />
-                    </SwiperSlide>
-                ))}
-            </Swiper>
+            <Image height={606} width={517} src="/swiper.png" alt="swiper" />
         </div>
     </div>
   )
