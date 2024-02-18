@@ -4,7 +4,7 @@ import { Input, Button } from "antd"
 function Footer() {
   return (
     <footer className="w-full  bg-white box-border pt-[64px] pb-[40px]">
-      <div className="max-container">
+      <div className="max-container padding-container">
         <div className="footer-top w-full flex justify-between ">
           <div className="f-left flex justify-between w-[45%]">
             <div>
@@ -42,7 +42,7 @@ function Footer() {
               </div>
             </div>
           </div>
-          <div className="f-right">
+          <div className="f-right w-[30%]">
             <div className="text-[14px] font-bold mb-[10px]">
               订阅我们的邮件以获取最新消息
             </div>

@@ -31,7 +31,7 @@ const Home = async ({ params: { locale } }) => {
             </div>
           </div>
           <div className="absolute right-[92px]">
-            <Image src={"/top-banner.png"} width={280} height={320} alt="" /> 
+            <Image src={"/top-banner.png"} width={280} height={320} alt="" />
           </div>
         </div>
         <div
@@ -44,7 +44,7 @@ const Home = async ({ params: { locale } }) => {
               记录精彩骑迹 为骑行运动而生
             </div>
             <div className="pt-[20px] w-[32px] mx-auto">
-              <Image src={"/play-video.png"} width={32} height={32} alt="" /> 
+              <Image src={"/play-video.png"} width={32} height={32} alt="" />
             </div>
           </div>
         </div>
@@ -108,7 +108,7 @@ const Home = async ({ params: { locale } }) => {
         }}
       >
         <div className="media-container mx-auto pb-20">
-          <DataApp /> 
+          <DataApp />
           <Advertisement />
         </div>
       </div>
