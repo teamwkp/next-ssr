@@ -5,9 +5,9 @@ import initTranslations from "../i18n"
 import TranslationsProvider from "@/components/TranslationsProvider"
 
 const i18nNamespaces = ["default"]
-
 const Home = async ({ params: { locale } }) => {
   const { t, resources } = await initTranslations(locale, i18nNamespaces)
+
   return (
     <TranslationsProvider
       namespaces={i18nNamespaces}
@@ -103,12 +103,12 @@ const Home = async ({ params: { locale } }) => {
         </div>
       </div>
       <div
-        className="w-full pb-[98px]"
+        className="w-full"
         style={{
           backgroundImage: "linear-gradient(#fff,#f8f9fc 160px,#f8f9fc)",
         }}
       >
-        <div className="media-container mx-auto">
+        <div className="media-container mx-auto pb-20">
           <div
             className="rounded-2xl h-[530px] relative bg-[#F2F3FA] mt-[48px]"
             style={{ backgroundImage: "url('/sport-bg.png')" }}
@@ -143,7 +143,7 @@ const Home = async ({ params: { locale } }) => {
             </div>
           </div>
           <div
-            className="rounded-2xl text-white h-[528px] relative mt-[48px] flex items-center"
+            className=" text-white h-[528px] relative mt-[48px] flex items-center rounded-2xl"
             style={{ background: "linear-gradient(75deg, #131313, #4A4A4C)" }}
           >
             <div className="ml-[128px] w-[388px]">
