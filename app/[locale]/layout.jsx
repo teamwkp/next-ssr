@@ -1,11 +1,12 @@
-import Navbar from "@/components/Navbar"
 import "./globals.css"
-import Footer from "@/components/Footer"
-import TranslationsProvider from "@/components/TranslationsProvider"
-import initTranslations from "../i18n"
+import i18nConfig from "@/i18nConfig"
 import { AntdRegistry } from "@ant-design/nextjs-registry"
 import { ConfigProvider } from "antd"
 import theme from "@/theme/themeConfig"
+import { Inter } from "next/font/google"
+import { dir } from "i18next"
+
+const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
   title: "齐物科技",
@@ -15,26 +16,19 @@ export const metadata = {
   },
 }
 
-const i18nNamespaces = ["default"]
+export function generateStaticParams() {
+  return i18nConfig.locales.map((locale) => ({ locale }))
+}
 
-export default async function RootLayout({ children, params: { locale } }) {
-  const { t, resources } = await initTranslations(locale, i18nNamespaces)
+export default function RootLayout({ children, params: { locale } }) {
   return (
-    <html>
-      <body>
-        <TranslationsProvider
-          resources={resources}
-          locale={locale}
-          namespaces={i18nNamespaces}
-        >
-          <AntdRegistry>
-            <ConfigProvider theme={theme}>
-              <Navbar />
-              <main className="mt-[64px]">{children}</main>
-              <Footer />
-            </ConfigProvider>
-          </AntdRegistry>
-        </TranslationsProvider>
+    <html lang={locale} dir={dir(locale)}>
+      <body className={inter.className}>
+        <AntdRegistry>
+          <ConfigProvider theme={theme}>
+            <main className="mt-[64px] select-none">{children}</main>
+          </ConfigProvider>
+        </AntdRegistry>
       </body>
     </html>
   )

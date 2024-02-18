@@ -1,0 +1,26 @@
+.fw {
+  font-size: 14px;
+  color: #76767f;
+  line-height: 35px;
+  transition: all 0.3s;
+  font-weight: 400;
+
+  cursor: pointer;
+  &:hover {
+    color: #262629;
+  }
+}
+.footerBottom {
+  width: 100%;
+  border-top: 1px solid #edeff2;
+  margin-top: 20px;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.copyright {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #b6b6c0;
+}
