@@ -9,53 +9,54 @@ import LanguageChanger from "./LanguageChanger"
 import { Button } from "antd"
 import { ShoppingOutlined } from "@ant-design/icons"
 import styles from "./Navbar.module.scss"
-import styled from "styled-components"
 
 const Navbar = () => {
   const { t } = useTranslation()
   return (
-    <nav
+    <header
       style={{
         transition: "top 0.3s",
       }}
-      className="fixed top-0 translate-x-[-50%] left-[50%] flexBetween max-container padding-container w-full z-30 h-[64px] bg-white"
+      className="fixed top-0 translate-x-[-50%] left-[50%]  w-full z-30  bg-white"
     >
-      <Link href="/">
-        <Image
-          src="/logo.png"
-          alt="logo"
-          width={0}
-          priority
-          sizes="100vw"
-          height={0}
-          style={{ width: "124px", height: "auto" }}
-        />
-      </Link>
-      <div className="hidden h-full gap-12 lg:flex">
-        {NAV_LINKS.map((link) => (
-          <Link
-            href={link.href}
-            key={link.key}
-            className="group relative regular-14 text-gray-50 flexCenter cursor-pointer"
-          >
-            <span>{t(link.key)}</span>
-            <div className="absolute w-0 h-[2px] bg-[#262629] transition-all left-0 bottom-0 group-hover:w-full"></div>
-          </Link>
-        ))}
-      </div>
+      <div className="max-container padding-container  flexBetween h-[64px]">
+        <Link href="/">
+          <Image
+            src="/logo.png"
+            alt="logo"
+            width={0}
+            priority
+            sizes="100vw"
+            height={0}
+            style={{ width: "124px", height: "auto" }}
+          />
+        </Link>
+        <div className="hidden h-full gap-12 lg:flex">
+          {NAV_LINKS.map((link) => (
+            <Link
+              href={link.href}
+              key={link.key}
+              className="group relative regular-14 text-gray-50 flexCenter cursor-pointer"
+            >
+              <span>{t(link.key)}</span>
+              <div className="absolute w-0 h-[2px] bg-[#262629] transition-all left-0 bottom-0 group-hover:w-full"></div>
+            </Link>
+          ))}
+        </div>
 
-      <div className="lg:flexCenter hidden">
-        <Button type="primary" className="mr-5" icon={<ShoppingOutlined />}>
-          {t("shopping_centre")}
-        </Button>
-        <LanguageChanger />
+        <div className="lg:flexCenter hidden">
+          <Button type="primary" className="mr-5" icon={<ShoppingOutlined />}>
+            {t("shopping_centre")}
+          </Button>
+          <LanguageChanger />
+        </div>
+        <Bars3Icon
+          width={32}
+          height={32}
+          className="inline-block cursor-pointer lg:hidden"
+        />
       </div>
-      <Bars3Icon
-        width={32}
-        height={32}
-        className="inline-block cursor-pointer lg:hidden"
-      />
-    </nav>
+    </header>
   )
 }
 
