@@ -60,22 +60,32 @@ function Advertisement() {
         </Swiper>
 
         <div className="flex mt-[24px] space-x-[20px]">
-          <img className="size-[40px] cursor-pointer" src="/left-icon.png" />
-          <img className="size-[40px] cursor-pointer" src="/right-icon.png" />
+          <Image width={40} height={40} className="cursor-pointer" src="/left-icon.png" alt="" />
+          <Image width={40} height={40} className="cursor-pointer" src="/right-icon.png" alt="" />
         </div>
       </div>
-      <div className="absolute right-[145px] z-10">
-        {/* <img className="size-[365px]" src="/avatar.png" /> */}
-        <div className="w-[365px] h-[365px] bg-red-500 relative">
-          <Image
-            className=" absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%]"
-            src={"/avt1.png"}
-            width={50}
-            height={50}
-            alt=""
-          />
+      <div className="absolute w-[400px] h-[400px] right-[100px] z-10">
+          <div className="w-full h-full  avatar-animation">
+            <div className="absolute size-[55px] bg-[#ccc] rounded-full  top-[35px] left-[55px]">
+              <Image width={55} height={55} className="cursor-pointer rounded-full" src="/avt1.png"  alt="" />
+            </div>
+            <div className="absolute size-[100px] bg-[#ccc] rounded-full top-[10px] left-[270px]">
+              <Image width={100} height={100} className="cursor-pointer rounded-full" src="/avt2.png" alt="" />
+            </div>
+            <div className="absolute size-[50px] bg-[#ccc] rounded-full top-[210px] left-[310px]">
+              <Image width={50} height={50} className="cursor-pointer rounded-full" src="/avt3.png" alt="" />
+            </div>
+            <div className="absolute size-[60px] bg-[#ccc] rounded-full top-[310px] left-[230px]">
+              <Image width={60} height={60} className="cursor-pointer rounded-full" src="/avt4.png" alt="" />
+            </div>
+            <div className="absolute size-[100px] bg-[#ccc] rounded-full top-[230px] left-[0px] ">
+              <Image width={100} height={100} className="cursor-pointer rounded-full" src="/avt5.png" alt="" />
+            </div>
+          </div>
+          <div className="absolute size-[160px] bg-[#ccc] rounded-full top-[120px] left-[130px] active-avatar-animation">
+            <Image width={160} height={160} className="cursor-pointer rounded-full" src="/avt6.png" alt="" />
+          </div>
         </div>
-      </div>
     </div>
   )
 }

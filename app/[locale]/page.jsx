@@ -2,8 +2,10 @@ import { motion } from "framer-motion"
 import Footer from "@/components/Footer"
 import Navbar from "@/components/Navbar"
 import Advertisement from "@/components/home/Advertisement"
+import DataApp from "@/components/home/DataApp"
 import initTranslations from "../i18n"
 import TranslationsProvider from "@/components/TranslationsProvider"
+import Image from "next/image"
 
 const i18nNamespaces = ["default"]
 const Home = async ({ params: { locale } }) => {
@@ -29,7 +31,7 @@ const Home = async ({ params: { locale } }) => {
             </div>
           </div>
           <div className="absolute right-[92px]">
-            <img src="/top-banner.png" alt="" />
+            <Image src={"/top-banner.png"} width={280} height={320} alt="" /> 
           </div>
         </div>
         <div
@@ -41,12 +43,8 @@ const Home = async ({ params: { locale } }) => {
             <div className="text-[24px] text-[#0E0606]">
               记录精彩骑迹 为骑行运动而生
             </div>
-            <div className="pt-[20px]">
-              <img
-                className="mx-auto cursor-pointer"
-                src="/play-video.png"
-                alt=""
-              />
+            <div className="pt-[20px] w-[32px] mx-auto">
+              <Image src={"/play-video.png"} width={32} height={32} alt="" /> 
             </div>
           </div>
         </div>
@@ -110,39 +108,7 @@ const Home = async ({ params: { locale } }) => {
         }}
       >
         <div className="media-container mx-auto pb-20">
-          <div
-            className="rounded-2xl h-[530px] relative bg-[#F2F3FA] mt-[48px]"
-            style={{ backgroundImage: "url('/sport-bg.png')" }}
-          >
-            <div
-              className="absolute rounded-2xl w-[100%] h-[100%] z-10  flex items-center"
-              style={{ background: "rgba(0,0,0,.6)" }}
-            >
-              <div className="ml-[128px] space-y-[24px] lg:w-[344px]">
-                <div className="font-bold text-[42px] text-center text-white">
-                  专业数据分析APP
-                </div>
-                <div className="text-white text-[18px]">
-                  记录您的每一次骑行活动。在活动记录中有摘要数据、详细数据以及多样的图表分析，帮助您分析自己的每次运动表现。
-                </div>
-                <div className="flex lg:flex-row flex-col justify-between">
-                  <img
-                    className="w-[166px] h-[52px] cursor-pointer"
-                    src="/app_store.png"
-                    alt="app_store"
-                  />
-                  <img
-                    className="w-[166px] h-[52px] cursor-pointer"
-                    src="/goole_play.png"
-                    alt="goole_play"
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="absolute z-20 right-[80px] flex">
-              <img className="h-[530px]" src="/swiper.png" alt="swiper" />
-            </div>
-          </div>
+          <DataApp /> 
           <Advertisement />
         </div>
       </div>
