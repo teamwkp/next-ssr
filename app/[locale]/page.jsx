@@ -17,7 +17,7 @@ const Home = async ({ params: { locale } }) => {
       locale={locale}
       resources={resources}
     >
-      {/* <Navbar /> */}
+      <Navbar />
       <div className="media-container mx-auto">
         <div className="bg-[#F2F2FA] w-full mt-[100px] h-[200px] flex items-center rounded-2xl relative">
           <div className="left-[130px] w-[40%] absolute">
