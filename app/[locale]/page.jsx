@@ -35,7 +35,7 @@ const Home = async ({ params: { locale } }) => {
             <Image src={"/top-banner.png"} width={280} height={320} alt="" />
           </div>
         </div>
-        <div className="h-[607px] bg-no-repeat bg-center rounded-2xl mt-[48px] overflow-hidden relative">
+        <div className="h-[607px] bg-no-repeat bg-center rounded-2xl mt-[48px] overflow-hidden relative cursor-pointer hover:shadow-lg overflow-hidden transition ease-linear delay-150">
           <video
             src="https://30265801.s21v.faiusr.com/58/ABUIABA6GAAgxdHjoQYogNbjZw.mp4"
             autoPlay
@@ -43,7 +43,7 @@ const Home = async ({ params: { locale } }) => {
             loop
             className="w-full h-full object-fill"
           ></video>
-          <div className="absolute w-full h-full z-[99] top-0 text-white flex flex-col justify-center items-center">
+          <div className="absolute w-full h-full z-[19] top-0 text-white flex flex-col justify-center items-center">
             <div className="font-bold tracking-[2px] stroke-text">iGPSPORT</div>
             <div className="text-[24px]">记录精彩骑迹 为骑行运动而生</div>
             <div className="pt-[20px] w-[32px] mx-auto"></div>
