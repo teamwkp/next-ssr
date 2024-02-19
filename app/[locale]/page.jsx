@@ -47,7 +47,7 @@ const Home = async ({ params: { locale } }) => {
             className="w-full h-full object-fill"
           ></video>
           <div className="absolute w-full h-full z-[19] top-0 text-white flex flex-col justify-center items-center">
-            <div className="font-bold tracking-[2px] stroke-text">iGPSPORT</div>
+            <div className="font-bold tracking-[2px] text-[56px]">iGPSPORT</div>
             <div className="text-[24px]">记录精彩骑迹 为骑行运动而生</div>
             <div className="pt-[20px] w-[32px] mx-auto"></div>
           </div>
