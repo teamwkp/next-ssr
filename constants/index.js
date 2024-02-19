@@ -16,3 +16,5 @@ export const NAV_LINKS = [
     key: "business_cooperation",
   },
 ]
+
+export const CDN_URL = "http://drip-upyun.test.upcdn.net"

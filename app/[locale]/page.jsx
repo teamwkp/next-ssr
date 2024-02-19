@@ -7,6 +7,7 @@ import initTranslations from "../i18n"
 import TranslationsProvider from "@/components/TranslationsProvider"
 import Image from "next/image"
 import AnimatedWrap from "@/components/AnimatedWrap"
+import { CDN_URL } from "@/constants"
 
 const i18nNamespaces = ["default"]
 const Home = async ({ params: { locale } }) => {
@@ -39,7 +40,7 @@ const Home = async ({ params: { locale } }) => {
         </div>
         <div className="h-[607px] bg-no-repeat bg-center rounded-2xl mt-[48px] overflow-hidden relative cursor-pointer hover:shadow-lg transition ease-linear delay-150">
           <video
-            src="https://30265801.s21v.faiusr.com/58/ABUIABA6GAAgxdHjoQYogNbjZw.mp4"
+            src={`${CDN_URL}/iGPSPORT.mp4`}
             autoPlay
             muted
             loop
