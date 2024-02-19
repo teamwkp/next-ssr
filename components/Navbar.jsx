@@ -16,12 +16,17 @@ import { useState } from "react"
 const Navbar = () => {
   const { t } = useTranslation()
   const [flagship, flagshipHovering] = useHover()
+  const [popShow, setPopShow] = useState(false)
   const content = (
     <div className="w-full h-full box-border">
       <p>Content</p>
       <p>Content</p>
     </div>
   )
+  const popoverChange = (val) => {
+    console.log(val)
+    setPopShow(val)
+  }
   return (
     <>
       <header
@@ -49,6 +54,7 @@ const Navbar = () => {
               className="group relative regular-14 text-gray-50 flexCenter cursor-pointer"
             >
               <Popover
+                onOpenChange={popoverChange}
                 overlayClassName="shadow-none"
                 overlayStyle={{
                   position: "fixed",
@@ -57,6 +63,7 @@ const Navbar = () => {
                   top: "64px",
                   bottom: 0,
                   background: "#fff",
+                  borderTop: "1px solid #eee",
                 }}
                 overlayInnerStyle={{ boxShadow: "none", height: "100%" }}
                 arrow={false}
@@ -64,7 +71,11 @@ const Navbar = () => {
               >
                 <div className="w-full h-full flexCenter">
                   <span>{t("flagship_products")}</span>
-                  <div className="absolute w-0 h-[2px] bg-[#262629] transition-all left-0 bottom-0 group-hover:w-full"></div>
+                  <div
+                    className={`absolute w-0 h-[2px] bg-[#262629] transition-all left-0 bottom-0 group-hover:w-full ${
+                      popShow ? "w-full" : ""
+                    }`}
+                  ></div>
                 </div>
               </Popover>
             </Link>

@@ -35,7 +35,7 @@ const Home = async ({ params: { locale } }) => {
             <Image src={"/top-banner.png"} width={280} height={320} alt="" />
           </div>
         </div>
-        <div className="h-[607px] bg-no-repeat bg-center rounded-2xl mt-[48px] overflow-hidden relative cursor-pointer hover:shadow-lg overflow-hidden transition ease-linear delay-150">
+        <div className="h-[607px] bg-no-repeat bg-center rounded-2xl mt-[48px] overflow-hidden relative cursor-pointer hover:shadow-lg transition ease-linear delay-150">
           <video
             src="https://30265801.s21v.faiusr.com/58/ABUIABA6GAAgxdHjoQYogNbjZw.mp4"
             autoPlay
