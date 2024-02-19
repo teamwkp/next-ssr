@@ -6,6 +6,7 @@ import DataApp from "@/components/home/DataApp"
 import initTranslations from "../i18n"
 import TranslationsProvider from "@/components/TranslationsProvider"
 import Image from "next/image"
+import AnimatedTextWord from "@/components/AnimatedTextWord"
 
 const i18nNamespaces = ["default"]
 const Home = async ({ params: { locale } }) => {
@@ -34,70 +35,84 @@ const Home = async ({ params: { locale } }) => {
             <Image src={"/top-banner.png"} width={280} height={320} alt="" />
           </div>
         </div>
-        <div
-          className="h-[742px] bg-no-repeat bg-center rounded-2xl mt-[48px] overflow-hidden relative"
-        >
-          <video src="https://30265801.s21v.faiusr.com/58/ABUIABA6GAAgw8jgnAYotPyGqAY.mp4" autoPlay muted loop className="w-full h-full object-fill"></video>
+        <div className="h-[607px] bg-no-repeat bg-center rounded-2xl mt-[48px] overflow-hidden relative">
+          <video
+            src="https://30265801.s21v.faiusr.com/58/ABUIABA6GAAgxdHjoQYogNbjZw.mp4"
+            autoPlay
+            muted
+            loop
+            className="w-full h-full object-fill"
+          ></video>
           <div className="absolute w-full h-full z-[99] top-0 text-white flex flex-col justify-center items-center">
             <div className="font-bold tracking-[2px] stroke-text">iGPSPORT</div>
-            <div className="text-[24px]">
-              记录精彩骑迹 为骑行运动而生
-            </div>
-            <div className="pt-[20px] w-[32px] mx-auto">
-              <Image src={"/play-video.png"} width={32} height={32} alt="" />
-            </div>
+            <div className="text-[24px]">记录精彩骑迹 为骑行运动而生</div>
+            <div className="pt-[20px] w-[32px] mx-auto"></div>
           </div>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-2  gap-[24px] mt-[48px]">
-          <div
-            className="h-[356px] bg-[#F2F3FA] rounded-2xl flex items-center bg-no-repeat bg-right-bottom"
-            style={{ backgroundImage: "url('/mbxl-bg.png')" }}
-          >
-            <div className="ml-[47px] text-center space-y-[10px]">
-              <div className="font-medium text-[32px]">码表系列</div>
-              <div className="font-light text-[24px] leading-6">
+        <div className=" grid grid-cols-1 lg:grid-cols-2 gap-[24px] mt-[48px]">
+          <div className="h-[284px] bg-[#F2F3FA] rounded-2xl flex items-center relative cursor-pointer hover:shadow-lg overflow-hidden transition ease-linear delay-150">
+            <div className="text-center space-y-[10px] flex flex-col justify-center absolute left-[10%]">
+              <div className="font-medium text-[30px]">码表系列</div>
+              <div className="font-light text-[18px] text-[#0E0606] opacity-[0.75] leading-6">
                 旗舰产品 智能导航
               </div>
             </div>
+            <Image
+              className="absolute right-0 bottom-0"
+              src={"/mbxl-bg.png"}
+              width={350}
+              height={350}
+              objectFit="contain"
+              alt=""
+            />
           </div>
-          <div
-            className="h-[356px] bg-[#F2F3FA] rounded-2xl flex items-center bg-no-repeat bg-right-bottom"
-            style={{ backgroundImage: "url('/cdxl-bg.png')" }}
-          >
-            <div className="ml-[47px] text-center space-y-[10px]">
-              <div className="font-medium text-[32px]">车灯系列</div>
-              <div className="font-light text-[24px] leading-6">
+          <div className="h-[284px] bg-[#F2F3FA] rounded-2xl flex items-center relative cursor-pointer hover:shadow-lg overflow-hidden transition ease-linear delay-150">
+            <div className="text-center space-y-[10px] flex flex-col justify-center absolute left-[10%]">
+              <div className="font-medium text-[30px]">车灯系列</div>
+              <div className="font-light text-[18px] text-[#0E0606] opacity-[0.75] leading-6">
                 追光而行 智能护航
               </div>
             </div>
+            <Image
+              className="absolute right-0 bottom-0"
+              src={"/cdxl-bg.png"}
+              width={450}
+              height={450}
+              objectFit="contain"
+              alt=""
+            />
           </div>
-          <div
-            className="h-[356px] bg-[#F2F3FA] rounded-2xl pt-[48px] bg-no-repeat"
-            style={{
-              backgroundImage: "url('/sbxl-bg.png')",
-              backgroundPosition: "20px 60px",
-            }}
-          >
-            <div className="text-center space-y-[10px]">
-              <div className="font-medium text-[32px]">手表/心率带</div>
-              <div className="font-light text-[24px] leading-6">
+          <div className="h-[284px] bg-[#F2F3FA] rounded-2xl flex items-center relative cursor-pointer hover:shadow-lg overflow-hidden transition ease-linear delay-150">
+            <div className="text-center space-y-[10px] flex flex-col justify-center absolute left-[50%] top-[10%] translate-x-[-50%]">
+              <div className="font-medium text-[30px]">手表/心率带</div>
+              <div className="font-light text-[18px] text-[#0E0606] opacity-[0.75] leading-6">
                 生活随行 运动随心
               </div>
             </div>
+            <Image
+              className="absolute left-[55%] translate-x-[-50%]  bottom-[-25%]"
+              src={"/sbxl-bg.png"}
+              width={400}
+              height={400}
+              objectFit="contain"
+              alt=""
+            />
           </div>
-          <div
-            className="h-[356px] bg-[#F2F3FA] rounded-2xl pt-[48px] bg-no-repeat bg-center"
-            style={{
-              backgroundImage: "url('/cgqxl-bg.png')",
-              backgroundPosition: "0 90px",
-            }}
-          >
-            <div className="text-center space-y-[10px]">
-              <div className="font-medium text-[32px]">传感器系列</div>
-              <div className="font-light text-[24px] leading-6">
+          <div className="h-[284px] bg-[#F2F3FA] rounded-2xl flex items-center relative cursor-pointer hover:shadow-lg overflow-hidden transition ease-linear delay-150">
+            <div className="text-center space-y-[10px] flex flex-col justify-center absolute left-[50%] top-[10%] translate-x-[-50%]">
+              <div className="font-medium text-[30px]">传感器系列</div>
+              <div className="font-light text-[18px] text-[#0E0606] opacity-[0.75] leading-6">
                 双模速度/踏频传感器
               </div>
             </div>
+            <Image
+              className="absolute left-[50%] translate-x-[-50%] bottom-[-15%]"
+              src={"/cgqxl-bg.png"}
+              width={400}
+              height={400}
+              objectFit="contain"
+              alt=""
+            />
           </div>
         </div>
       </div>
