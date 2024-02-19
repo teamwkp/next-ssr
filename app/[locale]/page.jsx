@@ -6,7 +6,7 @@ import DataApp from "@/components/home/DataApp"
 import initTranslations from "../i18n"
 import TranslationsProvider from "@/components/TranslationsProvider"
 import Image from "next/image"
-import AnimatedTextWord from "@/components/AnimatedTextWord"
+import AnimatedWrap from "@/components/AnimatedWrap"
 
 const i18nNamespaces = ["default"]
 const Home = async ({ params: { locale } }) => {
@@ -23,7 +23,9 @@ const Home = async ({ params: { locale } }) => {
         <div className="bg-[#F2F2FA] w-full mt-[100px] h-[200px] flex items-center rounded-2xl relative">
           <div className="left-[130px] w-[40%] absolute">
             <div className="text-3xl font-medium tracking-wider text-center mb-[25px]">
-              {t("intelligent_riding")}
+              <AnimatedWrap type={"fade"}>
+                {t("intelligent_riding")}
+              </AnimatedWrap>
             </div>
             <div className="sub-text text-center font-light text-sm leading-6">
               <div>专注于以自行车码表为代表的运动智能硬件</div>
