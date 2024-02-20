@@ -17,4 +17,5 @@ export const NAV_LINKS = [
   },
 ]
 
-export const CDN_URL = "http://drip-upyun.test.upcdn.net"
+// cdn 文件存储
+export const CDN_URL = "http://arsizes.com"
