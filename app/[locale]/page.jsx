@@ -40,7 +40,7 @@ const Home = async ({ params: { locale } }) => {
         </div>
         <div className="h-[607px] bg-no-repeat bg-center rounded-2xl mt-[48px] overflow-hidden relative cursor-pointer hover:shadow-lg transition ease-linear delay-150">
           <video
-            src={`${CDN_URL}/iGPSPORT.mp4`}
+            src={`${CDN_URL}/igort.mp4`}
             autoPlay
             muted
             loop
