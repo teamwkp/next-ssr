@@ -1,22 +1,23 @@
 "use client"
 
-import { useState}  from 'react'
+import { useState } from "react"
 import { Swiper, SwiperSlide } from "swiper/react"
 import { Autoplay, EffectFade } from "swiper/modules"
+import AnimatedWrap from "../AnimatedWrap"
 import "swiper/css"
 import "swiper/css/effect-fade"
 
 import Image from "next/image"
 
 function Advertisement() {
-  
   const quotation = [
     {
       text: "骑行充实了我的生活，我一直用iGPSPORT码表记录骑行数据，不仅定位快、数据准、续航久，还能通过APP分享骑行的乐趣。",
       img: "/avt1.png",
       name: "爱踩单车的凉茶",
       label: "骑行达人",
-      position: "absolute size-[55px] bg-[#ccc] rounded-full  top-[35px] left-[55px]",
+      position:
+        "absolute size-[55px] bg-[#ccc] rounded-full  top-[35px] left-[55px]",
       size: 55,
     },
     {
@@ -24,7 +25,8 @@ function Advertisement() {
       img: "/avt2.png",
       name: "孔文生",
       label: "知名男车手",
-      position: "absolute size-[100px] bg-[#ccc] rounded-full top-[10px] left-[270px]",
+      position:
+        "absolute size-[100px] bg-[#ccc] rounded-full top-[10px] left-[270px]",
       size: 100,
     },
     {
@@ -32,7 +34,8 @@ function Advertisement() {
       img: "/avt3.png",
       name: "LS.",
       label: "知名女车手",
-      position: "absolute size-[50px] bg-[#ccc] rounded-full top-[210px] left-[310px]",
+      position:
+        "absolute size-[50px] bg-[#ccc] rounded-full top-[210px] left-[310px]",
       size: 50,
     },
     {
@@ -40,7 +43,8 @@ function Advertisement() {
       img: "/avt4.png",
       name: "小蛮爱单车",
       label: "骑行达人",
-      position: "absolute size-[60px] bg-[#ccc] rounded-full top-[310px] left-[230px]",
+      position:
+        "absolute size-[60px] bg-[#ccc] rounded-full top-[310px] left-[230px]",
       size: 60,
     },
     {
@@ -48,7 +52,8 @@ function Advertisement() {
       img: "/avt5.png",
       name: "是_da婷…",
       label: "知名女车手",
-      position: "absolute size-[100px] bg-[#ccc] rounded-full top-[230px] left-[0px] ",
+      position:
+        "absolute size-[100px] bg-[#ccc] rounded-full top-[230px] left-[0px] ",
       size: 100,
     },
   ]
@@ -59,7 +64,9 @@ function Advertisement() {
       style={{ background: "linear-gradient(75deg, #131313, #4A4A4C)" }}
     >
       <div className="ml-[128px] w-[388px]">
-        <div className="font-bold text-[42px]">听听他们的声音</div>
+        <div className="font-bold text-[42px]">
+          <AnimatedWrap type={"fade"}>听听他们的声音</AnimatedWrap>
+        </div>
         <div className="py-[15px]">
           <Image src={"/yinhao.png"} width={40} height={30} alt="" />
         </div>
@@ -108,19 +115,17 @@ function Advertisement() {
       </div>
       <div className="absolute w-[400px] h-[400px] right-[80px] z-10">
         <div className="w-full h-full avatar-animation">
-          {
-            quotation.map(item => (
-              <div className={item.position} key={item.img}>
-                <Image
-                  width={item.size}
-                  height={item.size}
-                  className="cursor-pointer rounded-full"
-                  src={item.img}
-                  alt={item.name}
-                />
-              </div>
-            ))
-          }
+          {quotation.map((item) => (
+            <div className={item.position} key={item.img}>
+              <Image
+                width={item.size}
+                height={item.size}
+                className="cursor-pointer rounded-full"
+                src={item.img}
+                alt={item.name}
+              />
+            </div>
+          ))}
         </div>
         <div className="absolute size-[160px] bg-[#ccc] rounded-full top-[120px] left-[130px] active-avatar-animation">
           <Image

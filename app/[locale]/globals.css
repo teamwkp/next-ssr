@@ -163,6 +163,21 @@ body {
   scrollbar-width: none; /* Firefox */
 }
 
+/* 缓入动画*/
+
+.slowIn-animation {
+  animation: slowin 0.5s ease forwards 3s;
+}
+
+@keyframes slowin {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
 /* 头像动画 */
 .avatar-animation {
   animation: avatar-animation 50s linear infinite;
@@ -187,30 +202,30 @@ body {
 @keyframes active-avatar-animation {
   0% {
     transform: scale(1);
-    box-shadow:  0px 0px 0px #444
+    box-shadow: 0px 0px 0px #444;
   }
   25% {
     transform: scale(0.9);
-    box-shadow:  0px 0px 10px #111
+    box-shadow: 0px 0px 10px #111;
   }
   50% {
     transform: scale(1);
-    box-shadow:  0px 0px 8px #444
+    box-shadow: 0px 0px 8px #444;
   }
   75% {
     transform: scale(1.1);
-    box-shadow:  0px 0px 8px #111
+    box-shadow: 0px 0px 8px #111;
   }
   100% {
     transform: rotate(1);
-    box-shadow:  0px 0px 8px #444
+    box-shadow: 0px 0px 8px #444;
   }
 }
 
 /* 镂空文字*/
 .stroke-text {
-  -webkit-text-stroke: 2px #fff; 
-  -webkit-text-fill-color : transparent;
+  -webkit-text-stroke: 2px #fff;
+  -webkit-text-fill-color: transparent;
   font-size: 56px;
-  color:#fff;
+  color: #fff;
 }
