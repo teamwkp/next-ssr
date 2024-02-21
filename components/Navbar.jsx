@@ -9,13 +9,11 @@ import LanguageChanger from "./LanguageChanger"
 import { Button, Popover } from "antd"
 import { ShoppingOutlined } from "@ant-design/icons"
 import styles from "./Navbar.module.scss"
-import { useHover } from "@uidotdev/usehooks"
 import SubMenuOverlay from "@/components/SubMenuOverlay"
 import { useState } from "react"
 
 const Navbar = () => {
   const { t } = useTranslation()
-  const [flagship, flagshipHovering] = useHover()
   const [popShow, setPopShow] = useState(false)
   const content = (
     <div className="w-full h-full box-border">
@@ -56,12 +54,13 @@ const Navbar = () => {
               <Popover
                 onOpenChange={popoverChange}
                 overlayClassName="shadow-none"
+                mouseEnterDelay={0}
                 overlayStyle={{
                   position: "fixed",
                   left: 0,
                   right: 0,
                   top: "64px",
-                  bottom: 0,
+                  height: "50vh",
                   background: "#fff",
                   borderTop: "1px solid #eee",
                 }}
@@ -124,7 +123,7 @@ const Navbar = () => {
           />
         </div>
       </header>
-      {flagshipHovering ? <SubMenuOverlay /> : <></>}
+      {popShow ? <SubMenuOverlay /> : <></>}
     </>
   )
 }
