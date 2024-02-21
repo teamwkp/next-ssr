@@ -1,16 +1,8 @@
 "use client"
 
-import { useEffect } from "react"
 import style from "./igpLogo.module.css"
 
 function IgpLogo({ props }) {
-  useEffect(() => {
-    const logo = document.querySelectorAll("#igp_logo path")
-    console.log(logo)
-    for (let i = 0; i < logo.length; i++) {
-      console.log(`letter ${i} is ${logo[i].getTotalLength()}`)
-    }
-  })
   return (
     <svg
       id="igp_logo"

@@ -72,6 +72,23 @@ async function Enterprise({ params: { locale } }) {
           </div>
         </div>
       </div>
+      <div className="w-full h-[900px] bg-black"></div>
+      <div className="w-full h-[900px] relative">
+        <div className=" absolute z-100 left-[50%] top-[40%] translate-x-[-50%] translate-y-[-50%]">
+          <div className=" font-bold text-[#ffffff] text-[36px]">品牌伙伴</div>
+          <div>
+            iGPSPORT坚持对科技创新的不断探索，并深度布局骑行运动市场，知名运动员、骑行达人及专业自行车队，共同研发骑行爱好者更喜爱的智能骑行产品。
+          </div>
+        </div>
+
+        <Image
+          className="absolute z-90 left-[50%] top-[40%] translate-x-[-50%] translate-y-[-50%]"
+          src={"/bg3.jpg"}
+          width={1130}
+          height={477}
+          objectFit="contain"
+        />
+      </div>
 
       <div className="bg-[#F4F5FB] w-full h-[900px] flex flex-col items-center justify-center">
         <div className="text-[#121217] text-[36px] font-bold">联系我们</div>
