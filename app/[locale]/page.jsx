@@ -39,7 +39,7 @@ const Home = async ({ params: { locale } }) => {
             <Image src={"/top-banner.png"} width={280} height={320} alt="" />
           </div>
         </div>
-        <div className="h-[607px] bg-no-repeat bg-center rounded-2xl mt-[48px] overflow-hidden relative cursor-pointer hover:shadow-lg transition ease-linear delay-150">
+        <div className="bg-no-repeat bg-center rounded-2xl mt-[48px] overflow-hidden relative cursor-pointer hover:shadow-lg transition ease-linear delay-150">
           <video
             src={`${CDN_URL}/igort.mp4`}
             autoPlay
@@ -47,7 +47,7 @@ const Home = async ({ params: { locale } }) => {
             loop
             className="w-full h-full object-fill"
           ></video>
-          <div className="absolute w-full h-full z-[19] top-0 text-white flex flex-col justify-center items-center">
+          <div className="hidden lg:flex md:flex absolute w-full h-full z-[19] top-0 text-white  flex-col justify-center items-center">
             <IgpLogo />
             <AnimatedWrap type={"fade"}>
               <div className="text-[22px] mt-[8px]">

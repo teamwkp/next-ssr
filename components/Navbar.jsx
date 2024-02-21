@@ -33,9 +33,9 @@ const Navbar = () => {
         style={{
           transition: "top 0.3s",
         }}
-        className="fixed top-0 translate-x-[-50%] left-[50%]  w-full z-30  bg-white"
+        className="fixed top-0 translate-x-[-50%] left-[50%]  w-full z-30 bg-white"
       >
-        <div className="max-container padding-container  flexBetween h-[64px]">
+        <div className="max-container padding-container  flexBetween h-[49px] lg:h-[64px] md:h-[64px]">
           <Link href="/">
             <Image
               src="/logo.png"

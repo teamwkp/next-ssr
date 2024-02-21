@@ -32,7 +32,7 @@ body {
   }
 
   .media-container {
-    @apply w-full px-[10px] box-border sm:max-w-[800px] mx-auto md:max-w-[1080px];
+    @apply w-full px-[20px] box-border sm:max-w-[800px] mx-auto md:max-w-[1080px];
   }
 
   .max-container {
