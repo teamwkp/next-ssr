@@ -50,7 +50,7 @@ const Home = async ({ params: { locale } }) => {
           <div className="hidden lg:flex md:flex absolute w-full h-full z-[19] top-0 text-white  flex-col justify-center items-center">
             <IgpLogo />
             <AnimatedWrap type={"fade"}>
-              <div className="text-[22px] mt-[8px]">
+              <div className="text-[20px] mt-[8px]">
                 记录精彩骑迹 为骑行运动而生
               </div>
             </AnimatedWrap>
