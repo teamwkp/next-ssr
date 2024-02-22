@@ -39,9 +39,11 @@ const Home = async ({ params: { locale } }) => {
               </AnimatedWrap>
             </div>
             <div className="sub-text text-center font-light text-sm leading-6">
-              <div>专注于以自行车码表为代表的运动智能硬件</div>
-              <div>让骑行变得更加轻松</div>
-              <div>服务于全球超百万骑行运动爱好者</div>
+              <AnimatedWrap type={"fade"} delay={200}>
+                <div>专注于以自行车码表为代表的运动智能硬件</div>
+                <div>让骑行变得更加轻松</div>
+                <div>服务于全球超百万骑行运动爱好者</div>
+              </AnimatedWrap>
             </div>
           </div>
           <div className="absolute right-[92px]">
@@ -78,7 +80,7 @@ const Home = async ({ params: { locale } }) => {
         <div className=" grid grid-cols-1 lg:grid-cols-2 gap-[24px] mt-[48px]">
           <div className="h-[284px] bg-[#F2F3FA] rounded-2xl flex items-center relative group cursor-pointer hover:shadow-lg overflow-hidden transition ease-linear delay-150">
             <div className="text-center space-y-[10px] flex flex-col justify-center absolute left-[10%]">
-              <div className="font-medium text-[30px]">码表系列</div>
+              <div className="font-medium text-[25px]">码表系列</div>
               <div className="font-light text-[18px] text-[#0E0606] opacity-[0.75] leading-6">
                 旗舰产品 智能导航
               </div>
@@ -94,7 +96,7 @@ const Home = async ({ params: { locale } }) => {
           </div>
           <div className="h-[284px] bg-[#F2F3FA] rounded-2xl group flex items-center relative cursor-pointer hover:shadow-lg overflow-hidden transition ease-linear delay-150">
             <div className="text-center space-y-[10px] flex flex-col justify-center absolute left-[10%]">
-              <div className="font-medium text-[30px]">车灯系列</div>
+              <div className="font-medium text-[25px]">车灯系列</div>
               <div className="font-light text-[18px] text-[#0E0606] opacity-[0.75] leading-6">
                 追光而行 智能护航
               </div>
@@ -110,7 +112,7 @@ const Home = async ({ params: { locale } }) => {
           </div>
           <div className="h-[284px] bg-[#F2F3FA] group rounded-2xl flex items-center relative cursor-pointer hover:shadow-lg overflow-hidden transition ease-linear delay-150">
             <div className="text-center space-y-[10px] flex flex-col justify-center absolute left-[50%] top-[10%] translate-x-[-50%]">
-              <div className="font-medium text-[30px]">手表/心率带</div>
+              <div className="font-medium text-[25px]">手表/心率带</div>
               <div className="font-light text-[18px] text-[#0E0606] opacity-[0.75] leading-6">
                 生活随行 运动随心
               </div>
@@ -126,7 +128,7 @@ const Home = async ({ params: { locale } }) => {
           </div>
           <div className="h-[284px] bg-[#F2F3FA] group rounded-2xl flex items-center relative cursor-pointer hover:shadow-lg overflow-hidden transition ease-linear delay-150">
             <div className="text-center space-y-[10px] flex flex-col justify-center absolute left-[50%] top-[10%] translate-x-[-50%]">
-              <div className="font-medium text-[30px]">传感器系列</div>
+              <div className="font-medium text-[25px]">传感器系列</div>
               <div className="font-light text-[18px] text-[#0E0606] opacity-[0.75] leading-6">
                 双模速度/踏频传感器
               </div>

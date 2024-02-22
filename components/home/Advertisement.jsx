@@ -72,7 +72,6 @@ function Advertisement() {
         <Swiper
           modules={[Autoplay, EffectFade]}
           onSlideChange={(item) => {
-            console.log("show", item.activeIndex)
             setStatus(quotation[item.activeIndex].img)
           }}
           effect={"fade"}
@@ -80,7 +79,7 @@ function Advertisement() {
             crossFade: true,
           }}
           autoplay={{
-            delay: 4000,
+            delay: 3000,
             disableOnInteraction: false,
           }}
         >
