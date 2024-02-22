@@ -40,7 +40,6 @@ const Aftersales = async ({ params: { locale } }) => {
       path: '/aftersales/support'
     }
   ]
-  const goType= () => {}
   return (
     <TranslationsProvider
       namespaces={i18nNamespaces}
@@ -55,7 +54,7 @@ const Aftersales = async ({ params: { locale } }) => {
           backgroundSize: "100% auto",
         }}
       >
-        <div className="lg:h-[480px] h-[240px] bg-[#111] flex justify-center items-center text-center">
+        <div className="lg:h-[480px] lg:bg-[transparent] bg-[#111] h-[240px] flex justify-center items-center text-center">
           <div className="lg:w-[640px] w-3/4">
             <div className="text-[42px] text-white tracking-[2px]">使用帮助</div>
             <div className="mt-[40px]">
