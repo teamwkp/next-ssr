@@ -25,10 +25,10 @@ const Home = async ({ params: { locale } }) => {
         }}
       >
         <div className="">
-          <div className="text-white w-[520px] mx-auto text-center pt-[280px] pb-[400px]">
-            <div className="text-[52px] font-bold">品牌伙伴</div>
+          <div className="text-white lg:w-[520px] mx-auto text-center pt-[100px] pb-[200ppx] lg:pt-[280px] lg:pb-[400px]">
+            <div className=" text-[32px] lg:text-[52px] font-bold">品牌伙伴</div>
             <div
-              className="text-[18px] mt-[20px] leading-[32px]"
+              className="lg:text-[18px] text-[14px] mt-[20px] leading-[32px]"
               style={{ color: "rgba(255,255,255,0.71)" }}
             >
               坚持对科技创新的不断探索，并深度布局骑行运动市场，知名运动员、骑行达人及专业自行车队，共同研发骑行爱好者更喜爱的智能骑行产。
@@ -36,9 +36,9 @@ const Home = async ({ params: { locale } }) => {
           </div>
         </div>
         <div className="media-container mx-auto pb-20">
-          <div className="py-[50px] text-white text-[36px]">合作车队</div>
+          <div className="py-[50px] text-white lg:text-[36px] text-[28px]">合作车队</div>
           <div
-            className="w-full h-[572px] rounded-2xl bg-no-repeat flex items-end"
+            className="w-full lg:h-[572px] h-[260px] rounded-2xl bg-no-repeat flex items-end"
             style={{
               backgroundImage: "url('/swhz-1.png')",
               backgroundSize: "100% 100%",
@@ -54,9 +54,9 @@ const Home = async ({ params: { locale } }) => {
               </div>
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-[26px] mt-[40px]">
+          <div className="grid lg:grid-cols-2 grid-cols-1 gap-[26px] mt-[40px]">
             <div
-              className="h-[482px] rounded-2xl bg-no-repeat flex items-end"
+              className="lg:h-[482px] h-[260px] rounded-2xl bg-no-repeat flex items-end"
               style={{
                 backgroundImage: "url('/swhz-2.png')",
                 backgroundSize: "100% 100%",
@@ -76,7 +76,7 @@ const Home = async ({ params: { locale } }) => {
               </div>
             </div>
             <div
-              className="h-[482px] rounded-2xl bg-no-repeat flex items-end"
+              className="lg:h-[482px] h-[260px] rounded-2xl bg-no-repeat flex items-end"
               style={{
                 backgroundImage: "url('/swhz-3.png')",
                 backgroundSize: "100% 100%",
@@ -95,23 +95,23 @@ const Home = async ({ params: { locale } }) => {
               </div>
             </div>
           </div>
-          <div className="py-[50px] text-white text-[36px]">骑行达人</div>
-          <div className="grid grid-cols-4 gap-[24px]">
+          <div className="py-[50px] text-white lg:text-[36px] text-[28px]">骑行达人</div>
+          <div className="grid lg:grid-cols-4 grid-cols-2 gap-[24px]">
             {Array.from({ length: 8 }).map((item, index) => {
               return (
                 <div
-                  className="h-[324px] rounded-2xl overflow-hidden"
+                  className="lg:h-[324px] h-[220px] rounded-2xl overflow-hidden"
                   style={{ background: "linear-gradient(#202020, #222222)" }}
                 >
                   <div
-                    className="h-[324px] bg-no-repeat flex items-end"
+                    className="lg:h-[324px] h-[220px] bg-no-repeat flex items-end"
                     style={{
                       background: "url('/user-" + (index + 1) + ".png')",
                       backgroundSize: "100% 100%",
                     }}
                   >
-                    <div className="text-white p-[30px]">
-                      <div className="text-[22px]">孔文生</div>
+                    <div className="text-white lg:p-[30px] p-[20px]">
+                      <div className="lg:text-[22px] text-[18px]">孔文生</div>
                       <div
                         className="text-[14px] mt-[5px]"
                         style={{ color: "rgba(255,255,255,0.71)" }}
@@ -124,7 +124,7 @@ const Home = async ({ params: { locale } }) => {
               )
             })}
           </div>
-          <div className="py-[50px] text-white text-[36px]">品牌动态</div>
+          <div className="py-[50px] text-white lg:text-[36px] text-[28px]">品牌动态</div>
           <BrandTrends></BrandTrends>
         </div>
       </div>
