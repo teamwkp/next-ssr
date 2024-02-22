@@ -22,11 +22,20 @@ const Home = async ({ params: { locale } }) => {
     >
       <Navbar />
       <div className="media-container mx-auto">
-        <div className="bg-[#F2F2FA] w-full mt-[100px] h-[200px] flex items-center rounded-2xl relative">
-          <div className="left-[130px] w-[40%] absolute">
-            <div className="text-3xl font-medium tracking-wider text-center mb-[25px]">
+        <div className="bg-[#F2F2FA] w-full mt-[100px] h-[242px] flex items-center rounded-2xl relative">
+          <div className="left-[130px] min-w-[30%] absolute">
+            <div className="text-3xl font-medium tracking-widest text-center mb-[25px] relative">
               <AnimatedWrap type={"fade"}>
                 {t("intelligent_riding")}
+              </AnimatedWrap>
+              <AnimatedWrap type={"fade"}>
+                <Image
+                  className="absolute left-[30px] mt-2"
+                  src={"/caihong.png"}
+                  width={60}
+                  height={3}
+                  alt=""
+                />
               </AnimatedWrap>
             </div>
             <div className="sub-text text-center font-light text-sm leading-6">
@@ -50,9 +59,17 @@ const Home = async ({ params: { locale } }) => {
           <div className="hidden lg:flex md:flex absolute w-full h-full z-[19] top-0 text-white  flex-col justify-center items-center">
             <IgpLogo />
             <AnimatedWrap type={"fade"}>
-              <div className="text-[20px] mt-[8px]">
+              <div className="text-[20px] mt-[8px] mb-[32px]">
                 记录精彩骑迹 为骑行运动而生
               </div>
+              <Image
+                className="hover:scale-110 transition-all"
+                src={"/vuesax.png"}
+                width={32}
+                height={32}
+                objectFit="contain"
+                alt=""
+              />
             </AnimatedWrap>
 
             <div className="pt-[20px] w-[32px] mx-auto"></div>
