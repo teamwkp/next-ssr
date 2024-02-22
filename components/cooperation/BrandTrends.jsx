@@ -34,7 +34,19 @@ function BrandTrends() {
         <Swiper
             modules={[Autoplay, Navigation, Pagination]}
             spaceBetween={24}
-            slidesPerView={2.5}
+            breakpoints={
+                {
+                    640: {
+                        slidesPerView: 1,
+                    },
+                    768: {
+                        slidesPerView: 2.5,
+                    },
+                    1024: {
+                        slidesPerView: 2.5,
+                    },
+                }
+            }
             fadeEffect={{
                 crossFade: true,
             }}
@@ -45,7 +57,7 @@ function BrandTrends() {
         >
             {brandList.map((k, i) => (
                 <SwiperSlide className="w-[410px]" key={i}>
-                    <div className="w-[410px] h-[380px] flex items-end" style={{ backgroundImage: "url('"+ k.img +"')", backgroundSize: "100% 100%" }}>
+                    <div className="lg:w-[410px] w-full lg:h-[380px] h-[300px] flex items-end" style={{ backgroundImage: "url('"+ k.img +"')", backgroundSize: "100% 100%" }}>
                         <div className="p-[30px] ">
                             <div className="text-[22px] text-white">{k.text}</div>
                             <div className="text-[14px] line- mt-[15px] line-clamp-3" style={{color: "rgba(255,255,255,0.71)"}}>{k.label}</div>
