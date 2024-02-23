@@ -18,4 +18,4 @@ export const NAV_LINKS = [
 ]
 
 // cdn 文件存储
-export const CDN_URL = "http://arsizes.com"
+export const CDN_URL = "https://arsizes.com"

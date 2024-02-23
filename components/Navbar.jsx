@@ -11,6 +11,7 @@ import { ShoppingOutlined } from "@ant-design/icons"
 import styles from "./Navbar.module.scss"
 import SubMenuOverlay from "@/components/SubMenuOverlay"
 import { useState } from "react"
+import MenuSide from "./MenuSide"
 
 const Navbar = () => {
   const { t } = useTranslation()
@@ -301,11 +302,9 @@ const Navbar = () => {
             </Button>
             <LanguageChanger />
           </div>
-          <Bars3Icon
-            width={32}
-            height={32}
-            className="inline-block cursor-pointer lg:hidden"
-          />
+          <div className="lg:hidden">
+            <MenuSide />
+          </div>
         </div>
       </header>
       {popShow ? <SubMenuOverlay /> : <></>}
