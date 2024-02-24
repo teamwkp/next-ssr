@@ -24,3 +24,9 @@
   line-height: 20px;
   color: #b6b6c0;
 }
+.line {
+  display: flex;
+  flex-direction: column;
+  padding: 24px 0;
+  border-bottom: 1px solid #37373b;
+}

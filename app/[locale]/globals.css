@@ -32,7 +32,7 @@ body {
   }
 
   .media-container {
-    @apply w-full px-[10px] box-border sm:max-w-[800px] mx-auto md:max-w-[1080px];
+    @apply w-full px-[20px] box-border sm:max-w-[800px] mx-auto md:max-w-[1080px];
   }
 
   .max-container {
@@ -157,10 +157,29 @@ body {
   display: none;
 }
 
+.extral-container {
+  height: calc(100vh - 64px);
+}
+
 /* Hide scrollbar for IE, Edge and Firefox */
 .hide-scrollbar {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+}
+
+/* 缓入动画*/
+
+.slowIn-animation {
+  animation: slowin 0.5s ease forwards 3s;
+}
+
+@keyframes slowin {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
 }
 
 /* 头像动画 */
@@ -187,22 +206,22 @@ body {
 @keyframes active-avatar-animation {
   0% {
     transform: scale(1);
-    box-shadow:  0px 0px 0px #444
+    box-shadow: 0px 0px 0px #444;
   }
   25% {
     transform: scale(0.9);
-    box-shadow:  0px 0px 10px #111
+    box-shadow: 0px 0px 10px #111;
   }
   50% {
     transform: scale(1);
-    box-shadow:  0px 0px 8px #444
+    box-shadow: 0px 0px 8px #444;
   }
   75% {
     transform: scale(1.1);
-    box-shadow:  0px 0px 8px #111
+    box-shadow: 0px 0px 8px #111;
   }
   100% {
     transform: rotate(1);
-    box-shadow:  0px 0px 8px #444
+    box-shadow: 0px 0px 8px #444;
   }
 }
