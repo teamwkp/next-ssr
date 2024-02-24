@@ -15,15 +15,20 @@ import MenuSide from "./MenuSide"
 import Flagship from "./PullDown/FlagshipPd"
 import AfterSalesPd from "./PullDown/AfterSalesPd"
 import CooperationPd from "./PullDown/CooperationPd"
+import CompanyPd from "./PullDown/CompanyPd"
 
 const Navbar = () => {
   const { t } = useTranslation()
   const [popShow, setPopShow] = useState(false)
+  const [popShow2, setPopShow2] = useState(false)
   const [popShow3, setPopShow3] = useState(false)
   const [popShow4, setPopShow4] = useState(false)
 
   const popoverChange = (val) => {
     setPopShow(val)
+  }
+  const popoverChange2 = (val) => {
+    setPopShow2(val)
   }
   const popoverChange3 = (val) => {
     setPopShow3(val)
@@ -98,10 +103,41 @@ const Navbar = () => {
               key={"enterprise_introduction"}
               className="group relative regular-14 text-gray-50 flexCenter cursor-pointer"
             >
-              <div className="w-full h-full flexCenter">
-                <span>{t("enterprise_introduction")}</span>
-                <div className="absolute w-0 h-[2px] bg-[#FF4B27] transition-all left-0 bottom-0 group-hover:w-full"></div>
-              </div>
+              <ConfigProvider
+                theme={{
+                  token: { motion: false },
+                }}
+              >
+                <Popover
+                  onOpenChange={popoverChange2}
+                  overlayClassName="shadow-none"
+                  mouseEnterDelay={0}
+                  overlayStyle={{
+                    position: "fixed",
+                    left: 0,
+                    right: 0,
+                    top: "64px",
+                    height: "320px",
+                    background: "#fff",
+                    borderTop: "1px solid #eee",
+                  }}
+                  overlayInnerStyle={{
+                    boxShadow: "none",
+                    height: "100%",
+                  }}
+                  arrow={false}
+                  content={CompanyPd}
+                >
+                  <div className="w-full h-full flexCenter">
+                    <span>{t("enterprise_introduction")}</span>
+                    <div
+                      className={`absolute w-0 h-[2px] bg-[#FF4B27] transition-all left-0 bottom-0 group-hover:w-full ${
+                        popShow2 ? "w-full" : ""
+                      }`}
+                    ></div>
+                  </div>
+                </Popover>
+              </ConfigProvider>
             </Link>
             <Link
               href={"/aftersales"}
