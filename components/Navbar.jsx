@@ -71,7 +71,7 @@ const Navbar = () => {
                     left: 0,
                     right: 0,
                     top: "64px",
-                    height: "50vh",
+                    height: "668px",
                     background: "#fff",
                     borderTop: "1px solid #eee",
                   }}
