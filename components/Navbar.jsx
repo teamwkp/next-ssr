@@ -12,6 +12,7 @@ import styles from "./Navbar.module.scss"
 import SubMenuOverlay from "@/components/SubMenuOverlay"
 import { useState } from "react"
 import MenuSide from "./MenuSide"
+import Flagship from "./PullDown/Flagship"
 
 const Navbar = () => {
   const { t } = useTranslation()
@@ -49,12 +50,7 @@ const Navbar = () => {
   const [popShow, setPopShow] = useState(false)
   const [popShow3, setPopShow3] = useState(false)
   const [popShow4, setPopShow4] = useState(false)
-  const content = (
-    <div className="w-full h-full box-border">
-      <p>Content</p>
-      <p>Content</p>
-    </div>
-  )
+
   const contenThree = (
     <div className="w-full h-full box-border">
       <div className="media-container mx-auto flex">
@@ -216,12 +212,12 @@ const Navbar = () => {
                     height: "100%",
                   }}
                   arrow={false}
-                  content={content}
+                  content={Flagship}
                 >
                   <div className="w-full h-full flexCenter">
                     <span>{t("flagship_products")}</span>
                     <div
-                      className={`absolute w-0 h-[2px] bg-[#262629] transition-all left-0 bottom-0 group-hover:w-full ${
+                      className={`absolute w-0 h-[2px] bg-[#FF4B27] transition-all left-0 bottom-0 group-hover:w-full ${
                         popShow ? "w-full" : ""
                       }`}
                     ></div>
@@ -236,7 +232,7 @@ const Navbar = () => {
             >
               <div className="w-full h-full flexCenter">
                 <span>{t("enterprise_introduction")}</span>
-                <div className="absolute w-0 h-[2px] bg-[#262629] transition-all left-0 bottom-0 group-hover:w-full"></div>
+                <div className="absolute w-0 h-[2px] bg-[#FF4B27] transition-all left-0 bottom-0 group-hover:w-full"></div>
               </div>
             </Link>
             <Link
@@ -269,7 +265,7 @@ const Navbar = () => {
                   <div className="w-full h-full flexCenter">
                     <span>{t("aftersales_section")}</span>
                     <div
-                      className={`absolute w-0 h-[2px] bg-[#262629] transition-all left-0 bottom-0 group-hover:w-full ${
+                      className={`absolute w-0 h-[2px] bg-[#FF4B27] transition-all left-0 bottom-0 group-hover:w-full ${
                         popShow3 ? "w-full" : ""
                       }`}
                     ></div>
@@ -307,7 +303,7 @@ const Navbar = () => {
                   <div className="w-full h-full flexCenter">
                     <span>{t("business_cooperation")}</span>
                     <div
-                      className={`absolute w-0 h-[2px] bg-[#262629] transition-all left-0 bottom-0 group-hover:w-full ${
+                      className={`absolute w-0 h-[2px] bg-[#FF4B27] transition-all left-0 bottom-0 group-hover:w-full ${
                         popShow4 ? "w-full" : ""
                       }`}
                     ></div>
