@@ -6,7 +6,7 @@ import Link from "next/link"
 import { ShoppingBagIcon, Bars3Icon } from "@heroicons/react/24/outline"
 import { useTranslation } from "react-i18next"
 import LanguageChanger from "./LanguageChanger"
-import { Button, Popover } from "antd"
+import { Button, Popover, ConfigProvider } from "antd"
 import { ShoppingOutlined } from "@ant-design/icons"
 import styles from "./Navbar.module.scss"
 import SubMenuOverlay from "@/components/SubMenuOverlay"
@@ -193,32 +193,41 @@ const Navbar = () => {
               key={"flagship_products"}
               className="group relative regular-14 text-gray-50 flexCenter cursor-pointer"
             >
-              <Popover
-                onOpenChange={popoverChange}
-                overlayClassName="shadow-none"
-                mouseEnterDelay={0}
-                overlayStyle={{
-                  position: "fixed",
-                  left: 0,
-                  right: 0,
-                  top: "64px",
-                  height: "50vh",
-                  background: "#fff",
-                  borderTop: "1px solid #eee",
+              <ConfigProvider
+                theme={{
+                  token: { motion: false },
                 }}
-                overlayInnerStyle={{ boxShadow: "none", height: "100%" }}
-                arrow={false}
-                content={content}
               >
-                <div className="w-full h-full flexCenter">
-                  <span>{t("flagship_products")}</span>
-                  <div
-                    className={`absolute w-0 h-[2px] bg-[#262629] transition-all left-0 bottom-0 group-hover:w-full ${
-                      popShow ? "w-full" : ""
-                    }`}
-                  ></div>
-                </div>
-              </Popover>
+                <Popover
+                  onOpenChange={popoverChange}
+                  overlayClassName="shadow-none"
+                  mouseEnterDelay={0}
+                  overlayStyle={{
+                    position: "fixed",
+                    left: 0,
+                    right: 0,
+                    top: "64px",
+                    height: "50vh",
+                    background: "#fff",
+                    borderTop: "1px solid #eee",
+                  }}
+                  overlayInnerStyle={{
+                    boxShadow: "none",
+                    height: "100%",
+                  }}
+                  arrow={false}
+                  content={content}
+                >
+                  <div className="w-full h-full flexCenter">
+                    <span>{t("flagship_products")}</span>
+                    <div
+                      className={`absolute w-0 h-[2px] bg-[#262629] transition-all left-0 bottom-0 group-hover:w-full ${
+                        popShow ? "w-full" : ""
+                      }`}
+                    ></div>
+                  </div>
+                </Popover>
+              </ConfigProvider>
             </Link>
             <Link
               href={"/enterprise"}
@@ -235,64 +244,76 @@ const Navbar = () => {
               key={"aftersales_section"}
               className="group relative regular-14 text-gray-50 flexCenter cursor-pointer"
             >
-              <Popover
-                onOpenChange={popoverChange3}
-                overlayClassName="shadow-none"
-                mouseEnterDelay={0}
-                overlayStyle={{
-                  position: "fixed",
-                  left: 0,
-                  right: 0,
-                  top: "64px",
-                  height: "320px",
-                  background: "#fff",
-                  borderTop: "1px solid #eee",
+              <ConfigProvider
+                theme={{
+                  token: { motion: false },
                 }}
-                overlayInnerStyle={{ boxShadow: "none", height: "100%" }}
-                arrow={false}
-                content={contenThree}
               >
-                <div className="w-full h-full flexCenter">
-                  <span>{t("aftersales_section")}</span>
-                  <div
-                    className={`absolute w-0 h-[2px] bg-[#262629] transition-all left-0 bottom-0 group-hover:w-full ${
-                      popShow3 ? "w-full" : ""
-                    }`}
-                  ></div>
-                </div>
-              </Popover>
+                <Popover
+                  onOpenChange={popoverChange3}
+                  overlayClassName="shadow-none"
+                  mouseEnterDelay={0}
+                  overlayStyle={{
+                    position: "fixed",
+                    left: 0,
+                    right: 0,
+                    top: "64px",
+                    height: "320px",
+                    background: "#fff",
+                    borderTop: "1px solid #eee",
+                  }}
+                  overlayInnerStyle={{ boxShadow: "none", height: "100%" }}
+                  arrow={false}
+                  content={contenThree}
+                >
+                  <div className="w-full h-full flexCenter">
+                    <span>{t("aftersales_section")}</span>
+                    <div
+                      className={`absolute w-0 h-[2px] bg-[#262629] transition-all left-0 bottom-0 group-hover:w-full ${
+                        popShow3 ? "w-full" : ""
+                      }`}
+                    ></div>
+                  </div>
+                </Popover>
+              </ConfigProvider>
             </Link>
             <Link
               href={"/cooperation"}
               key={"business_cooperation"}
               className="group relative regular-14 text-gray-50 flexCenter cursor-pointer"
             >
-              <Popover
-                onOpenChange={popoverChange4}
-                overlayClassName="shadow-none"
-                mouseEnterDelay={0}
-                overlayStyle={{
-                  position: "fixed",
-                  left: 0,
-                  right: 0,
-                  top: "64px",
-                  height: "320px",
-                  background: "#fff",
-                  borderTop: "1px solid #eee",
+              <ConfigProvider
+                theme={{
+                  token: { motion: false },
                 }}
-                overlayInnerStyle={{ boxShadow: "none", height: "100%" }}
-                arrow={false}
-                content={contentFour}
               >
-                <div className="w-full h-full flexCenter">
-                  <span>{t("business_cooperation")}</span>
-                  <div
-                    className={`absolute w-0 h-[2px] bg-[#262629] transition-all left-0 bottom-0 group-hover:w-full ${
-                      popShow4 ? "w-full" : ""
-                    }`}
-                  ></div>
-                </div>
-              </Popover>
+                <Popover
+                  onOpenChange={popoverChange4}
+                  overlayClassName="shadow-none"
+                  mouseEnterDelay={0}
+                  overlayStyle={{
+                    position: "fixed",
+                    left: 0,
+                    right: 0,
+                    top: "64px",
+                    height: "320px",
+                    background: "#fff",
+                    borderTop: "1px solid #eee",
+                  }}
+                  overlayInnerStyle={{ boxShadow: "none", height: "100%" }}
+                  arrow={false}
+                  content={contentFour}
+                >
+                  <div className="w-full h-full flexCenter">
+                    <span>{t("business_cooperation")}</span>
+                    <div
+                      className={`absolute w-0 h-[2px] bg-[#262629] transition-all left-0 bottom-0 group-hover:w-full ${
+                        popShow4 ? "w-full" : ""
+                      }`}
+                    ></div>
+                  </div>
+                </Popover>
+              </ConfigProvider>
             </Link>
           </div>
 
@@ -307,7 +328,7 @@ const Navbar = () => {
           </div>
         </div>
       </header>
-      {popShow ? <SubMenuOverlay /> : <></>}
+      {popShow || popShow4 || popShow3 ? <SubMenuOverlay /> : <></>}
     </>
   )
 }
