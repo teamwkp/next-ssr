@@ -56,11 +56,11 @@ const Navbar = () => {
               style={{ width: "124px", height: "auto" }}
             />
           </Link>
-          <div className="hidden h-full gap-12 lg:flex">
+          <div className="hidden h-full lg:flex">
             <Link
               href={"/standard"}
               key={"flagship_products"}
-              className="group relative regular-14 text-gray-50 flexCenter cursor-pointer"
+              className="group relative regular-14 text-gray-50 flexCenter cursor-pointer px-5"
             >
               <ConfigProvider
                 theme={{
@@ -90,8 +90,8 @@ const Navbar = () => {
                   <div className="w-full h-full flexCenter">
                     <span>{t("flagship_products")}</span>
                     <div
-                      className={`absolute w-0 h-[2px] bg-[#FF4B27] transition-all left-0 bottom-0 group-hover:w-full ${
-                        popShow ? "w-full" : ""
+                      className={`absolute w-0 h-[2px] bg-[#FF4B27] transition-all left-[50%] translate-x-[-50%] bottom-0 group-hover:w-[60%] ${
+                        popShow ? "w-[60%]" : ""
                       }`}
                     ></div>
                   </div>
@@ -101,7 +101,7 @@ const Navbar = () => {
             <Link
               href={"/enterprise"}
               key={"enterprise_introduction"}
-              className="group relative regular-14 text-gray-50 flexCenter cursor-pointer"
+              className="group relative regular-14 text-gray-50 flexCenter cursor-pointer px-5"
             >
               <ConfigProvider
                 theme={{
@@ -131,8 +131,8 @@ const Navbar = () => {
                   <div className="w-full h-full flexCenter">
                     <span>{t("enterprise_introduction")}</span>
                     <div
-                      className={`absolute w-0 h-[2px] bg-[#FF4B27] transition-all left-0 bottom-0 group-hover:w-full ${
-                        popShow2 ? "w-full" : ""
+                      className={`absolute w-0 h-[2px] bg-[#FF4B27] transition-all left-[50%] translate-x-[-50%] bottom-0 group-hover:w-[60%] ${
+                        popShow2 ? "w-[60%]" : ""
                       }`}
                     ></div>
                   </div>
@@ -142,7 +142,7 @@ const Navbar = () => {
             <Link
               href={"/aftersales"}
               key={"aftersales_section"}
-              className="group relative regular-14 text-gray-50 flexCenter cursor-pointer"
+              className="group relative regular-14 text-gray-50 flexCenter cursor-pointer px-5"
             >
               <ConfigProvider
                 theme={{
@@ -169,8 +169,8 @@ const Navbar = () => {
                   <div className="w-full h-full flexCenter">
                     <span>{t("aftersales_section")}</span>
                     <div
-                      className={`absolute w-0 h-[2px] bg-[#FF4B27] transition-all left-0 bottom-0 group-hover:w-full ${
-                        popShow3 ? "w-full" : ""
+                      className={`absolute w-0 h-[2px] bg-[#FF4B27] transition-all left-[50%] translate-x-[-50%] bottom-0 group-hover:w-[60%] ${
+                        popShow3 ? "w-[60%]" : ""
                       }`}
                     ></div>
                   </div>
@@ -180,7 +180,7 @@ const Navbar = () => {
             <Link
               href={"/cooperation"}
               key={"business_cooperation"}
-              className="group relative regular-14 text-gray-50 flexCenter cursor-pointer"
+              className="group relative regular-14 text-gray-50 flexCenter cursor-pointer px-5"
             >
               <ConfigProvider
                 theme={{
@@ -207,8 +207,8 @@ const Navbar = () => {
                   <div className="w-full h-full flexCenter">
                     <span>{t("business_cooperation")}</span>
                     <div
-                      className={`absolute w-0 h-[2px] bg-[#FF4B27] transition-all left-0 bottom-0 group-hover:w-full ${
-                        popShow4 ? "w-full" : ""
+                      className={`absolute w-0 h-[2px] bg-[#FF4B27] transition-all left-[50%] translate-x-[-50%] bottom-0 group-hover:w-[60%] ${
+                        popShow4 ? "w-[60%]" : ""
                       }`}
                     ></div>
                   </div>
