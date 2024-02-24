@@ -2,7 +2,6 @@ import Footer from "@/components/Footer"
 import Navbar from "@/components/Navbar"
 import initTranslations from "../../../i18n"
 import TranslationsProvider from "@/components/TranslationsProvider"
-import { Select } from "antd"
 import Image from "next/image"
 
 const i18nNamespaces = ["default"]
