@@ -60,7 +60,7 @@ const Navbar = () => {
             <Link
               href={"/standard"}
               key={"flagship_products"}
-              className="group relative regular-14 text-gray-50 flexCenter cursor-pointer px-5"
+              className="group relative regular-14 text-gray-50 flexCenter cursor-pointer"
             >
               <ConfigProvider
                 theme={{
@@ -87,7 +87,7 @@ const Navbar = () => {
                   arrow={false}
                   content={Flagship}
                 >
-                  <div className="w-full h-full flexCenter">
+                  <div className="w-full h-full flexCenter px-5 box-border">
                     <span>{t("flagship_products")}</span>
                     <div
                       className={`absolute w-0 h-[2px] bg-[#FF4B27] transition-all left-[50%] translate-x-[-50%] bottom-0 group-hover:w-[60%] ${
@@ -101,7 +101,7 @@ const Navbar = () => {
             <Link
               href={"/enterprise"}
               key={"enterprise_introduction"}
-              className="group relative regular-14 text-gray-50 flexCenter cursor-pointer px-5"
+              className="group relative regular-14 text-gray-50 flexCenter cursor-pointer"
             >
               <ConfigProvider
                 theme={{
@@ -128,7 +128,7 @@ const Navbar = () => {
                   arrow={false}
                   content={CompanyPd}
                 >
-                  <div className="w-full h-full flexCenter">
+                  <div className="w-full h-full flexCenter px-5 box-border">
                     <span>{t("enterprise_introduction")}</span>
                     <div
                       className={`absolute w-0 h-[2px] bg-[#FF4B27] transition-all left-[50%] translate-x-[-50%] bottom-0 group-hover:w-[60%] ${
@@ -142,7 +142,7 @@ const Navbar = () => {
             <Link
               href={"/aftersales"}
               key={"aftersales_section"}
-              className="group relative regular-14 text-gray-50 flexCenter cursor-pointer px-5"
+              className="group relative regular-14 text-gray-50 flexCenter cursor-pointer"
             >
               <ConfigProvider
                 theme={{
@@ -166,7 +166,7 @@ const Navbar = () => {
                   arrow={false}
                   content={AfterSalesPd}
                 >
-                  <div className="w-full h-full flexCenter">
+                  <div className="w-full h-full flexCenter px-5 box-border">
                     <span>{t("aftersales_section")}</span>
                     <div
                       className={`absolute w-0 h-[2px] bg-[#FF4B27] transition-all left-[50%] translate-x-[-50%] bottom-0 group-hover:w-[60%] ${
@@ -180,7 +180,7 @@ const Navbar = () => {
             <Link
               href={"/cooperation"}
               key={"business_cooperation"}
-              className="group relative regular-14 text-gray-50 flexCenter cursor-pointer px-5"
+              className="group relative regular-14 text-gray-50 flexCenter cursor-pointer"
             >
               <ConfigProvider
                 theme={{
@@ -204,7 +204,7 @@ const Navbar = () => {
                   arrow={false}
                   content={CooperationPd}
                 >
-                  <div className="w-full h-full flexCenter">
+                  <div className="w-full h-full flexCenter px-5 box-border">
                     <span>{t("business_cooperation")}</span>
                     <div
                       className={`absolute w-0 h-[2px] bg-[#FF4B27] transition-all left-[50%] translate-x-[-50%] bottom-0 group-hover:w-[60%] ${
