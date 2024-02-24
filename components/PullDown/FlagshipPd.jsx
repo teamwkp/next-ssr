@@ -42,14 +42,14 @@ function Flagship() {
             <div>
               <div className="text-[20px] h-[25px] font-bold mb-[16px]"></div>
               <div className="productItem">
-                <Image src={"/f1.png"} width={100} height={100} />
+                <Image src={"/f1.png"} width={100} height={100} alt="" />
                 <div>iGS630</div>
               </div>
             </div>
             <div>
               <div className="text-[20px] h-[25px] font-bold mb-[16px]"></div>
               <div className="productItem">
-                <Image src={"/f2.png"} width={100} height={100} />
+                <Image src={"/f2.png"} width={100} height={100} alt="" />
                 <div>BSC300</div>
               </div>
             </div>
@@ -58,7 +58,7 @@ function Flagship() {
                 前灯
               </div>
               <div className="productItem">
-                <Image src={"/f3.png"} width={100} height={100} />
+                <Image src={"/f3.png"} width={100} height={100} alt="" />
                 <div>VS1200</div>
               </div>
             </div>
@@ -67,14 +67,14 @@ function Flagship() {
                 尾灯
               </div>
               <div className="productItem">
-                <Image src={"/f4.png"} width={100} height={100} />
+                <Image src={"/f4.png"} width={100} height={100} alt="" />
                 <div>SR30</div>
               </div>
             </div>
             <div>
               <div className="text-[20px] h-[25px] font-bold mb-[16px]"></div>
               <div className="productItem">
-                <Image src={"/f5.png"} width={100} height={100} />
+                <Image src={"/f5.png"} width={100} height={100} alt="" />
                 <div>TL30</div>
               </div>
             </div>
@@ -85,7 +85,7 @@ function Flagship() {
                 手表
               </div>
               <div className="productItem">
-                <Image src={"/f6.png"} width={100} height={100} />
+                <Image src={"/f6.png"} width={100} height={100} alt="" />
                 <div>LW10</div>
               </div>
             </div>
@@ -94,14 +94,14 @@ function Flagship() {
                 传感器
               </div>
               <div className="productItem">
-                <Image src={"/f7.png"} width={100} height={100} />
+                <Image src={"/f7.png"} width={100} height={100} alt="" />
                 <div>SPD70</div>
               </div>
             </div>
             <div>
               <div className="text-[20px] h-[25px] font-bold mb-[16px]"></div>
               <div className="productItem">
-                <Image src={"/f8.png"} width={100} height={100} />
+                <Image src={"/f8.png"} width={100} height={100} alt="" />
                 <div>CAD70</div>
               </div>
             </div>
@@ -110,14 +110,14 @@ function Flagship() {
                 心率带
               </div>
               <div className="productItem">
-                <Image src={"/f9.png"} width={100} height={100} />
+                <Image src={"/f9.png"} width={100} height={100} alt="" />
                 <div>HR70</div>
               </div>
             </div>
             <div>
               <div className="text-[20px] h-[25px] font-bold mb-[16px]"></div>
               <div className="productItem">
-                <Image src={"/f2.png"} width={100} height={100} />
+                <Image src={"/f2.png"} width={100} height={100} alt="" />
                 <div>HR40</div>
               </div>
             </div>

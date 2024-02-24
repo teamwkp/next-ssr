@@ -228,7 +228,7 @@ const Navbar = () => {
           </div>
         </div>
       </header>
-      {popShow || popShow4 || popShow3 ? <SubMenuOverlay /> : <></>}
+      {popShow || popShow2 || popShow4 || popShow3 ? <SubMenuOverlay /> : <></>}
     </>
   )
 }

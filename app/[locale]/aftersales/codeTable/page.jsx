@@ -58,7 +58,12 @@ const CodeTable = async ({ params: { locale } }) => {
               {codeList.map((item) => {
                 return (
                   <div className="bg-[#F3F4F8] rounded-2xl lg:h-[248px] h-[180px] flex flex-col justify-center items-center">
-                    <Image height={120} width={120} src={item.src}></Image>
+                    <Image
+                      height={120}
+                      width={120}
+                      src={item.src}
+                      alt=""
+                    ></Image>
                     <div className="mt-[8px]">{item.title}</div>
                   </div>
                 )

@@ -40,6 +40,7 @@ function CooperationPd() {
                 width={240}
                 height={170}
                 style={{ width: "240px", height: "170px" }}
+                alt=""
               ></Image>
               <div className="text-[#121217] opacity-[0.5]">文章</div>
               <div>iGPSPORT中文品牌“迹驰”发布</div>
@@ -50,6 +51,7 @@ function CooperationPd() {
                 width={240}
                 height={170}
                 style={{ width: "240px", height: "170px" }}
+                alt=""
               ></Image>
               <div className="text-[#121217] opacity-[0.5]">文章</div>
               <div>iGPSPORT中文品牌“迹驰”发布</div>
@@ -60,6 +62,7 @@ function CooperationPd() {
                 width={240}
                 height={170}
                 style={{ width: "240px", height: "170px" }}
+                alt=""
               ></Image>
               <div className="text-[#121217] opacity-[0.5]">文章</div>
               <div>iGPSPORT中文品牌“迹驰”发布</div>

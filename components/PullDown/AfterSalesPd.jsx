@@ -38,9 +38,9 @@ function AfterSalesPd() {
         <div className="flex-1">
           <div className="font-bold text-[18px]">售后服务与支持</div>
           <div className="grid grid-cols-4 mt-[30px]">
-            {saleList.map((item) => {
+            {saleList.map((item, index) => {
               return (
-                <Link href={item.path}>
+                <Link href={item.path} key={index}>
                   <div className="lg:h-[168px] h-[100px] w-[168px] bg-[#F3F4F8] rounded-2xl flex flex-col justify-center items-center">
                     <Image
                       className="transition-transform hover:scale-110 cursor-pointer"
