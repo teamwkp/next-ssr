@@ -6,17 +6,16 @@ function DataApp() {
   return (
     <div
       className="rounded-2xl h-[530px] relative bg-[#F2F3FA] mt-[48px]"
-      style={{ backgroundImage: "url('/sport-bg.png')" }}
     >
       <div
         className="absolute rounded-2xl w-[100%] h-[100%] z-10  flex items-center"
-        style={{ background: "rgba(0,0,0,.6)" }}
+        style={{ background: "#F7F7F8" }}
       >
         <div className="ml-[100px] space-y-[24px] lg:w-[344px]">
-          <div className="font-bold text-[42px] text-center text-white">
+          <div className="font-bold text-[42px] text-center">
             <AnimatedWrap type={"fade"}> 专业数据分析APP</AnimatedWrap>
           </div>
-          <div className="text-white text-[18px]">
+          <div className=" text-[16px] text-[#121217]">
             记录您的每一次骑行活动。在活动记录中有摘要数据、详细数据以及多样的图表分析，帮助您分析自己的每次运动表现。
           </div>
           <div className="flex lg:flex-row flex-col justify-between">

@@ -60,7 +60,7 @@ function Advertisement() {
   return (
     <div
       className=" text-white h-[528px] relative mt-[48px] flex items-center rounded-2xl"
-      style={{ background: "linear-gradient(75deg, #131313, #4A4A4C)" }}
+      style={{ background: "linear-gradient(75deg, #36353A, #232328)" }}
     >
       <div className="ml-[128px] w-[388px]">
         <div className="font-bold text-[42px]">
@@ -125,7 +125,7 @@ function Advertisement() {
             </div>
           ))}
         </div>
-        <div className="absolute size-[160px] bg-[#ccc] rounded-full top-[120px] left-[130px] active-avatar-animation">
+        <div className="absolute size-[160px] bg-[#ccc] rounded-full top-[120px] left-[130px] active-avatar-animation border-[#FF7236] border-[6px]">
           <Image
             width={160}
             height={160}

@@ -30,7 +30,7 @@ function BrandTrends() {
     },
   ]
   return (
-    <div className="w-full">
+    <div className="w-full rounded-2xl overflow-hidden">
         <Swiper
             modules={[Autoplay, Navigation, Pagination]}
             spaceBetween={24}
@@ -57,9 +57,9 @@ function BrandTrends() {
         >
             {brandList.map((k, i) => (
                 <SwiperSlide className="w-[410px]" key={i}>
-                    <div className="lg:w-[410px] w-full lg:h-[380px] h-[300px] flex items-end" style={{ backgroundImage: "url('"+ k.img +"')", backgroundSize: "100% 100%" }}>
-                        <div className="p-[30px] ">
-                            <div className="text-[22px] text-white">{k.text}</div>
+                    <div className="lg:w-[410px] w-full lg:h-[380px] h-[300px] flex items-end rounded-2xl overflow-hidden" style={{ backgroundImage: "url('"+ k.img +"')", backgroundSize: "100% 100%" }}>
+                        <div className="p-[30px] h-[180px]" style={{ backgroundColor: "#1C1C1C", opacity: "0.85"}}>
+                            <div className="text-[22px] text-white line-clamp-1">{k.text}</div>
                             <div className="text-[14px] line- mt-[15px] line-clamp-3" style={{color: "rgba(255,255,255,0.71)"}}>{k.label}</div>
                         </div>
                     </div>
