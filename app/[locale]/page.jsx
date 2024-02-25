@@ -3,7 +3,7 @@ import Footer from "@/components/Footer"
 import Navbar from "@/components/Navbar"
 import Advertisement from "@/components/home/Advertisement"
 import DataApp from "@/components/home/DataApp"
-import initTranslations from "../i18n"
+import initTranslations from "@/app/i18n"
 import TranslationsProvider from "@/components/TranslationsProvider"
 import Image from "next/image"
 import AnimatedWrap from "@/components/AnimatedWrap"
@@ -23,7 +23,7 @@ const Home = async ({ params: { locale } }) => {
     >
       <Navbar />
       <div className="media-container mx-auto">
-      <div className="bg-[#F2F2FA] w-full mt-[100px] h-[242px] flex items-center rounded-2xl relative">
+        <div className="bg-[#F2F2FA] w-full mt-[100px] h-[242px] flex items-center rounded-2xl relative">
           <div className="left-[130px] min-w-[30%] absolute">
             <div className="text-3xl font-medium tracking-widest text-center mb-[25px] relative">
               <AnimatedWrap type={"fade"}>
@@ -54,12 +54,22 @@ const Home = async ({ params: { locale } }) => {
         <div className="bg-no-repeat bg-center rounded-2xl mt-[48px] overflow-hidden relative cursor-pointer hover:shadow-lg transition ease-linear delay-150">
           <VideoPlay />
         </div>
-        <div className="mt-[48px] bg-[#F7F7F8] h-[300px] rounded-2xl flex items-center" style={{ backgroundImage: "url(/tanji-bg.png)"}}>
+        <div
+          className="mt-[48px] bg-[#F7F7F8] h-[300px] rounded-2xl flex items-center"
+          style={{ backgroundImage: "url(/tanji-bg.png)" }}
+        >
           <div className="ml-[80px] space-y-[10px]">
             <div className="font-bold text-[32px]">IGS630S</div>
             <div>智能导航 探迹山海</div>
             <div className="flex pt-[20px] items-center">
-              <div className="w-[120px] h-[40px] cursor-pointer text-white rounded-xl flex items-center justify-center" style={{ background: "linear-gradient(75deg, #FF612F, #FFA74A)" }}>立即购买</div>
+              <div
+                className="w-[120px] h-[40px] cursor-pointer text-white rounded-xl flex items-center justify-center"
+                style={{
+                  background: "linear-gradient(75deg, #FF612F, #FFA74A)",
+                }}
+              >
+                立即购买
+              </div>
               <div className="underline text-[#666] ml-[15px]">了解更多</div>
             </div>
           </div>
@@ -131,9 +141,7 @@ const Home = async ({ params: { locale } }) => {
           </div>
         </div>
       </div>
-      <div
-        className="w-full"
-      >
+      <div className="w-full">
         <div className="media-container mx-auto pb-20">
           <DataApp />
           <Advertisement />

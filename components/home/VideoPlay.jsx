@@ -3,7 +3,7 @@
 import SubMenuOverlay from "@/components/SubMenuOverlay"
 import { CDN_URL } from "@/constants"
 import IgpLogo from "@/components/home/IgpLogo"
-import { useState } from "react"
+import { useEffect, useState, useRef } from "react"
 import Image from "next/image"
 import AnimatedWrap from "@/components/AnimatedWrap"
 
@@ -15,19 +15,30 @@ function VideoPlay() {
   const hideVieo = (val) => {
     setIsPlay(false)
   }
+
+  const videoRef = useRef(null)
+
+  useEffect(() => {
+    if (videoRef && videoRef.current) {
+      videoRef.current.play()
+    }
+  }, [videoRef])
+
   return (
     <div>
       <video
-        src={`${CDN_URL}/igort.mp4`}
+        preload="auto"
         autoPlay
         muted
         loop
         className="w-full h-full object-fill"
-      ></video>
+      >
+        <source src={`${CDN_URL}/igort2.mp4`} type="video/mp4" />
+      </video>
       <div className="hidden lg:flex md:flex absolute w-full h-full z-[19] top-0 text-white  flex-col justify-center items-center">
         <IgpLogo />
         <AnimatedWrap type={"fade"}>
-          <div className="text-[20px] mt-[8px] mb-[32px]">
+          <div className="text-[20px] mt-[12px] mb-[32px]">
             记录精彩骑迹 为骑行运动而生
           </div>
           <Image
@@ -45,9 +56,11 @@ function VideoPlay() {
       </div>
       {isPlay ? (
         <video
+          ref={videoRef}
           autoPlay
+          muted
           controls
-          src={`${CDN_URL}/iGPSPORT.mp4`}
+          src={`${CDN_URL}/iGPSPORT2.mp4`}
           className="w-[960px] fixed translate-x-[-50%] translate-y-[-50%] z-[300] left-[50%] top-[50%]"
         ></video>
       ) : (
