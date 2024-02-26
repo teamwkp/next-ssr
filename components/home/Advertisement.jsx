@@ -16,7 +16,7 @@ function Advertisement() {
       name: "爱踩单车的凉茶",
       label: "骑行达人",
       position:
-        "absolute size-[55px] bg-[#ccc] rounded-full  top-[35px] left-[55px]",
+        "absolute size-[55px] bg-[#ccc] rounded-full  top-[10px] left-[55px]",
       size: 55,
     },
     {
@@ -25,8 +25,8 @@ function Advertisement() {
       name: "孔文生",
       label: "知名男车手",
       position:
-        "absolute size-[100px] bg-[#ccc] rounded-full top-[10px] left-[270px]",
-      size: 100,
+        "absolute size-[80px] bg-[#ccc] rounded-full top-[20px] left-[200px]",
+      size: 80,
     },
     {
       text: "自从有了iGPSPORT码表之后，无论比赛还是骑游，我对数据都非常期待，不知不觉，能够骑得更快、更远。",
@@ -34,7 +34,7 @@ function Advertisement() {
       name: "LS.",
       label: "知名女车手",
       position:
-        "absolute size-[50px] bg-[#ccc] rounded-full top-[210px] left-[310px]",
+        "absolute size-[50px] bg-[#ccc] rounded-full top-[180px] left-[270px]",
       size: 50,
     },
     {
@@ -43,7 +43,7 @@ function Advertisement() {
       name: "小蛮爱单车",
       label: "骑行达人",
       position:
-        "absolute size-[60px] bg-[#ccc] rounded-full top-[310px] left-[230px]",
+        "absolute size-[60px] bg-[#ccc] rounded-full top-[250px] left-[200px]",
       size: 60,
     },
     {
@@ -52,15 +52,17 @@ function Advertisement() {
       name: "是_da婷…",
       label: "知名女车手",
       position:
-        "absolute size-[100px] bg-[#ccc] rounded-full top-[230px] left-[0px] ",
-      size: 100,
+        "absolute size-[90px] bg-[#ccc] rounded-full top-[200px] left-[0px] ",
+      size: 90,
     },
   ]
   const [currentAvt, setStatus] = useState(quotation[0].img)
   return (
     <div
-      className=" text-white h-[528px] relative mt-[48px] flex items-center rounded-2xl"
-      style={{ background: "linear-gradient(75deg, #36353A, #232328)" }}
+      className=" text-[#121217] h-[460px] relative mt-[48px] flex items-center rounded-2xl bg-cover bg-center"
+      style={{
+        backgroundImage: "url(/home_act.png)",
+      }}
     >
       <div className="ml-[128px] w-[388px]">
         <div className="font-bold text-[42px]">
@@ -87,17 +89,15 @@ function Advertisement() {
             <SwiperSlide className="w-full h-[100px]" key={i}>
               <div className="w-full block">{k.text}</div>
               <div className="mt-10 text-[14px]">- @{k.name}</div>
-              <div className="mt-1 text-[12px] text-[#ffffff] opacity-[0.75]">
-                {k.label}
-              </div>
+              <div className="mt-1 text-[12px]  opacity-[0.75]">{k.label}</div>
             </SwiperSlide>
           ))}
         </Swiper>
 
         <div className="flex mt-[24px] space-x-[20px]"></div>
       </div>
-      <div className="absolute w-[400px] h-[400px] right-[80px] z-10">
-        <div className="w-full h-full avatar-animation">
+      <div className="absolute w-[290px] h-[290px] right-[130px] z-10">
+        <div className="w-full h-full  avatar-animation">
           {quotation.map((item) => (
             <div className={item.position} key={item.img}>
               <Image
@@ -110,7 +110,7 @@ function Advertisement() {
             </div>
           ))}
         </div>
-        <div className="absolute size-[160px] bg-[#ccc] rounded-full top-[120px] left-[130px] active-avatar-animation border-[#ff4b2f] border-[3px]">
+        <div className="absolute size-[130px] bg-[#ccc] rounded-full top-[100px] left-[90px] active-avatar-animation border-[#ff4b2f] border-[3px]">
           <Image
             width={160}
             height={160}

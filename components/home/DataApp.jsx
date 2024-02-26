@@ -4,14 +4,12 @@ import AnimatedWrap from "../AnimatedWrap"
 function DataApp() {
   const dataList = [1, 2]
   return (
-    <div
-      className="rounded-2xl h-[530px] relative bg-[#F2F3FA] mt-[48px]"
-    >
+    <div className="rounded-2xl h-[460px] relative bg-[#F2F3FA] mt-[48px]">
       <div
         className="absolute rounded-2xl w-[100%] h-[100%] z-10  flex items-center"
         style={{ background: "#F7F7F8" }}
       >
-        <div className="ml-[100px] space-y-[24px] lg:w-[344px]">
+        <div className="ml-[80px] space-y-[24px] lg:w-[344px]">
           <div className="font-bold text-[42px] text-center">
             <AnimatedWrap type={"fade"}> 专业数据分析APP</AnimatedWrap>
           </div>
@@ -37,7 +35,7 @@ function DataApp() {
         </div>
       </div>
       <div className="absolute z-20 h-[517px] w-[606px] right-[-60px] flex cursor-pointer">
-        <Image height={606} width={517} src="/swiper.png" alt="swiper" />
+        <img src="/swiper.png" width="500px" height="auto" alt="" />
       </div>
     </div>
   )
