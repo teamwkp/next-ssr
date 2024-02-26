@@ -43,7 +43,14 @@ const Home = async ({ params: { locale } }) => {
             </div>
           </div>
           <div className="absolute right-[126px] bottom-0">
-            <img src="/home_banner02.jpg" width="380px" height="auto" alt="" />
+            <AnimatedWrap type="reveal" duration={1000}>
+              <img
+                src="/home_banner02.jpg"
+                width="380px"
+                height="auto"
+                alt=""
+              />
+            </AnimatedWrap>
           </div>
         </div>
 
@@ -52,33 +59,35 @@ const Home = async ({ params: { locale } }) => {
         </div>
         <div className="mt-[48px] bg-line-grey h-[300px] rounded-2xl flex items-center relative">
           <div className="ml-[100px]">
-            <div className="font-bold text-[36px] leading-[55px]">IGS630S</div>
+            <div className="font-bold text-[36px] leading-[55px]">
+              <AnimatedWrap type="fade">IGS630S</AnimatedWrap>
+            </div>
             <div className="flex items-center mt-[8px]">
               <div className="mr-[15px] text-[20px] text-[#121217]">
-                智能导航 探迹山海
+                <AnimatedWrap type="fade"> 智能导航 探迹山海</AnimatedWrap>
               </div>
               <img src="/hottest.png" width="32px" height="32px" alt="" />
             </div>
             <div className="flex pt-[20px] items-center mt-[10px]">
               <div
-                className="w-[120px] h-[40px] cursor-pointer text-white rounded-sm flex items-center justify-center"
+                className="w-[112px] h-[40px] cursor-pointer text-white rounded-sm flex items-center justify-center"
                 style={{
                   background: "linear-gradient(75deg, #FF612F, #FFA74A)",
                 }}
               >
                 立即购买
               </div>
-              <div className="text-[#121217] opacity-[0.6] text-[16px] font-normal ml-[24px] border-b border-[#1b1b20b1] pb-[3px] cursor-pointer">
+              <div className="text-[#121217] opacity-[0.6] text-[16px] font-normal ml-[24px] border-b-[2px] border-[#1b1b20b1] pb-[3px] cursor-pointer">
                 了解更多
               </div>
             </div>
-            <img
-              className=" absolute bottom-0 right-[100px]"
-              src="/home_prod02.jpg"
-              width="280px"
-              height="auto"
-              alt=""
-            />
+            <AnimatedWrap
+              type="reveal"
+              duration={1000}
+              overlayClassName="absolute right-[100px] bottom-0"
+            >
+              <img src="/home_prod02.jpg" width="280px" height="auto" alt="" />
+            </AnimatedWrap>
           </div>
         </div>
         <Recommend />

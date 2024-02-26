@@ -176,15 +176,17 @@ body {
 /* 缓入动画*/
 
 .slowIn-animation {
-  animation: slowin 0.5s ease forwards 3s;
+  animation: slowin 0.5s ease forwards 1s;
 }
 
 @keyframes slowin {
   from {
-    transform: scale(1);
+    opacity: 0;
+    scale: 1;
   }
   to {
-    transform: scale(1.1);
+    opacity: 1;
+    scale: 1.5;
   }
 }
 

@@ -1,5 +1,7 @@
 "use client"
 
+import AnimatedWrap from "../AnimatedWrap"
+
 function Recommend() {
   const prodList = [
     {
