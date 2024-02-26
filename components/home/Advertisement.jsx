@@ -94,22 +94,7 @@ function Advertisement() {
           ))}
         </Swiper>
 
-        <div className="flex mt-[24px] space-x-[20px]">
-          <Image
-            width={40}
-            height={40}
-            className="cursor-pointer"
-            src="/left-icon.png"
-            alt=""
-          />
-          <Image
-            width={40}
-            height={40}
-            className="cursor-pointer"
-            src="/right-icon.png"
-            alt=""
-          />
-        </div>
+        <div className="flex mt-[24px] space-x-[20px]"></div>
       </div>
       <div className="absolute w-[400px] h-[400px] right-[80px] z-10">
         <div className="w-full h-full avatar-animation">
@@ -125,7 +110,7 @@ function Advertisement() {
             </div>
           ))}
         </div>
-        <div className="absolute size-[160px] bg-[#ccc] rounded-full top-[120px] left-[130px] active-avatar-animation border-[#FF7236] border-[6px]">
+        <div className="absolute size-[160px] bg-[#ccc] rounded-full top-[120px] left-[130px] active-avatar-animation border-[#ff4b2f] border-[3px]">
           <Image
             width={160}
             height={160}

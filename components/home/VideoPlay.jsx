@@ -38,7 +38,7 @@ function VideoPlay() {
       <div className="hidden lg:flex md:flex absolute w-full h-full z-[19] top-0 text-white  flex-col justify-center items-center">
         <IgpLogo />
         <AnimatedWrap type={"fade"}>
-          <div className="text-[20px] mt-[12px] mb-[32px]">
+          <div className="text-[20px] font-[400] mt-[12px] mb-[32px]">
             记录精彩骑迹 为骑行运动而生
           </div>
           <Image
