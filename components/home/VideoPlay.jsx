@@ -60,7 +60,7 @@ function VideoPlay() {
           autoPlay
           muted
           controls
-          src={`${CDN_URL}/iGPSPORT2.mp4`}
+          src={`${CDN_URL}/iGPSPORT.mp4`}
           className="w-[960px] fixed translate-x-[-50%] translate-y-[-50%] z-[300] left-[50%] top-[50%]"
         ></video>
       ) : (
