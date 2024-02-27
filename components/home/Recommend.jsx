@@ -26,7 +26,7 @@ function Recommend() {
     },
   ]
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-[24px] mt-[48px]">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-[24px] mt-[24px]">
       {prodList.map((k, index) => (
         <div
           key={index}

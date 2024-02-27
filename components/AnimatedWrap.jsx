@@ -15,7 +15,7 @@ function AnimatedWrap({
   switch (type) {
     case "fade":
       return (
-        <Fade delay={delay} className={overlayClassName}>
+        <Fade delay={delay} duration={duration} className={overlayClassName}>
           {children}
         </Fade>
       )
