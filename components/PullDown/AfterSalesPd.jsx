@@ -59,7 +59,7 @@ function AfterSalesPd() {
         <div className="w-[200px] border-l border-[#EBEBEF] pl-[60px] ml-[60px]">
           <div className="font-bold text-[18px]">常用服务</div>
           <ul className="mt-[30px] space-y-[28px]">
-            <li className="cursor-pointer">网站查询</li>
+            <li className="cursor-pointer">网点查询</li>
             <li className="cursor-pointer">APP下载</li>
             <li className="cursor-pointer">售后流程</li>
             <li className="cursor-pointer">售后政策</li>

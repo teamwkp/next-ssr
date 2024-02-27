@@ -20,7 +20,7 @@ import { useRouter, usePathname } from "next/navigation"
 import { useScrollExcess } from "@/hooks/useScroll"
 import { useTriggerStore } from "@/store/trigger"
 
-const Navbar = ({ bg = "#fff" }) => {
+const Navbar = ({ bg = "#fff", color = "#121217" }) => {
   const router = useRouter()
   const pathname = usePathname()
   const { t } = useTranslation()
@@ -28,21 +28,33 @@ const Navbar = ({ bg = "#fff" }) => {
   const [popShow2, setPopShow2] = useState(false)
   const [popShow3, setPopShow3] = useState(false)
   const [popShow4, setPopShow4] = useState(false)
-  const [customBg, setCustomBg] = useState("transparent")
+  const [customBg, setCustomBg] = useState("#fff")
+  const [customColor, setCustomColor] = useState("#121217")
+
   const [scrollBegin, setScrollBegin] = useScrollExcess(false, 50)
   const { trigger, setTrigger } = useTriggerStore()
 
   useEffect(() => {
     if (scrollBegin) {
       setCustomBg("#fff")
+      setCustomColor("#121217")
     } else {
       if (
-        pathname.includes("enterprise") &&
+        (pathname.includes("enterprise") ||
+          pathname.includes("aftersales") ||
+          pathname.includes("cooperation")) &&
         (popShow || popShow2 || popShow3 || popShow4)
       ) {
         setCustomBg("#fff")
+        setCustomColor("#121217")
       } else {
-        setCustomBg(bg)
+        if (window.scrollY > 50) {
+          setCustomBg("#fff")
+          setCustomColor("#121217")
+        } else {
+          setCustomBg(bg)
+          setCustomColor(color)
+        }
       }
     }
   }, [scrollBegin, pathname, popShow, popShow2, popShow3, popShow4])
@@ -81,8 +93,9 @@ const Navbar = ({ bg = "#fff" }) => {
       <header
         style={{
           backgroundColor: customBg,
+          color: customColor,
         }}
-        className="fixed top-0 translate-x-[-50%] left-[50%]  w-full z-30 "
+        className="fixed top-0 translate-x-[-50%] left-[50%]  w-full z-30 transition-all ease-in-out duration-200"
       >
         <div className="max-container padding-container  flexBetween h-[49px] lg:h-[64px] md:h-[64px]">
           <Link href="/">
@@ -99,7 +112,7 @@ const Navbar = ({ bg = "#fff" }) => {
           <div className="hidden h-full lg:flex">
             <div
               key={"flagship_products"}
-              className="group relative regular-14 text-gray-50 flexCenter cursor-pointer"
+              className="group relative regular-14  flexCenter cursor-pointer"
             >
               <ConfigProvider
                 theme={{
@@ -151,7 +164,7 @@ const Navbar = ({ bg = "#fff" }) => {
             </div>
             <div
               key={"enterprise_introduction"}
-              className="group relative regular-14 text-gray-50 flexCenter cursor-pointer"
+              className="group relative regular-14  flexCenter cursor-pointer"
             >
               <ConfigProvider
                 theme={{
@@ -203,7 +216,7 @@ const Navbar = ({ bg = "#fff" }) => {
             </div>
             <div
               key={"aftersales_section"}
-              className="group relative regular-14 text-gray-50 flexCenter cursor-pointer"
+              className="group relative regular-14  flexCenter cursor-pointer"
             >
               <ConfigProvider
                 theme={{
@@ -252,7 +265,7 @@ const Navbar = ({ bg = "#fff" }) => {
             </div>
             <div
               key={"business_cooperation"}
-              className="group relative regular-14 text-gray-50 flexCenter cursor-pointer"
+              className="group relative regular-14  flexCenter cursor-pointer"
             >
               <ConfigProvider
                 theme={{

@@ -14,9 +14,9 @@ const Home = async ({ params: { locale } }) => {
       locale={locale}
       resources={resources}
     >
-      <Navbar />
+      <Navbar bg={"transparent"} color={"#fff"} />
       <div
-        className="w-full bg-no-repeat lg:bg-[length:100%_1000px] bg-[length:100%_250px]"
+        className="w-full bg-no-repeat lg:bg-[length:100%_900px] bg-[length:100%_250px]"
         style={{
           backgroundImage: "url('/swhz-bg.png')",
         }}
@@ -39,8 +39,16 @@ const Home = async ({ params: { locale } }) => {
               backgroundSize: "100% 100%",
             }}
           >
-            <div className="p-[30px] text-white" style={{ background: "linear-gradient( 180deg, rgba(60,60,60,0) 0%, #0B0B0B 100%)"}}>
-              <div className="text-[22px] line-clamp-1">瑞豹车队（迹驰冠名车队）</div>
+            <div
+              className="p-[30px] text-white"
+              style={{
+                background:
+                  "linear-gradient( 180deg, rgba(60,60,60,0) 0%, #0B0B0B 100%)",
+              }}
+            >
+              <div className="text-[22px] line-clamp-1">
+                瑞豹车队（迹驰冠名车队）
+              </div>
               <div
                 className="text-[14px] line- mt-[15px] line-clamp-2 "
                 style={{ color: "rgba(255,255,255,0.6)" }}
@@ -57,7 +65,13 @@ const Home = async ({ params: { locale } }) => {
                 backgroundSize: "100% 100%",
               }}
             >
-              <div className="p-[30px] text-white"  style={{ background: "linear-gradient( 180deg, rgba(60,60,60,0) 0%, #0B0B0B 100%)"}}>
+              <div
+                className="p-[30px] text-white"
+                style={{
+                  background:
+                    "linear-gradient( 180deg, rgba(60,60,60,0) 0%, #0B0B0B 100%)",
+                }}
+              >
                 <div className="text-[22px] line-clamp-1">
                   巴斯克电信车队(Euskaltel – Euskadi)
                 </div>
@@ -77,7 +91,13 @@ const Home = async ({ params: { locale } }) => {
                 backgroundSize: "100% 100%",
               }}
             >
-              <div className="p-[30px] text-white"  style={{ background: "linear-gradient( 180deg, rgba(60,60,60,0) 0%, #0B0B0B 100%)"}}>
+              <div
+                className="p-[30px] text-white"
+                style={{
+                  background:
+                    "linear-gradient( 180deg, rgba(60,60,60,0) 0%, #0B0B0B 100%)",
+                }}
+              >
                 <div className="text-[22px] line-clamp-1">
                   爱三工业自行车队（爱三工业レーシングチーム）
                 </div>
@@ -90,7 +110,9 @@ const Home = async ({ params: { locale } }) => {
               </div>
             </div>
           </div>
-          <div className="py-[50px] font-bold lg:text-[36px] text-[28px]">骑行达人</div>
+          <div className="py-[50px] font-bold lg:text-[36px] text-[28px]">
+            骑行达人
+          </div>
           <div className="grid lg:grid-cols-4 grid-cols-2 gap-[24px]">
             {Array.from({ length: 8 }).map((item, index) => {
               return (
@@ -119,7 +141,9 @@ const Home = async ({ params: { locale } }) => {
               )
             })}
           </div>
-          <div className="py-[50px] font-bold lg:text-[36px] text-[28px]">品牌动态</div>
+          <div className="py-[50px] font-bold lg:text-[36px] text-[28px]">
+            品牌动态
+          </div>
           <BrandTrends></BrandTrends>
         </div>
       </div>

@@ -3,7 +3,7 @@ import Navbar from "@/components/Navbar"
 import initTranslations from "../../i18n"
 import TranslationsProvider from "@/components/TranslationsProvider"
 import { SearchOutlined } from "@ant-design/icons"
-import { Input } from "antd"
+import { Input, Button } from "antd"
 import Link from "next/link"
 import Image from "next/image"
 
@@ -46,7 +46,7 @@ const Aftersales = async ({ params: { locale } }) => {
       locale={locale}
       resources={resources}
     >
-      <Navbar />
+      <Navbar bg={"transparent"} color={"#fff"} />
       <div
         className="w-full bg-no-repeat"
         style={{
@@ -97,6 +97,14 @@ const Aftersales = async ({ params: { locale } }) => {
               )
             })}
           </div>
+        </div>
+        <div className="media-container mx-auto text-center mb-[50px]">
+          <div className="mb-[20px]">
+            没有找到想要的信息？联系我们享受专属服务
+          </div>
+          <Link href={"/contactus"}>
+            <Button type="primary">联系我们</Button>
+          </Link>
         </div>
       </div>
       <Footer />
