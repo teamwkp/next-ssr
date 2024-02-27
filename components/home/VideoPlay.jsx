@@ -40,7 +40,7 @@ function VideoPlay() {
         <AnimatedWrap type="fade" duration={1500}>
           <div className=" text-[60px] font-bold leading-[60px]">iGPSPORT</div>
         </AnimatedWrap>
-        <AnimatedWrap type={"fade"} duration={2000}>
+        <AnimatedWrap type="reveal-fadeInUp" duration={2000}>
           <div className="text-[20px] font-[400] opacity-[0.9] mt-[8px] mb-[32px]">
             记录精彩骑迹 为骑行运动而生
           </div>
