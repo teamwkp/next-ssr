@@ -6,10 +6,15 @@ import { IOS_DOWN_URL } from "@/constants"
 function DataApp() {
   const dataList = [1, 2]
   return (
-    <div className="rounded-2xl h-[460px] flex items-center bg-[#F2F3FA] mt-[48px]">
+    <div className="rounded-2xl h-[460px] flex items-center  mt-[48px]">
       <div
         className="rounded-2xl w-[100%] h-[100%] z-10  flex justify-between items-center"
-        style={{ background: "#F7F7F8" }}
+        style={{
+          backgroundImage: `url(/home_acty.png)`,
+          backgroundSize: "contain",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
+        }}
       >
         <div className=" w-[45%]  flex justify-center">
           <div className="w-[344px] space-y-[24px]">
@@ -22,7 +27,7 @@ function DataApp() {
             <div className="flex lg:flex-row flex-col justify-between">
               <a href={IOS_DOWN_URL} target="_blank">
                 <Image
-                  src="/ios-df.svg"
+                  src="/btn_ios.png"
                   height={52}
                   width={166}
                   className="cursor-pointer hover:scale-105 transition-all"
@@ -31,7 +36,7 @@ function DataApp() {
               </a>
 
               <Image
-                src="/Android-df.svg"
+                src="/btn_andro.png"
                 height={52}
                 width={166}
                 className="cursor-pointer hover:scale-105 transition-all"

@@ -7,22 +7,22 @@ function Recommend() {
     {
       title: "LW10",
       subTitle: "生活随行 运动随心",
-      img: "home_prod03.png",
+      img: "switch3.png",
     },
     {
       title: "TL30",
       subTitle: "安全之星 智护骑行",
-      img: "home_prod04.png",
+      img: "switch1.png",
     },
     {
       title: "HR70",
       subTitle: "记录跳动 智享运动",
-      img: "home_prod05.png",
+      img: "switch4.png",
     },
     {
       title: "SPD70",
       subTitle: "双模速度传感器",
-      img: "home_prod06.png",
+      img: "switch2.png",
     },
   ]
   return (
@@ -30,7 +30,12 @@ function Recommend() {
       {prodList.map((k, index) => (
         <div
           key={index}
-          className="h-[284px] bg-[#F7F7F8] rounded-2xl flex items-center relative group cursor-pointer hover:shadow-lg overflow-hidden transition ease-linear delay-150"
+          style={{
+            backgroundImage: `url(/${k.img})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+          className="h-[284px] rounded-2xl flex items-center relative group cursor-pointer hover:shadow-lg overflow-hidden transition ease-linear delay-150"
         >
           <div className="text-center space-y-[10px] w-[45%] flex flex-col justify-center items-center">
             <div className=" flex flex-col items-start">
@@ -41,9 +46,6 @@ function Recommend() {
                 </div>
               </AnimatedWrap>
             </div>
-          </div>
-          <div className="w-[55%] h-full flex items-center justify-center">
-            <img src={`/${k.img}`} width="100%" height="auto" alt="" />
           </div>
         </div>
       ))}
