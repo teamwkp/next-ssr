@@ -11,22 +11,22 @@ function DataApp() {
       >
         <div className=" w-[45%]  flex justify-center">
           <div className="w-[344px] space-y-[24px]">
-            <div className="font-bold text-[42px] text-center">
+            <div className="font-bold text-[36px] text-left">
               <AnimatedWrap type={"fade"}> 专业数据分析APP</AnimatedWrap>
             </div>
-            <div className=" text-[16px] text-[#121217]">
+            <div className="text-[16px] text-[#121217] leading-[28px] mb-[44px]">
               记录您的每一次骑行活动。在活动记录中有摘要数据、详细数据以及多样的图表分析，帮助您分析自己的每次运动表现。
             </div>
             <div className="flex lg:flex-row flex-col justify-between">
               <Image
-                src="/app_store.png"
+                src="/ios-df.svg"
                 height={52}
                 width={166}
                 className="cursor-pointer hover:scale-105 transition-all"
                 alt="app_store"
               />
               <Image
-                src="/goole_play.png"
+                src="/Android-df.svg"
                 height={52}
                 width={166}
                 className="cursor-pointer hover:scale-105 transition-all"

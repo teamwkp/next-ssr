@@ -70,7 +70,7 @@ const Home = async ({ params: { locale } }) => {
             </div>
             <div className="flex pt-[20px] items-center mt-[10px]">
               <div
-                className="w-[112px] h-[40px] cursor-pointer text-white rounded-sm flex items-center justify-center"
+                className="w-[112px] h-[40px] rounded-md hover:scale-105 transition-all cursor-pointer text-white flex items-center justify-center"
                 style={{
                   background: "linear-gradient(75deg, #FF612F, #FFA74A)",
                 }}
