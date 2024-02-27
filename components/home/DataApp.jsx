@@ -37,47 +37,40 @@ function DataApp() {
         </div>
         <div className="w-[55%] cursor-pointer relative flex">
           <AnimatedWrap
-            overlayClassName="absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] z-[10]"
+            overlayClassName="absolute left-[50%] top-[50%] translate-x-[-70%] translate-y-[-50%] z-[10]"
             type="move-left-1"
             duration={800}
           >
-            <img src="/phone1.png" width="116px" height="auto" alt="" />
+            <img src="/phone4.png" width="116px" height="auto" alt="" />
           </AnimatedWrap>
           <AnimatedWrap
-            overlayClassName="absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] z-[20]"
+            overlayClassName="absolute left-[50%] top-[50%] translate-x-[-70%] translate-y-[-50%] z-[20]"
             type="move-left-2"
             duration={1200}
           >
-            <img src="/phone4.png" width="116px" height="auto" alt="" />
+            <img src="/phone1.png" width="116px" height="auto" alt="" />
           </AnimatedWrap>
-          <div
-            className=" shadow-2xl w-[147px] h-[297px] absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] z-[30]"
-            style={{
-              backgroundImage: "url(/phone_wai.png)",
-              backgroundSize: "contain",
-              backgroundRepeat: "no-repeat",
-            }}
-          ></div>
-          {/* <img
-            className="absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] z-[30]"
-            src="/phone_wai.png"
-            width="116px"
-            height="auto"
-            alt=""
-          /> */}
+
           <AnimatedWrap
-            overlayClassName="absolute right-[50%] top-[50%] translate-x-[50%] translate-y-[-50%] z-[20]"
+            overlayClassName="absolute left-[50%] top-[50%] translate-x-[-65%] translate-y-[-50%] z-[30]"
+            type="fade"
+          >
+            <img src="/phone5.png" width="147px" height="auto" alt="" />
+          </AnimatedWrap>
+
+          <AnimatedWrap
+            overlayClassName="absolute right-[50%] top-[50%] translate-x-[30%] translate-y-[-50%] z-[20]"
             type="move-right-1"
             duration={800}
           >
-            <img src="/phone4.png" width="116px" height="auto" alt="" />
+            <img src="/phone2.png" width="116px" height="auto" alt="" />
           </AnimatedWrap>
           <AnimatedWrap
-            overlayClassName="absolute right-[50%] top-[50%] translate-x-[50%] translate-y-[-50%] z-[10]"
+            overlayClassName="absolute right-[50%] top-[50%] translate-x-[30%] translate-y-[-50%] z-[10]"
             type="move-right-2"
             duration={1200}
           >
-            <img src="/phone2.png" width="116px" height="auto" alt="" />
+            <img src="/phone3.png" width="116px" height="auto" alt="" />
           </AnimatedWrap>
         </div>
       </div>

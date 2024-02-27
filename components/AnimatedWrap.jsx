@@ -8,13 +8,17 @@ function AnimatedWrap({
   delay = 0,
   children,
   duration = 1000,
-  overlayClassName,
+  overlayClassName = "",
   fromAni = {},
   toAni = {},
 }) {
   switch (type) {
     case "fade":
-      return <Fade delay={delay}>{children}</Fade>
+      return (
+        <Fade delay={delay} className={overlayClassName}>
+          {children}
+        </Fade>
+      )
       break
     case "slide":
       return <Slide delay={delay}>{children}</Slide>
@@ -49,7 +53,7 @@ function AnimatedWrap({
         }
         to {
           opacity: 1;
-          left: 30%;
+          left: 15%;
         }
       `
       return (
@@ -71,7 +75,7 @@ function AnimatedWrap({
           }
           to {
             opacity: 1;
-            left: 20%;
+            left: 25%;
           }
         `
       return (
@@ -93,7 +97,7 @@ function AnimatedWrap({
           }
           to {
             opacity: 1;
-            right: 30%;
+            right: 25%;
           }
         `
       return (
@@ -115,7 +119,7 @@ function AnimatedWrap({
             }
             to {
               opacity: 1;
-              right: 20%;
+              right: 15%;
             }
           `
       return (
