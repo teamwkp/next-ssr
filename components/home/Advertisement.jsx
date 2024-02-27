@@ -64,7 +64,7 @@ function Advertisement() {
         backgroundImage: "url(/home_act.png)",
       }}
     >
-      <div className="ml-[128px] w-[388px]">
+      <div className="ml-[70px] w-[388px]">
         <div className="font-bold text-[42px]">
           <AnimatedWrap type={"fade"}>听听他们的声音</AnimatedWrap>
         </div>
