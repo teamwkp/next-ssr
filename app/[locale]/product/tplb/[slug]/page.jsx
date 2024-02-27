@@ -19,7 +19,9 @@ async function TplB({ params: { locale, slug } }) {
       resources={resources}
     >
       <Navbar />
-      <div>产品: {slug}</div>
+      <div className="">
+        <div>产品: {slug}</div>
+      </div>
       <Footer />
     </TranslationsProvider>
   )

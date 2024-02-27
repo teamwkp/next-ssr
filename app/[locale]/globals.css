@@ -191,6 +191,10 @@ body {
 }
 
 /* 头像动画 */
+.user-center {
+  background: linear-gradient(147deg, rgba(255, 75, 39, 1), rgba(255, 186, 82, 1));
+  padding: 5px;
+}
 .avatar-animation {
   animation: avatar-animation 50s linear infinite;
 }
@@ -232,4 +236,17 @@ body {
     transform: rotate(1);
     box-shadow: 0px 0px 8px #444;
   }
+}
+
+/** swiper pagation样式**/
+.dot-auto {
+  border: 2px solid #FF4B27;
+  background-color: transparent !important;
+}
+.dot-active {
+  background: linear-gradient(135deg, #FF4B27 0%, #FFBA52 100%) !important;
+  border: none !important;
+}
+.swiper-pagination {
+  text-align: right !important;
 }
