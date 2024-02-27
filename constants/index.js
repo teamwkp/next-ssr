@@ -19,3 +19,6 @@ export const NAV_LINKS = [
 
 // cdn 文件存储
 export const CDN_URL = "https://arsizes.com"
+
+// ios app 下载地址
+export const IOS_DOWN_URL = "https://apps.apple.com/cn/app/igpsport/id999260402"
