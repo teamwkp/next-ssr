@@ -24,7 +24,7 @@ const Home = async ({ params: { locale } }) => {
     >
       <Navbar />
       <div className="media-container mx-auto">
-        <div className="lg:bg-line-grey md:bg-line-grey cursor-pointer w-full mt-[100px] h-[220px] flex items-center rounded-2xl relative">
+        <div className="lg:bg-line-grey md:bg-line-grey cursor-pointer w-full lg:mt-[100px] md:mt-[100px] mt-[40px] h-[220px] flex items-center rounded-2xl relative">
           <div className="lg:ml-[143px] md:ml-[80px] lg:w-[35%] md:w-[35%] w-full flex flex-col items-center">
             <div className="relative mb-[15px]">
               <img
