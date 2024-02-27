@@ -77,7 +77,7 @@ const Navbar = ({ bg = "#fff" }) => {
         style={{
           backgroundColor: customBg,
         }}
-        className="fixed top-0 translate-x-[-50%] left-[50%]  w-full z-30 transition-all duration-300"
+        className="fixed top-0 translate-x-[-50%] left-[50%]  w-full z-30 transition-all"
       >
         <div className="max-container padding-container  flexBetween h-[49px] lg:h-[64px] md:h-[64px]">
           <Link href="/">
