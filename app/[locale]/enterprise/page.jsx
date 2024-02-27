@@ -24,13 +24,15 @@ async function Enterprise({ params: { locale } }) {
           </AnimatedWrap>
 
           <div className="mt-[48px] text-[#121217] text-[18px] leading-[32px]">
-            记录精彩骑迹 为骑行运动而生
+            <AnimatedWrap type="reveal-fadeInUp">
+              记录精彩骑迹 为骑行运动而生
+            </AnimatedWrap>
           </div>
         </div>
       </div>
       <div className="media-container mx-auto flex-col items-center justify-center">
         <div className="text-[#121217] text-[36px] text-center leading-[40px] font-bold mt-[152px] mb-[42px]">
-          品牌简介
+          <AnimatedWrap type="fade">品牌简介</AnimatedWrap>
         </div>
         <div className="text-[16px] text-[#121217] leading-[32px]">
           iGPSPORT迹驰创立于2012年9月，中国深具创新力的自行车GPS码表品牌，专注于以自行车码表为代表的运动智能硬件的研发、制造、销售及数据服务，产品销售到全球40多个国家和地区，服务于全球超百万骑行运动爱好者。
@@ -40,11 +42,13 @@ async function Enterprise({ params: { locale } }) {
       </div>
       <div className="media-container mx-auto flex-col items-center justify-center mb-[120px]">
         <div className="text-[#121217] text-[36px] text-center leading-[40px] font-bold mt-[120px] mb-[42px]">
-          迹驰，记录精彩骑迹
+          <AnimatedWrap type="fade">迹驰，记录精彩骑迹</AnimatedWrap>
         </div>
         <div className="flex justify-between">
           <div className="w-[33.3%] text-center text-[#121217]">
-            <div className="text-[36px] ">1000000+</div>
+            <div className="text-[36px] ">
+              <AnimatedWrap type="reveal-fadeInUp">1000000+</AnimatedWrap>
+            </div>
             <div className="text-[18px] mt-[16px] mb-[24px] font-normal">
               用户
             </div>
@@ -57,14 +61,18 @@ async function Enterprise({ params: { locale } }) {
               borderRight: "1px solid #eee",
             }}
           >
-            <div className="text-[36px] ">40+</div>
+            <div className="text-[36px] ">
+              <AnimatedWrap type="reveal-fadeInUp">40+</AnimatedWrap>
+            </div>
             <div className="text-[18px] mt-[16px] mb-[24px] font-normal">
               国家和地区
             </div>
             <div className="text-[16px]">产品销售到全球众多国家和地区</div>
           </div>
           <div className="w-[33.3%] text-center">
-            <div className="text-[36px] ">10年+</div>
+            <div className="text-[36px] ">
+              <AnimatedWrap type="reveal-fadeInUp">10年+</AnimatedWrap>
+            </div>
             <div className="text-[18px] mt-[16px] mb-[24px] font-normal">
               创立时间
             </div>
@@ -73,72 +81,46 @@ async function Enterprise({ params: { locale } }) {
         </div>
       </div>
       <div className="w-full h-[900px] bg-black"></div>
-      <div className="w-full h-[900px] relative">
-        <div className=" absolute z-100 left-[50%] top-[40%] translate-x-[-50%] translate-y-[-50%]">
-          <div className=" font-bold text-[#ffffff] text-[36px]">品牌伙伴</div>
-          <div>
-            iGPSPORT坚持对科技创新的不断探索，并深度布局骑行运动市场，知名运动员、骑行达人及专业自行车队，共同研发骑行爱好者更喜爱的智能骑行产品。
+      <div className="media-container mx-auto mt-[100px]">
+        <div className="flex justify-center flex-col items-center">
+          <AnimatedWrap type="fade">
+            <div className="font-bold text-[#121217] text-[36px] mb-[32px]">
+              品牌伙伴
+            </div>
+          </AnimatedWrap>
+          <div className="w-[626px] text-[18px] font-normal mb-[48px]">
+            <AnimatedWrap type="reveal-fadeInUp">
+              iGPSPORT坚持对科技创新的不断探索，并深度布局骑行运动市场，知名运动员、骑行达人及专业自行车队，共同研发骑行爱好者更喜爱的智能骑行产品。
+            </AnimatedWrap>
           </div>
-        </div>
-
-        <Image
-          className="absolute z-90 left-[50%] top-[40%] translate-x-[-50%] translate-y-[-50%]"
-          src={"/bg3.jpg"}
-          width={1130}
-          height={477}
-          objectFit="contain"
-          alt=""
-        />
-      </div>
-
-      <div className="bg-[#F4F5FB] w-full h-[900px] flex flex-col items-center justify-center">
-        <div className="text-[#121217] text-[36px] font-bold">联系我们</div>
-        <div className="w-full flex justify-center mt-[40px]">
-          <div>
-            <Image
-              src={"/map.png"}
-              width={1132}
-              height={480}
-              objectFit="contain"
-              alt=""
-            ></Image>
-            <div className="w-full h-[180px] bg-[#121217] rounded-b-2xl flex justify-center">
-              <div className="flex items-center w-1/2 justify-center">
-                <div className="w-[54px] mr-3 h-[51px] bg-[#FF4B27] rounded-xl flex justify-center items-center">
-                  <Image
-                    src={"/sms@2x.png"}
-                    width={24}
-                    height={24}
-                    alt=""
-                  ></Image>
+          <img src="/elsfriend.png" width="100%" height="auto" alt="" />
+          <div className="mt-[120px] mb-[100px] flex justify-between w-full">
+            <div className="w-[468px] cursor-pointer">
+              <img src="/elps1.png" width="100%" height="auto" alt="" />
+              <div className="mt-[24px]">
+                <div className="mb-[10px] text-[#121217] font-bold text-[28px] leading-[40px]">
+                  联系我们
                 </div>
-                <div>
-                  <div className="text-[#ffffff] text-[16px]">邮件</div>
-                  <div className="text-[#FF4B27] text-[16px] font-bold">
-                    china@igpsport.com
-                  </div>
+                <div className="text-[#121217] text-[16px] font-bold">
+                  查看更多
                 </div>
               </div>
-              <div className="flex items-center w-1/2 justify-center">
-                <div className="w-[54px] mr-3 h-[51px] bg-[#FF4B27] rounded-xl flex justify-center items-center">
-                  <Image
-                    src={"/location@2x.png"}
-                    width={24}
-                    height={24}
-                    alt=""
-                  ></Image>
+            </div>
+            <div className="w-[468px] cursor-pointer">
+              <img src="/elps2.png" width="100%" height="auto" alt="" />
+              <div className="mt-[24px]">
+                <div className="mb-[10px] text-[#121217] font-bold text-[28px] leading-[40px]">
+                  品牌新闻
                 </div>
-                <div>
-                  <div className="text-[#ffffff] text-[16px]">地址</div>
-                  <div className="text-[#FF4B27] text-[16px] font-bold">
-                    湖北省武汉市洪山区野芷湖西路16号
-                  </div>
+                <div className="text-[#121217] text-[16px] font-bold">
+                  查看更多
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+
       <Footer />
     </TranslationsProvider>
   )
