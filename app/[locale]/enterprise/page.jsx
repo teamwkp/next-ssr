@@ -15,15 +15,15 @@ async function Enterprise({ params: { locale } }) {
       locale={locale}
       resources={resources}
     >
-      <Navbar />
+      <Navbar bg={"transparent"} />
       <div className="w-full h-screen relative">
-        <Image layout="fill" objectFit="cover" src={"/bick2.png"} />
+        <Image layout="fill" objectFit="cover" src={"/bick2.png"} alt="" />
         <div className="absolute top-[50%] left-[50%] flex flex-col items-center translate-x-[-50%] translate-y-[-50%] ">
           <AnimatedWrap type={"fade"}>
             <div className=" text-[72px] font-bold">iGPSPORT</div>
           </AnimatedWrap>
 
-          <div className="mt-[48px] text-[#121217] text-[18px]">
+          <div className="mt-[48px] text-[#121217] text-[18px] leading-[32px]">
             记录精彩骑迹 为骑行运动而生
           </div>
         </div>
@@ -87,6 +87,7 @@ async function Enterprise({ params: { locale } }) {
           width={1130}
           height={477}
           objectFit="contain"
+          alt=""
         />
       </div>
 
@@ -99,11 +100,17 @@ async function Enterprise({ params: { locale } }) {
               width={1132}
               height={480}
               objectFit="contain"
+              alt=""
             ></Image>
             <div className="w-full h-[180px] bg-[#121217] rounded-b-2xl flex justify-center">
               <div className="flex items-center w-1/2 justify-center">
                 <div className="w-[54px] mr-3 h-[51px] bg-[#FF4B27] rounded-xl flex justify-center items-center">
-                  <Image src={"/sms@2x.png"} width={24} height={24}></Image>
+                  <Image
+                    src={"/sms@2x.png"}
+                    width={24}
+                    height={24}
+                    alt=""
+                  ></Image>
                 </div>
                 <div>
                   <div className="text-[#ffffff] text-[16px]">邮件</div>
@@ -118,6 +125,7 @@ async function Enterprise({ params: { locale } }) {
                     src={"/location@2x.png"}
                     width={24}
                     height={24}
+                    alt=""
                   ></Image>
                 </div>
                 <div>

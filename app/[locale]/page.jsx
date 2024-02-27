@@ -22,7 +22,7 @@ const Home = async ({ params: { locale } }) => {
       locale={locale}
       resources={resources}
     >
-      <Navbar />
+      <Navbar bg={"#ffffff"} />
       <div className="media-container mx-auto">
         <div className="lg:bg-line-grey md:bg-line-grey cursor-pointer w-full mt-[100px] h-[220px] flex items-center rounded-2xl relative">
           <div className="lg:ml-[143px] md:ml-[80px] lg:w-[35%] md:w-[35%] w-full flex flex-col items-center">

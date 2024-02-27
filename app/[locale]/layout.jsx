@@ -26,7 +26,7 @@ export default function RootLayout({ children, params: { locale } }) {
       <body className={inter.className}>
         <AntdRegistry>
           <ConfigProvider theme={theme}>
-            <main className="mt-[64px] select-none">{children}</main>
+            <main className="select-none">{children}</main>
           </ConfigProvider>
         </AntdRegistry>
       </body>

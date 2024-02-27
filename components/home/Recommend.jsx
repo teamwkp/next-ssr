@@ -29,9 +29,8 @@ function Recommend() {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-[24px] mt-[24px]">
       {prodList.map((k, index) => (
-        <ScalWrap>
+        <ScalWrap key={index}>
           <div
-            key={index}
             style={{
               backgroundImage: `url(/${k.img})`,
             }}

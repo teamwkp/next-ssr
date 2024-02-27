@@ -16,21 +16,40 @@ import Flagship from "./PullDown/FlagshipPd"
 import AfterSalesPd from "./PullDown/AfterSalesPd"
 import CooperationPd from "./PullDown/CooperationPd"
 import CompanyPd from "./PullDown/CompanyPd"
-import { useRouter } from "next/navigation"
+import { useRouter, usePathname } from "next/navigation"
+import { useScrollExcess } from "@/hooks/useScroll"
 
-const Navbar = () => {
+const Navbar = ({ bg = "#fff" }) => {
   const router = useRouter()
+  const pathname = usePathname()
   const { t } = useTranslation()
   const [popShow, setPopShow] = useState(false)
   const [popShow2, setPopShow2] = useState(false)
   const [popShow3, setPopShow3] = useState(false)
   const [popShow4, setPopShow4] = useState(false)
+  const [customBg, setCustomBg] = useState("transparent")
+  const [scrollBegin, setScrollBegin] = useScrollExcess(false, 50)
 
   useEffect(() => {
     setTimeout(() => {
       hideAll()
     }, 0)
   }, [router])
+
+  useEffect(() => {
+    if (scrollBegin) {
+      setCustomBg("#fff")
+    } else {
+      if (
+        pathname.includes("enterprise") &&
+        (popShow || popShow2 || popShow3 || popShow4)
+      ) {
+        setCustomBg("#fff")
+      } else {
+        setCustomBg(bg)
+      }
+    }
+  }, [scrollBegin, pathname, popShow, popShow2, popShow3, popShow4])
 
   const hideAll = () => {
     setPopShow(false)
@@ -56,9 +75,9 @@ const Navbar = () => {
     <>
       <header
         style={{
-          transition: "top 0.3s",
+          backgroundColor: customBg,
         }}
-        className="fixed top-0 translate-x-[-50%] left-[50%]  w-full z-30 bg-white"
+        className="fixed top-0 translate-x-[-50%] left-[50%]  w-full z-30 transition-all duration-300"
       >
         <div className="max-container padding-container  flexBetween h-[49px] lg:h-[64px] md:h-[64px]">
           <Link href="/">
