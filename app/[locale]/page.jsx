@@ -24,12 +24,20 @@ const Home = async ({ params: { locale } }) => {
     >
       <Navbar />
       <div className="media-container mx-auto">
-        <div className="bg-line-grey cursor-pointer w-full mt-[100px] h-[220px] flex items-center rounded-2xl relative">
-          <div className="ml-[143px] min-w-[35%] flex flex-col items-center">
+        <div className="lg:bg-line-grey md:bg-line-grey cursor-pointer w-full mt-[100px] h-[220px] flex items-center rounded-2xl relative">
+          <div className="lg:ml-[143px] md:ml-[80px] lg:w-[35%] md:w-[35%] w-full flex flex-col items-center">
             <div className="relative mb-[15px]">
               <img
+                className="hidden lg:block"
                 src="/home_banner01.jpg"
                 width="320px"
+                height="auto"
+                alt=""
+              />
+              <img
+                className="lg:hidden"
+                src="/home_banner01.jpg"
+                width="230px"
                 height="auto"
                 alt=""
               />
@@ -43,16 +51,16 @@ const Home = async ({ params: { locale } }) => {
           <AnimatedWrap
             type="reveal"
             duration={1000}
-            overlayClassName="absolute right-[126px] bottom-0"
+            overlayClassName="absolute lg:right-[126px] md:right-[50px] bottom-0 hidden lg:block md:block"
           >
             <img src="/home_banner02.jpg" width="380px" height="auto" alt="" />
           </AnimatedWrap>
         </div>
 
-        <div className="bg-no-repeat bg-center rounded-2xl mt-[48px] overflow-hidden relative cursor-pointer hover:shadow-lg transition ease-linear delay-150">
+        <div className="bg-no-repeat bg-center rounded-2xl lg:mt-[48px] md:mt-[48px] mt-[0px] overflow-hidden relative cursor-pointer hover:shadow-lg transition ease-linear delay-150">
           <VideoPlay />
         </div>
-        <div className="mt-[48px] bg-line-grey h-[300px] rounded-2xl flex items-center relative">
+        <div className="lg:mt-[48px] md:mt-[48px] mt-[30px] bg-line-grey h-[300px] rounded-2xl flex items-center relative">
           <div className="ml-[100px]">
             <div className="font-bold text-[36px] leading-[55px]">IGS630S</div>
             <div className="flex items-center mt-[8px]">

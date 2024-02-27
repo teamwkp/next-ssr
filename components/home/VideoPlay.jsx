@@ -35,13 +35,15 @@ function VideoPlay() {
       >
         <source src={`${CDN_URL}/igort2.mp4`} type="video/mp4" />
       </video>
-      <div className="hidden lg:flex md:flex absolute w-full h-full z-[19] top-0 text-white  flex-col justify-center items-center">
+      <div className="flex absolute w-full h-full z-[19] top-0 text-white  flex-col justify-center items-center">
         {/* <IgpLogo /> */}
         <AnimatedWrap type="fade" duration={1500}>
-          <div className=" text-[60px] font-bold leading-[60px]">iGPSPORT</div>
+          <div className="text-[35px] lg:text-[60px] font-bold leading-[60px]">
+            iGPSPORT
+          </div>
         </AnimatedWrap>
         <AnimatedWrap type="reveal-fadeInUp" duration={2000}>
-          <div className="text-[20px] font-[400] opacity-[0.9] mt-[8px] mb-[32px]">
+          <div className="lg:text-[20px] font-[400] opacity-[0.9] mt-[8px] lg:mb-[32px]">
             记录精彩骑迹 为骑行运动而生
           </div>
           {/* <Image

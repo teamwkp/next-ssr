@@ -61,7 +61,7 @@ function Advertisement() {
     <div
       className=" text-[#121217] h-[460px] relative mt-[48px] flex items-center rounded-2xl bg-cover bg-center"
       style={{
-        backgroundImage: "url(/home_act.png)",
+        backgroundImage: "url(/home_acts.png)",
       }}
     >
       <div className="ml-[70px] w-[388px]">
