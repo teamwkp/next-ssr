@@ -34,10 +34,12 @@ function Recommend() {
         >
           <div className="text-center space-y-[10px] w-[45%] flex flex-col justify-center items-center">
             <div className=" flex flex-col items-start">
-              <div className="font-medium text-[36px]">{k.title}</div>
-              <div className=" text-[18px] text-[#0E0606] opacity-[0.75] leading-6">
-                {k.subTitle}
-              </div>
+              <div className="font-bold text-[36px]">{k.title}</div>
+              <AnimatedWrap type="reveal-fadeInUp">
+                <div className=" text-[18px] text-[#0E0606] opacity-[0.75] leading-6">
+                  {k.subTitle}
+                </div>
+              </AnimatedWrap>
             </div>
           </div>
           <div className="w-[55%] h-full flex items-center justify-center">

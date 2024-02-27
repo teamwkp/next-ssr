@@ -35,23 +35,18 @@ const Home = async ({ params: { locale } }) => {
               />
             </div>
             <div className="sub-text text-center font-light text-[13px] leading-6">
-              <AnimatedWrap type={"fade"} delay={200}>
-                <div>专注于以自行车码表为代表的运动智能硬件</div>
-                <div>让骑行变得更加轻松</div>
-                <div>服务于全球超百万骑行运动爱好者</div>
-              </AnimatedWrap>
+              <div>专注于以自行车码表为代表的运动智能硬件</div>
+              <div>让骑行变得更加轻松</div>
+              <div>服务于全球超百万骑行运动爱好者</div>
             </div>
           </div>
-          <div className="absolute right-[126px] bottom-0">
-            <AnimatedWrap type="reveal" duration={1000}>
-              <img
-                src="/home_banner02.jpg"
-                width="380px"
-                height="auto"
-                alt=""
-              />
-            </AnimatedWrap>
-          </div>
+          <AnimatedWrap
+            type="reveal"
+            duration={1000}
+            overlayClassName="absolute right-[126px] bottom-0"
+          >
+            <img src="/home_banner02.jpg" width="380px" height="auto" alt="" />
+          </AnimatedWrap>
         </div>
 
         <div className="bg-no-repeat bg-center rounded-2xl mt-[48px] overflow-hidden relative cursor-pointer hover:shadow-lg transition ease-linear delay-150">
@@ -59,12 +54,12 @@ const Home = async ({ params: { locale } }) => {
         </div>
         <div className="mt-[48px] bg-line-grey h-[300px] rounded-2xl flex items-center relative">
           <div className="ml-[100px]">
-            <div className="font-bold text-[36px] leading-[55px]">
-              <AnimatedWrap type="fade">IGS630S</AnimatedWrap>
-            </div>
+            <div className="font-bold text-[36px] leading-[55px]">IGS630S</div>
             <div className="flex items-center mt-[8px]">
               <div className="mr-[15px] text-[20px] text-[#121217]">
-                <AnimatedWrap type="fade"> 智能导航 探迹山海</AnimatedWrap>
+                <AnimatedWrap type="reveal-fadeInUp">
+                  智能导航 探迹山海
+                </AnimatedWrap>
               </div>
               <img src="/hottest.png" width="32px" height="32px" alt="" />
             </div>

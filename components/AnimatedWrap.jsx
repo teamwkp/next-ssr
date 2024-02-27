@@ -137,8 +137,8 @@ function AnimatedWrap({
       const fadeInUp = keyframes`
       0% {
         opacity: 0;
-        -webkit-transform: translateY(40px);
-        transform: translateY(40px);
+        -webkit-transform: translateY(10px);
+        transform: translateY(10px);
       }
       100% {
         opacity: 1;
@@ -146,7 +146,7 @@ function AnimatedWrap({
         transform: translateY(0);
       }`
       return (
-        <Reveal delay={delay} keyframes={fadeInUp}>
+        <Reveal duration={1000} keyframes={fadeInUp}>
           {children}
         </Reveal>
       )
