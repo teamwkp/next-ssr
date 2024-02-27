@@ -10,7 +10,7 @@ import { Button, Popover, ConfigProvider } from "antd"
 import { ShoppingOutlined } from "@ant-design/icons"
 import styles from "./Navbar.module.scss"
 import SubMenuOverlay from "@/components/SubMenuOverlay"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import MenuSide from "./MenuSide"
 import Flagship from "./PullDown/FlagshipPd"
 import AfterSalesPd from "./PullDown/AfterSalesPd"
@@ -26,6 +26,19 @@ const Navbar = () => {
   const [popShow3, setPopShow3] = useState(false)
   const [popShow4, setPopShow4] = useState(false)
 
+  useEffect(() => {
+    setTimeout(() => {
+      hideAll()
+    }, 0)
+  }, [router])
+
+  const hideAll = () => {
+    setPopShow(false)
+    setPopShow2(false)
+    setPopShow3(false)
+    setPopShow4(false)
+  }
+
   const popoverChange = (val) => {
     setPopShow(val)
   }
@@ -38,6 +51,7 @@ const Navbar = () => {
   const popoverChange4 = (val) => {
     setPopShow4(val)
   }
+
   return (
     <>
       <header
@@ -69,6 +83,7 @@ const Navbar = () => {
                 }}
               >
                 <Popover
+                  open={popShow}
                   onOpenChange={popoverChange}
                   overlayClassName="shadow-none"
                   mouseEnterDelay={0}
@@ -112,6 +127,7 @@ const Navbar = () => {
                 }}
               >
                 <Popover
+                  open={popShow2}
                   onOpenChange={popoverChange2}
                   overlayClassName="shadow-none"
                   mouseEnterDelay={0}
@@ -155,6 +171,7 @@ const Navbar = () => {
                 }}
               >
                 <Popover
+                  open={popShow3}
                   onOpenChange={popoverChange3}
                   overlayClassName="shadow-none"
                   mouseEnterDelay={0}
@@ -195,6 +212,7 @@ const Navbar = () => {
                 }}
               >
                 <Popover
+                  open={popShow4}
                   onOpenChange={popoverChange4}
                   overlayClassName="shadow-none"
                   mouseEnterDelay={0}
