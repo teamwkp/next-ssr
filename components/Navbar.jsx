@@ -18,6 +18,7 @@ import CooperationPd from "./PullDown/CooperationPd"
 import CompanyPd from "./PullDown/CompanyPd"
 import { useRouter, usePathname } from "next/navigation"
 import { useScrollExcess } from "@/hooks/useScroll"
+import { useTriggerStore } from "@/store/trigger"
 
 const Navbar = ({ bg = "#fff" }) => {
   const router = useRouter()
@@ -29,12 +30,7 @@ const Navbar = ({ bg = "#fff" }) => {
   const [popShow4, setPopShow4] = useState(false)
   const [customBg, setCustomBg] = useState("transparent")
   const [scrollBegin, setScrollBegin] = useScrollExcess(false, 50)
-
-  useEffect(() => {
-    setTimeout(() => {
-      hideAll()
-    }, 0)
-  }, [router])
+  const { trigger, setTrigger } = useTriggerStore()
 
   useEffect(() => {
     if (scrollBegin) {
@@ -58,17 +54,26 @@ const Navbar = ({ bg = "#fff" }) => {
     setPopShow4(false)
   }
 
-  const popoverChange = (val) => {
-    setPopShow(val)
+  const popoverChange = (val, type) => {
+    switch (type) {
+      case "flagship_products":
+        setPopShow(val)
+        break
+      case "enterprise_introduction":
+        setPopShow2(val)
+        break
+      case "aftersales_section":
+        setPopShow3(val)
+        break
+      case "business_cooperation":
+        setPopShow4(val)
+        break
+      default:
+        break
+    }
   }
-  const popoverChange2 = (val) => {
-    setPopShow2(val)
-  }
-  const popoverChange3 = (val) => {
-    setPopShow3(val)
-  }
-  const popoverChange4 = (val) => {
-    setPopShow4(val)
+  const mouseMove = (val) => {
+    setTrigger("hover")
   }
 
   return (
@@ -77,7 +82,7 @@ const Navbar = ({ bg = "#fff" }) => {
         style={{
           backgroundColor: customBg,
         }}
-        className="fixed top-0 translate-x-[-50%] left-[50%]  w-full z-30 transition-all"
+        className="fixed top-0 translate-x-[-50%] left-[50%]  w-full z-30 "
       >
         <div className="max-container padding-container  flexBetween h-[49px] lg:h-[64px] md:h-[64px]">
           <Link href="/">
@@ -103,7 +108,10 @@ const Navbar = ({ bg = "#fff" }) => {
               >
                 <Popover
                   open={popShow}
-                  onOpenChange={popoverChange}
+                  trigger={trigger}
+                  onOpenChange={(val) =>
+                    popoverChange(val, "flagship_products")
+                  }
                   overlayClassName="shadow-none"
                   mouseEnterDelay={0}
                   overlayStyle={{
@@ -123,7 +131,12 @@ const Navbar = ({ bg = "#fff" }) => {
                   content={Flagship}
                 >
                   <div
-                    onClick={() => router.push("/standard")}
+                    onMouseEnter={mouseMove}
+                    onMouseLeave={mouseMove}
+                    onClick={() => {
+                      setTrigger("click")
+                      router.push("/standard")
+                    }}
                     className="w-full h-full flexCenter px-5 box-border"
                   >
                     <span>{t("flagship_products")}</span>
@@ -147,7 +160,10 @@ const Navbar = ({ bg = "#fff" }) => {
               >
                 <Popover
                   open={popShow2}
-                  onOpenChange={popoverChange2}
+                  trigger={trigger}
+                  onOpenChange={(val) =>
+                    popoverChange(val, "enterprise_introduction")
+                  }
                   overlayClassName="shadow-none"
                   mouseEnterDelay={0}
                   overlayStyle={{
@@ -167,7 +183,12 @@ const Navbar = ({ bg = "#fff" }) => {
                   content={CompanyPd}
                 >
                   <div
-                    onClick={() => router.push("/enterprise")}
+                    onMouseEnter={mouseMove}
+                    onMouseLeave={mouseMove}
+                    onClick={() => {
+                      setTrigger("click")
+                      router.push("/enterprise")
+                    }}
                     className="w-full h-full flexCenter px-5 box-border"
                   >
                     <span>{t("enterprise_introduction")}</span>
@@ -191,7 +212,10 @@ const Navbar = ({ bg = "#fff" }) => {
               >
                 <Popover
                   open={popShow3}
-                  onOpenChange={popoverChange3}
+                  trigger={trigger}
+                  onOpenChange={(val) =>
+                    popoverChange(val, "aftersales_section")
+                  }
                   overlayClassName="shadow-none"
                   mouseEnterDelay={0}
                   overlayStyle={{
@@ -208,7 +232,12 @@ const Navbar = ({ bg = "#fff" }) => {
                   content={AfterSalesPd}
                 >
                   <div
-                    onClick={() => router.push("/aftersales")}
+                    onMouseEnter={mouseMove}
+                    onMouseLeave={mouseMove}
+                    onClick={() => {
+                      setTrigger("click")
+                      router.push("/aftersales")
+                    }}
                     className="w-full h-full flexCenter px-5 box-border"
                   >
                     <span>{t("aftersales_section")}</span>
@@ -232,7 +261,10 @@ const Navbar = ({ bg = "#fff" }) => {
               >
                 <Popover
                   open={popShow4}
-                  onOpenChange={popoverChange4}
+                  trigger={trigger}
+                  onOpenChange={(val) =>
+                    popoverChange(val, "business_cooperation")
+                  }
                   overlayClassName="shadow-none"
                   mouseEnterDelay={0}
                   overlayStyle={{
@@ -249,7 +281,12 @@ const Navbar = ({ bg = "#fff" }) => {
                   content={CooperationPd}
                 >
                   <div
-                    onClick={() => router.push("/cooperation")}
+                    onMouseEnter={mouseMove}
+                    onMouseLeave={mouseMove}
+                    onClick={() => {
+                      setTrigger("click")
+                      router.push("/cooperation")
+                    }}
                     className="w-full h-full flexCenter px-5 box-border"
                   >
                     <span>{t("business_cooperation")}</span>

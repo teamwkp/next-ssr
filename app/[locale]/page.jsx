@@ -22,7 +22,7 @@ const Home = async ({ params: { locale } }) => {
       locale={locale}
       resources={resources}
     >
-      <Navbar bg={"#ffffff"} />
+      <Navbar />
       <div className="media-container mx-auto">
         <div className="lg:bg-line-grey md:bg-line-grey cursor-pointer w-full mt-[100px] h-[220px] flex items-center rounded-2xl relative">
           <div className="lg:ml-[143px] md:ml-[80px] lg:w-[35%] md:w-[35%] w-full flex flex-col items-center">
@@ -51,7 +51,7 @@ const Home = async ({ params: { locale } }) => {
           <AnimatedWrap
             type="reveal"
             duration={1000}
-            overlayClassName="absolute lg:right-[126px] md:right-[50px] bottom-0 hidden lg:block md:block"
+            overlayClassName="absolute lg:right-[126px] md:right-[0px] bottom-0 hidden lg:block md:block"
           >
             <img src="/home_banner02.jpg" width="380px" height="auto" alt="" />
           </AnimatedWrap>

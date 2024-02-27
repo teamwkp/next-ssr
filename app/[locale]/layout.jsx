@@ -5,6 +5,7 @@ import { ConfigProvider } from "antd"
 import theme from "@/theme/themeConfig"
 import { Inter } from "next/font/google"
 import { dir } from "i18next"
+import AnimatedWrap from "@/components/AnimatedWrap"
 
 const inter = Inter({ subsets: ["latin"] })
 
