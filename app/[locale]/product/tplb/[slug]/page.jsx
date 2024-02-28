@@ -2,6 +2,7 @@ import TranslationsProvider from "@/components/TranslationsProvider"
 import initTranslations from "@/app/i18n"
 import Footer from "@/components/Footer"
 import Navbar from "@/components/Navbar"
+import BCS300 from "@/components/product/BCS300"
 
 /**
  * 特色模板b,黑色,适用于BCS300
@@ -19,9 +20,7 @@ async function TplB({ params: { locale, slug } }) {
       resources={resources}
     >
       <Navbar />
-      <div className="">
-        <div>产品: {slug}</div>
-      </div>
+      <BCS300></BCS300>
       <Footer />
     </TranslationsProvider>
   )
