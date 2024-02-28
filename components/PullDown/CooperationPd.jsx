@@ -36,7 +36,12 @@ function CooperationPd() {
         <div className="flex-1">
           <div className="flex items-center justify-between">
             <div className="font-bold text-[18px]">最新动态</div>
-            <div className="text-[12px] cursor-pointer">查看更多 →</div>
+            <div
+              onClick={() => router.push("/brand")}
+              className="text-[12px] cursor-pointer"
+            >
+              查看更多 →
+            </div>
           </div>
           <div className="grid grid-cols-3 pt-[20px] gap-[20px]">
             <div className="space-y-[5px]">
