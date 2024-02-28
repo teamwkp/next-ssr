@@ -1,6 +1,5 @@
 import Image from "next/image"
 import AnimatedWrap from "../AnimatedWrap"
-import Link from "next/link"
 import { IOS_DOWN_URL } from "@/constants"
 
 function DataApp() {
