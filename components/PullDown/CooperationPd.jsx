@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Link from "next/link"
 
 function CooperationPd() {
   return (
@@ -20,10 +21,12 @@ function CooperationPd() {
               </div>
             </li>
             <li>
-              <div className="text-[14px] font-bold">品牌动态</div>
-              <div className="text-[#121217] opacity-[0.5]">
-                研发骑行爱好者更喜爱的智能骑行产品
-              </div>
+              <Link href={"/brand"}>
+                <div className="text-[14px] font-bold">品牌动态</div>
+                <div className="text-[#121217] opacity-[0.5]">
+                  研发骑行爱好者更喜爱的智能骑行产品
+                </div>
+              </Link>
             </li>
           </ul>
         </div>
