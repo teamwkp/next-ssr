@@ -15,6 +15,7 @@ function BCS300() {
       transform: "translateY(-60%)",
       opacity: 2,
     })
+    // 动画效果
   }, [])
   const videoList = [
     {
