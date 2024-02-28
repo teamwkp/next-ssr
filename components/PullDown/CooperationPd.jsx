@@ -44,7 +44,10 @@ function CooperationPd() {
             </div>
           </div>
           <div className="grid grid-cols-3 pt-[20px] gap-[20px]">
-            <div className="space-y-[5px]">
+            <div
+              onClick={() => router.push(`/article/${1}`)}
+              className="space-y-[5px] cursor-pointer"
+            >
               <Image
                 src="/swhz-5.png"
                 width={240}
@@ -55,7 +58,10 @@ function CooperationPd() {
               <div className="text-[#121217] opacity-[0.5]">文章</div>
               <div>iGPSPORT中文品牌“迹驰”发布</div>
             </div>
-            <div className="space-y-[5px]">
+            <div
+              onClick={() => router.push(`/article/${1}`)}
+              className="space-y-[5px] cursor-pointer"
+            >
               <Image
                 src="/swhz-3.png"
                 width={240}
@@ -66,7 +72,10 @@ function CooperationPd() {
               <div className="text-[#121217] opacity-[0.5]">文章</div>
               <div>iGPSPORT中文品牌“迹驰”发布</div>
             </div>
-            <div className="space-y-[5px]">
+            <div
+              onClick={() => router.push(`/article/${1}`)}
+              className="space-y-[5px] cursor-pointer"
+            >
               <Image
                 src="/swhz-4.png"
                 width={240}

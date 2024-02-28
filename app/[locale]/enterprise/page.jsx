@@ -113,7 +113,10 @@ async function Enterprise({ params: { locale } }) {
                 </div>
               </div>
             </div>
-            <div className="w-[468px] cursor-pointer">
+            <div
+              onClick={() => router.push(`/article/${1}`)}
+              className="w-[468px] cursor-pointer"
+            >
               <img src="/elps2.png" width="100%" height="auto" alt="" />
               <div className="mt-[24px]">
                 <div className="mb-[10px] text-[#121217] font-bold text-[28px] leading-[40px]">
