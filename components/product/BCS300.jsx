@@ -3,6 +3,8 @@ import { useEffect } from "react"
 import { Swiper, SwiperSlide } from "swiper/react"
 import { Autoplay } from "swiper/modules"
 import gsap from "gsap"
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+gsap.registerPlugin(ScrollTrigger)
 import "swiper/css"
 import Image from "next/image"
 function BCS300() {
@@ -13,6 +15,7 @@ function BCS300() {
       transform: "translateY(-60%)",
       opacity: 2,
     })
+    // 动画效果
   }, [])
   const videoList = [
     {
@@ -66,10 +69,10 @@ function BCS300() {
     },
   ]
   return (
-    <div className="text-white">
-      <div className="h-[100vh] bg-[#000] overflow-hidden">
-        {/** 第一个模块 **/}
-        <div className="absolute z-10 top-[50%] opacity-0  left-[10%] logo-img flex flex-col items-center justify-center">
+    <div className="text-white scroll-el">
+       {/** 第一个模块 **/}
+      <div className="pro-one w-[100%] h-[100vh] bg-[#000] overflow-hidden absolute z-[5] left-0 top-0">
+        <div className="absolute z-[6] top-[50%] left-[10%] logo-img flex flex-col items-center justify-center">
           <Image
             width={200}
             height={567}
@@ -79,9 +82,10 @@ function BCS300() {
           />
           <div className="w-[300px] h-[56px] rounded-[30px] overflow-hidden">
             <div className="absolute z-[99] w-[300px] h-[56px] text-[24px] flex justify-center items-center cursor-pointer">
-              介绍视频
+              介绍视频-1
             </div>
             <video
+              className="rounded-[30px]"
               src="https://media.insta360.com/static/infr_base/6f2cdbb854314d0c60ac84371a9ead63/preview3.mp4"
               autoPlay
               loop
@@ -97,18 +101,18 @@ function BCS300() {
         ></video>
       </div>
       {/** 第二个模块 **/}
-      <div className="h-[100vh] w-[100%] bg-[#000] border-[#222] border-t flex">
+      <div className="pro-two h-[100vh] w-[100%]  overflow-hidden bg-[#000] border-[#222] border-t flex">
         <div className="w-[600px] h-[100vh] object-fill border-[#222] border-r">
           <video
-            className="w-full object-fill"
+            className="w-full h-[800px] object-fill"
             src="https://media.insta360.com/static/7020544279ac89700bfff6e9101459ed/c.mp4"
             autoPlay
             muted
           ></video>
         </div>
         <div className="flex-1 flex justify-center items-center">
-          <div className="space-y-[15px] w-[560px] text-white">
-            <div className="text-[#5f98d6]">隐形自拍杆</div>
+          <div className="two-text space-y-[15px] w-[560px] text-white">
+            <div className="text-[#5f98d6]">隐形自拍杆-2</div>
             <div className="text-[48px] whitespace-pre-wrap leading-[60px] font-bold">
               不可思议的<br></br>第三人称视角。
             </div>
@@ -128,9 +132,9 @@ function BCS300() {
         </div>
       </div>
       {/** 第三个模块 **/}
-      <div className="h-[100vh] w-[100%] bg-[#000] border-[#222] border-t flex justify-center items-center">
+      <div className="pro-three h-[100vh] w-[100%]  overflow-hidden bg-[#000] border-[#222] border-t flex justify-center items-center">
         <div className="space-y-[20px] w-[868px]">
-          <div className="text-[#5f98d6]">FlowState 防抖科技 </div>
+          <div className="text-[#5f98d6]">FlowState 防抖科技-3 </div>
           <div className="text-[48px] font-bold">稳住每一个灵感瞬间。 </div>
           <div>
             无论运动有多颠簸，X3
@@ -161,10 +165,10 @@ function BCS300() {
         </div>
       </div>
       {/** 第四个模块 **/}
-      <div className="h-[100vh] w-[100%] bg-[#000] flex justify-center items-center">
+      <div className="pro-four h-[100vh] w-[100%]  overflow-hidden bg-[#000] flex justify-center items-center">
         <div className="space-y-[25px]">
           <div className="text-[36px] w-[864px] mx-auto four-text-1">
-            360° 水平矫正
+            360° 水平矫正-4
           </div>
           <div className="w-[864px] four-text h-[468px] mx-auto rounded-xl overflow-hidden">
             <video
@@ -182,11 +186,11 @@ function BCS300() {
         </div>
       </div>
       {/** 第五个模块 **/}
-      <div className="h-[100vh] w-[100%] bg-[#000] border-[#222] border-t flex justify-center items-center">
+      <div className="pro-five h-[100vh] w-[100%]  overflow-hidden bg-[#000] border-[#222] border-t flex justify-center items-center">
         <div className="w-[900px] flex">
           <div className="flex-1 flex items-center">
             <div className="w-[400px] space-y-[20px]">
-              <div className="text-[#5f98d6]">自动取景</div>
+              <div className="text-[#5f98d6]">自动取景-5</div>
               <div className="text-[48px] font-bold leading-[60px]">
                 尽情开拍，<br></br> 取景交给AI。
               </div>
@@ -208,7 +212,7 @@ function BCS300() {
         </div>
       </div>
       {/** 第六个模块 **/}
-      <div className="h-[100vh] w-[100%] bg-[#000] flex justify-center items-center">
+      <div className="pro-six h-[100vh] w-[100%]  overflow-hidden bg-[#000] flex justify-center items-center">
         <div className="w-[900px] flex">
           <div className="relative">
             <Image width={345} height={650} alt="" src="/phone_wai.png"></Image>
@@ -222,7 +226,7 @@ function BCS300() {
           </div>
           <div className="flex-1 flex justify-end items-center">
             <div className="w-[400px] space-y-[20px]">
-              <div className="text-[#5f98d6]">照片动画师</div>
+              <div className="text-[#5f98d6]">照片动画师-6</div>
               <div className="text-[48px] font-bold leading-[60px]">
                 静态照片,<br></br> 动起来。
               </div>
@@ -235,10 +239,10 @@ function BCS300() {
         </div>
       </div>
       {/** 第七个模块 **/}
-      <div className="h-[100vh] w-[100%] bg-[#000] flex justify-center items-center">
+      <div className="pro-seven h-[100vh] w-[100%]  overflow-hidden bg-[#000] flex justify-center items-center">
         <div className="w-[80%] flex items-center">
           <div className="w-[365px] space-y-[20px]">
-            <div className="text-[#5f98d6]">AI 创意库</div>
+            <div className="text-[#5f98d6]">AI 创意库-7</div>
             <div className="text-[48px] font-bold leading-[60px]">
               指尖上的<br></br> 剪辑大师。
             </div>
@@ -306,11 +310,11 @@ function BCS300() {
         </div>
       </div>
       {/** 第八个模块 **/}
-      <div className="h-[100vh] w-[100%] bg-[#000] flex justify-center items-center">
+      <div className="pro-eight h-[100vh] w-[100%] overflow-hidden bg-[#000] flex justify-center items-center">
         <div className="w-[1048px] h-[601px] rounded-xl overflow-hidden relative">
           <div className="w-full h-full absolute z-[1] top-0 left-0 flex justify-center items-center bg-[black] bg-opacity-50">
             <div className="w-[528px] space-y-[20px] text-center">
-              <div className="text-[#5f98d6]">延时摄影</div>
+              <div className="text-[#5f98d6]">延时摄影-8</div>
               <div className="text-[48px] font-bold leading-[60px]">
                 K 全景延时，了不得。
               </div>
@@ -330,13 +334,13 @@ function BCS300() {
         </div>
       </div>
       {/** 第九个模块 **/}
-      <div className="w-[100%] bg-[#000] flex justify-center items-center pb-[100px]">
+      <div className="pro-nine w-[100%] bg-[#000]  overflow-hidden flex justify-center items-center pb-[100px]">
         <div className="w-[1048px] mx-auto">
-          <div className="text-[32px] font-bold py-[20px]">参数</div>
+          <div className="text-[32px] font-bold py-[20px]">参数-9</div>
           {params.map((k, i) => (
             <div className="flex py-[30px] border-[#222] border-b" key={i}>
               <div className="w-[460px] text-[20px]">{k.title}</div>
-              <div className="flex-1 w-[0px] ml-[100px] text-[#898a8e] leading-[40px]">
+              <div className="flex-1 w-[0px] ml-[100px] text-[#898a8e] leading-[40px] text-[18px]">
                 {k.list.map((item, index) => (
                   <div key={index}>{item.title}</div>
                 ))}
