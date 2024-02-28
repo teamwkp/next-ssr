@@ -15,6 +15,7 @@ import Recommend from "@/components/home/Recommend"
 const i18nNamespaces = ["default"]
 const Home = async ({ params: { locale } }) => {
   const { t, resources } = await initTranslations(locale, i18nNamespaces)
+  // console.log(process.env.I18NEXUS_API_KEY)
 
   return (
     <TranslationsProvider
