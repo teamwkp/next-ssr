@@ -1,7 +1,9 @@
 import Image from "next/image"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 
 function CooperationPd() {
+  const router = useRouter()
   return (
     <div className="w-full h-full box-border">
       <div className="media-container mx-auto flex  pt-[15px]">
@@ -20,13 +22,14 @@ function CooperationPd() {
                 十余年专注自行车GPS码表的创新
               </div>
             </li>
-            <li>
-              <Link href={"/brand"}>
-                <div className="text-[14px] font-bold">品牌动态</div>
-                <div className="text-[#121217] opacity-[0.5]">
-                  研发骑行爱好者更喜爱的智能骑行产品
-                </div>
-              </Link>
+            <li
+              className="cursor-pointer"
+              onClick={() => router.push("/brand")}
+            >
+              <div className="text-[14px] font-bold">品牌动态</div>
+              <div className="text-[#121217] opacity-[0.5]">
+                研发骑行爱好者更喜爱的智能骑行产品
+              </div>
             </li>
           </ul>
         </div>
