@@ -29,6 +29,7 @@ function BCS300() {
     ScrollTrigger.create({
       trigger: ".module-2",
       ...params,
+      end: "+=1600",
       animation: gsap
         .timeline()
         .to(".module-1", { yPercent: -100 })
@@ -68,10 +69,14 @@ function BCS300() {
       animation: gsap
         .timeline()
         .fromTo(
+          ".module-5-video",
+          { transform: "scale(1.5)" },
+          { transform: "scale(1)" }
+        )
+        .fromTo(
           ".module-5-one",
           { height: "400px", opacity: 1 },
-          { height: 0, opacity: 0 },
-          "<"
+          { height: 0, opacity: 0 }
         )
         .fromTo(
           ".module-5-two",
@@ -301,7 +306,7 @@ function BCS300() {
                 </div>
               </div>
             </div>
-            <div className="relative">
+            <div className="relative module-5-video origin-top-left scale-150">
               <Image
                 width={345}
                 height={650}
