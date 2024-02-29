@@ -3,7 +3,6 @@ import initTranslations from "@/app/i18n"
 import Footer from "@/components/Footer"
 import Navbar from "@/components/Navbar"
 import BCS300 from "@/components/product/BCS300"
-
 /**
  * 特色模板b,黑色,适用于BCS300
  * 路由:/zh/product/tplb/BCS300
@@ -19,7 +18,7 @@ async function TplB({ params: { locale, slug } }) {
       locale={locale}
       resources={resources}
     >
-      <Navbar />
+      <Navbar bg={"transparent"} color={"#fff"} type={"tplb"} />
       <BCS300></BCS300>
       <Footer />
     </TranslationsProvider>

@@ -20,7 +20,7 @@ import { useRouter, usePathname } from "next/navigation"
 import { useScrollExcess } from "@/hooks/useScroll"
 import { useTriggerStore } from "@/store/trigger"
 
-const Navbar = ({ bg = "#fff", color = "#121217" }) => {
+const Navbar = ({ bg = "#fff", color = "#121217", type = "" }) => {
   const router = useRouter()
   const pathname = usePathname()
   const { t } = useTranslation()

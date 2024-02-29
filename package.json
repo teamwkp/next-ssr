@@ -17,7 +17,7 @@
     "@uidotdev/usehooks": "^2.4.1",
     "antd": "^5.14.0",
     "framer-motion": "^11.0.5",
-    "gsap": "^3.12.5",
+    "gsap": "^3.8.0",
     "i18next": "^23.8.2",
     "i18next-resources-to-backend": "^1.2.0",
     "i18nexus-cli": "^3.3.0",
