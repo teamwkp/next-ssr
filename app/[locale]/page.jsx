@@ -43,6 +43,7 @@ const Home = async ({ params: { locale } }) => {
                 alt=""
               />
             </div>
+
             <div className="sub-text text-center font-light text-[13px] leading-6">
               <div>专注于以自行车码表为代表的运动智能硬件</div>
               <div>让骑行变得更加轻松</div>
