@@ -42,14 +42,18 @@ function Flagship() {
             <div>
               <div className="text-[20px] h-[25px] font-bold mb-[16px]"></div>
               <div className="productItem">
-                <Image src={"/f1.png"} width={100} height={100} alt="" />
+                <Link href={"/product/tpla/iGS630"}>
+                  <Image src={"/f1.png"} width={100} height={100} alt="" />
+                </Link>
                 <div>iGS630</div>
               </div>
             </div>
             <div>
               <div className="text-[20px] h-[25px] font-bold mb-[16px]"></div>
               <div className="productItem">
-                <Image src={"/f2.png"} width={100} height={100} alt="" />
+                <Link href={"/product/tplb/BSC300"}>
+                  <Image src={"/f2.png"} width={100} height={100} alt="" />
+                </Link>
                 <div>BSC300</div>
               </div>
             </div>
