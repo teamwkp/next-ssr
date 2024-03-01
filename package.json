@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "npx i18nexus pull && next dev",
-    "build": "npx i18nexus pull && next build",
-    "start": "npx i18nexus pull && next start",
-    "lint": "npx i18nexus pull && next lint"
+    "dev": "node ./utils/getMultilingual.js &&  next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
     "@ant-design/icons": "^5.3.0",

@@ -152,7 +152,7 @@ const Navbar = ({ bg = "#fff", color = "#121217", type = "" }) => {
                     }}
                     className="w-full h-full flexCenter px-5 box-border"
                   >
-                    <span>{t("flagship_products")}</span>
+                    <span>{t("home-1ABotj")}</span>
                     <div
                       className={`absolute w-0 h-[2px] bg-[#FF4B27] transition-all left-[50%] translate-x-[-50%] bottom-0 group-hover:w-[60%] ${
                         popShow ? "w-[60%]" : ""
@@ -204,7 +204,7 @@ const Navbar = ({ bg = "#fff", color = "#121217", type = "" }) => {
                     }}
                     className="w-full h-full flexCenter px-5 box-border"
                   >
-                    <span>{t("enterprise_introduction")}</span>
+                    <span>{t("home-jA5W2")}</span>
                     <div
                       className={`absolute w-0 h-[2px] bg-[#FF4B27] transition-all left-[50%] translate-x-[-50%] bottom-0 group-hover:w-[60%] ${
                         popShow2 ? "w-[60%]" : ""
@@ -253,7 +253,7 @@ const Navbar = ({ bg = "#fff", color = "#121217", type = "" }) => {
                     }}
                     className="w-full h-full flexCenter px-5 box-border"
                   >
-                    <span>{t("aftersales_section")}</span>
+                    <span>{t("home-1B8zpX")}</span>
                     <div
                       className={`absolute w-0 h-[2px] bg-[#FF4B27] transition-all left-[50%] translate-x-[-50%] bottom-0 group-hover:w-[60%] ${
                         popShow3 ? "w-[60%]" : ""
@@ -302,7 +302,7 @@ const Navbar = ({ bg = "#fff", color = "#121217", type = "" }) => {
                     }}
                     className="w-full h-full flexCenter px-5 box-border"
                   >
-                    <span>{t("business_cooperation")}</span>
+                    <span>{t("hoem-11RKZw")}</span>
                     <div
                       className={`absolute w-0 h-[2px] bg-[#FF4B27] transition-all left-[50%] translate-x-[-50%] bottom-0 group-hover:w-[60%] ${
                         popShow4 ? "w-[60%]" : ""
@@ -316,7 +316,7 @@ const Navbar = ({ bg = "#fff", color = "#121217", type = "" }) => {
 
           <div className="lg:flexCenter hidden">
             <Button type="primary" className="mr-5" icon={<ShoppingOutlined />}>
-              {t("shopping_centre")}
+              {"商城"}
             </Button>
             <LanguageChanger />
           </div>
