@@ -5,10 +5,12 @@ import { Swiper, SwiperSlide } from "swiper/react"
 import { Autoplay } from "swiper/modules"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { ScrollToPlugin } from "gsap/ScrollToPlugin"
+gsap.registerPlugin(ScrollToPlugin, ScrollTrigger)
 import "swiper/css"
-gsap.registerPlugin(ScrollTrigger)
 function BCS300() {
   const modeul4VideoRef = useRef()
+  let trigger1, trigger2, trigger3, trigger4, trigger5
   useEffect(() => {
     gsap.fromTo(
       ".logo-img",
@@ -26,21 +28,30 @@ function BCS300() {
       pin: true,
     }
     // 第一二个模块
-    ScrollTrigger.create({
+    trigger1 = ScrollTrigger.create({
       trigger: ".module-2",
       ...params,
+      end: "+=2000",
+      scrubSpeed: 0.1,
+      onEnter() {
+        console.log(0)
+      },
       animation: gsap
         .timeline()
-        .to(".module-1", { yPercent: -100 })
-        .fromTo(".module-2-text", { opacity: 0.1 }, { opacity: 1 }),
+        .to(".module-1", { yPercent: -100, ease: "steps(100)" })
+        .fromTo(
+          ".module-2-text",
+          { opacity: 0, transform: "scale(0.2)" },
+          { opacity: 1, transform: "scale(1)" }
+        ),
     })
     // 第三个模块无动画
     // 第四个模块
-    ScrollTrigger.create({
+    trigger2 = ScrollTrigger.create({
       trigger: ".module-4",
       ...params,
       onUpdate: (self) => {
-        if (self.progress > 0.5) {
+        if (self.progress > 0.8) {
           modeul4VideoRef.current.play()
         } else {
           modeul4VideoRef.current.pause()
@@ -50,8 +61,8 @@ function BCS300() {
         .timeline()
         .fromTo(
           ".module-4-center",
-          { height: "1px", width: "100vw" },
-          { height: "468px", width: "864px" },
+          { height: "0px", width: "100vw", xPercent: -100 },
+          { height: "468px", width: "864px", xPercent: 0 },
           "<"
         )
         .fromTo(
@@ -62,16 +73,20 @@ function BCS300() {
         ),
     })
     // 第五个模块
-    ScrollTrigger.create({
+    trigger3 = ScrollTrigger.create({
       trigger: ".module-5",
       ...params,
       animation: gsap
         .timeline()
         .fromTo(
+          ".module-5-video",
+          { transform: "scale(1.5)" },
+          { transform: "scale(1)" }
+        )
+        .fromTo(
           ".module-5-one",
           { height: "400px", opacity: 1 },
-          { height: 0, opacity: 0 },
-          "<"
+          { height: 0, opacity: 0 }
         )
         .fromTo(
           ".module-5-two",
@@ -81,8 +96,19 @@ function BCS300() {
         ),
     })
     // 第六七个模块无动画
+    trigger4 = ScrollTrigger.create({
+      trigger: ".module-6",
+      ...params,
+      animation: gsap
+        .timeline()
+        .fromTo(
+          ".module-6-video",
+          { transform: "scale(1.5)" },
+          { transform: "scale(1)" }
+        ),
+    })
     // 第八个模块
-    ScrollTrigger.create({
+    trigger5 = ScrollTrigger.create({
       trigger: ".module-8",
       ...params,
       animation: gsap
@@ -101,6 +127,10 @@ function BCS300() {
         ),
     })
   }, [])
+  // 滚动条位置
+  const goScroll = () => {
+    gsap.to(window, { scrollTo: { y: ".module-3" } })
+  }
   const videoList = [
     {
       src: "https://media.insta360.com/static/infr_base/be877e2a22381d7e705bd83b26d27948/sky_swap.mp4",
@@ -154,6 +184,17 @@ function BCS300() {
   ]
   return (
     <div className="w-[100%] relative text-[#fff]">
+      {/* 右侧导航 */}
+      <div className="fixed w-[40px] left-[10px] z-[99] top-[50%] translate-y-[-50%]">
+        <ul className="space-y-[20px]">
+          <li className="size-[10px] rounded-full bg-[#333] cursor-pointer"></li>
+          <li className="size-[10px] rounded-full bg-[#333] cursor-pointer"></li>
+          <li
+            className="size-[10px] rounded-full bg-[#333] cursor-pointer"
+            onClick={() => goScroll()}
+          ></li>
+        </ul>
+      </div>
       {/* 模块一 */}
       <div className="module-1 w-[100%] absolute h-[100vh] bg-[#000] top-0 left-0 z-[9] overflow-hidden">
         <div className="absolute z-[6] top-[50%] left-[10%] logo-img flex flex-col items-center justify-center">
@@ -301,7 +342,7 @@ function BCS300() {
                 </div>
               </div>
             </div>
-            <div className="relative">
+            <div className="relative module-5-video origin-top-left scale-150">
               <Image
                 width={345}
                 height={650}
@@ -324,7 +365,7 @@ function BCS300() {
       <div className="module-6 h-[100vh] w-[100%]  bg-[#000] overflow-hidden">
         <div className="w-[100%] h-[100vh] flex justify-center items-center">
           <div className="w-[900px] flex">
-            <div className="relative">
+            <div className="relative module-6-video origin-top-right scale-150">
               <Image
                 width={345}
                 height={650}

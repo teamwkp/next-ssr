@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "node ./utils/getMultilingual.js &&  next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "build": "node ./utils/getMultilingual.js && next build",
+    "start": "node ./utils/getMultilingual.js && next start",
+    "lint": "node ./utils/getMultilingual.js && next lint"
   },
   "dependencies": {
     "@ant-design/icons": "^5.3.0",

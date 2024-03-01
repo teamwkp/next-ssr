@@ -2,6 +2,7 @@ import TranslationsProvider from "@/components/TranslationsProvider"
 import initTranslations from "@/app/i18n"
 import Footer from "@/components/Footer"
 import Navbar from "@/components/Navbar"
+import WhiteTpl from "@/components/product/WhiteTpl"
 
 /**
  * 特色模板a,白色,适用于IGS630、IGS800，新品
@@ -19,7 +20,7 @@ async function TplA({ params: { locale, slug } }) {
       resources={resources}
     >
       <Navbar />
-      <div>产品: {slug}</div>
+      <WhiteTpl></WhiteTpl>
       <Footer />
     </TranslationsProvider>
   )
