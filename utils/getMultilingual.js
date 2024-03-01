@@ -3,18 +3,10 @@ const path = require("path")
 
 const dir = path.resolve(__dirname, "../locales")
 
-function checkDirExist() {
-  if (fs.existsSync(dir)) {
-    return true
-  } else {
-    return false
-  }
-}
-
 async function getConfig() {
   const res = await fetch("https://www.itxslq.com/multiLanguageConfig/all")
   if (!res.ok) {
-    throw new Error("Failed to fetch data")
+    throw new Error("获取多语言配置失败!请确认接口是否畅通.")
   }
   return res.json()
 }
@@ -45,8 +37,10 @@ async function handleToFile(key, _json) {
 async function main() {
   const data = await getConfig()
   if (data.code === 0) {
-    handleRespons(data.data)
+    await handleRespons(data.data)
     console.log("多语言同步成功!")
+  } else {
+    console.log("获取多语言配置失败!请确认接口是否畅通!")
   }
 }
 
