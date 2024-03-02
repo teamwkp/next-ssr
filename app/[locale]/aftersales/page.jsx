@@ -33,7 +33,7 @@ const Aftersales = async ({ params: { locale } }) => {
       title: "渠道",
       url: "/sale-4.png",
 
-      path: "/aftersales/support",
+      path: "/channel",
     },
     {
       title: "支持",
