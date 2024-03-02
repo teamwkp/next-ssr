@@ -1,5 +1,6 @@
 import TranslationsProvider from "@/components/TranslationsProvider"
 import initTranslations from "@/app/i18n"
+import TpldfComponent from "@/components/product/default/tpldf"
 import Footer from "@/components/Footer"
 import Navbar from "@/components/Navbar"
 
@@ -19,7 +20,7 @@ async function TplDf({ params: { locale, slug } }) {
       resources={resources}
     >
       <Navbar />
-      <div>产品: {slug}</div>
+      <TpldfComponent />
       <Footer />
     </TranslationsProvider>
   )
