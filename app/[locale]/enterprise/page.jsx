@@ -1,5 +1,3 @@
-"use client"
-
 import initTranslations from "@/app/i18n"
 import TranslationsProvider from "@/components/TranslationsProvider"
 import Image from "next/image"
@@ -7,11 +5,11 @@ import Footer from "@/components/Footer"
 import Navbar from "@/components/Navbar"
 import AnimatedWrap from "@/components/AnimatedWrap"
 import { useRouter } from "next/navigation"
+import Link from "next/link"
 
 const i18nNamespaces = ["default"]
 
 async function Enterprise({ params: { locale } }) {
-  const router = useRouter()
   const { t, resources } = await initTranslations(locale, i18nNamespaces)
   return (
     <TranslationsProvider
@@ -99,10 +97,7 @@ async function Enterprise({ params: { locale } }) {
           </div>
           <img src="/elsfriend.png" width="100%" height="auto" alt="" />
           <div className="mt-[120px] mb-[100px] flex justify-between w-full">
-            <div
-              onClick={() => router.push("/contactus")}
-              className="w-[468px] cursor-pointer"
-            >
+            <Link href={"/contactus"} className="w-[468px] cursor-pointer">
               <img src="/elps1.png" width="100%" height="auto" alt="" />
               <div className="mt-[24px]">
                 <div className="mb-[10px] text-[#121217] font-bold text-[28px] leading-[40px]">
@@ -112,11 +107,8 @@ async function Enterprise({ params: { locale } }) {
                   查看更多
                 </div>
               </div>
-            </div>
-            <div
-              onClick={() => router.push(`/article/${1}`)}
-              className="w-[468px] cursor-pointer"
-            >
+            </Link>
+            <Link href={`/article/${1}`} className="w-[468px] cursor-pointer">
               <img src="/elps2.png" width="100%" height="auto" alt="" />
               <div className="mt-[24px]">
                 <div className="mb-[10px] text-[#121217] font-bold text-[28px] leading-[40px]">
@@ -126,7 +118,7 @@ async function Enterprise({ params: { locale } }) {
                   查看更多
                 </div>
               </div>
-            </div>
+            </Link>
           </div>
         </div>
       </div>
