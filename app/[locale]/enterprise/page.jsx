@@ -6,6 +6,7 @@ import Navbar from "@/components/Navbar"
 import AnimatedWrap from "@/components/AnimatedWrap"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
+import TimeLine from "@/components/enterprise/TimeLine"
 
 const i18nNamespaces = ["default"]
 
@@ -82,7 +83,7 @@ async function Enterprise({ params: { locale } }) {
           </div>
         </div>
       </div>
-      <div className="w-full h-[900px] bg-black"></div>
+      <TimeLine />
       <div className="media-container mx-auto mt-[100px]">
         <div className="flex justify-center flex-col items-center">
           <AnimatedWrap type="fade">
