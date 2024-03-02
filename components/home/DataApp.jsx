@@ -6,15 +6,7 @@ function DataApp() {
   const dataList = [1, 2]
   return (
     <div className="rounded-2xl h-[460px] flex items-center  mt-[48px]">
-      <div
-        className="rounded-2xl w-[100%] h-[100%] z-10  flex justify-between items-center"
-        style={{
-          backgroundImage: `url(/home_acty.png)`,
-          backgroundSize: "contain",
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "center",
-        }}
-      >
+      <div className="rounded-2xl bg-[#F7F7F8] w-[100%] h-[100%] z-10  flex justify-between items-center">
         <div className=" w-[45%]  flex justify-center">
           <div className="w-[344px] space-y-[24px]">
             <div className="font-bold text-[36px] text-left">

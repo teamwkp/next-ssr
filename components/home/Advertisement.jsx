@@ -59,12 +59,7 @@ function Advertisement() {
   ]
   const [currentAvt, setStatus] = useState(quotation[0].img)
   return (
-    <div
-      className=" text-[#121217] h-[460px] relative mt-[48px] flex items-center justify-end rounded-2xl bg-cover bg-center"
-      style={{
-        backgroundImage: "url(/home_acts.png)",
-      }}
-    >
+    <div className=" text-[#121217] h-[460px] relative mt-[48px] flex items-center justify-end rounded-2xl bg-[#F8F8F9]">
       <div className="absolute w-[290px] h-[290px] left-[100px] z-10">
         <div className="w-full h-full  avatar-animation">
           {quotation.map((item) => (
@@ -106,9 +101,9 @@ function Advertisement() {
             crossFade: true,
           }}
           pagination={{
-            clickable: true,  
-            bulletClass: 'swiper-pagination-bullet dot-auto',
-            bulletActiveClass: 'swiper-pagination-bullet-active dot-active'
+            clickable: true,
+            bulletClass: "swiper-pagination-bullet dot-auto",
+            bulletActiveClass: "swiper-pagination-bullet-active dot-active",
           }}
           autoplay={{
             delay: 3000,

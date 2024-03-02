@@ -15,7 +15,6 @@ import Recommend from "@/components/home/Recommend"
 const i18nNamespaces = ["default"]
 const Home = async ({ params: { locale } }) => {
   const { t, resources } = await initTranslations(locale, i18nNamespaces)
-  // console.log(process.env.I18NEXUS_API_KEY)
 
   return (
     <TranslationsProvider
@@ -53,9 +52,9 @@ const Home = async ({ params: { locale } }) => {
           <AnimatedWrap
             type="reveal"
             duration={1000}
-            overlayClassName="absolute lg:right-[126px] md:right-[0px] bottom-0 hidden lg:block md:block"
+            overlayClassName="absolute lg:right-[80px] md:right-[0px] bottom-0 hidden lg:block md:block"
           >
-            <img src="/home_banner02.jpg" width="380px" height="auto" alt="" />
+            <img src="/home_banner02.png" width="450px" height="auto" alt="" />
           </AnimatedWrap>
         </div>
 

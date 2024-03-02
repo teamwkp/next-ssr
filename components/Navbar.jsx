@@ -302,7 +302,7 @@ const Navbar = ({ bg = "#fff", color = "#121217", type = "" }) => {
                     }}
                     className="w-full h-full flexCenter px-5 box-border"
                   >
-                    <span>{t("hoem-11RKZw")}</span>
+                    <span>{t("home-11RKZw")}</span>
                     <div
                       className={`absolute w-0 h-[2px] bg-[#FF4B27] transition-all left-[50%] translate-x-[-50%] bottom-0 group-hover:w-[60%] ${
                         popShow4 ? "w-[60%]" : ""
