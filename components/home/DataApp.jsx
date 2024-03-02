@@ -6,13 +6,21 @@ function DataApp() {
   const dataList = [1, 2]
   return (
     <div className="rounded-2xl h-[460px] flex items-center  mt-[48px]">
-      <div className="rounded-2xl bg-[#F7F7F8] w-[100%] h-[100%] z-10  flex justify-between items-center">
+      <div
+        style={{
+          backgroundImage: "url(/home_banner23.png)",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+        className="rounded-2xl w-[100%] h-[100%] z-10  flex justify-between items-center"
+      >
         <div className=" w-[45%]  flex justify-center">
           <div className="w-[344px] space-y-[24px]">
-            <div className="font-bold text-[36px] text-left">
+            <div className="font-bold text-[36px] text-[#fff] text-left">
               <AnimatedWrap type={"fade"}> 专业数据分析APP</AnimatedWrap>
             </div>
-            <div className="text-[16px] text-[#121217] leading-[28px] mb-[44px]">
+            <div className="text-[16px] text-[#fff] leading-[28px]">
               记录您的每一次骑行活动。在活动记录中有摘要数据、详细数据以及多样的图表分析，帮助您分析自己的每次运动表现。
             </div>
             <div className="flex lg:flex-row flex-col justify-between">
