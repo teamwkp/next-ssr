@@ -6,29 +6,25 @@ function AfterSalesPd() {
     {
       title: "码表",
       url: "/sale-1.png",
-      height: 80,
-      width: 54,
+
       path: "/aftersales/codeTable",
     },
     {
       title: "配件",
       url: "/sale-2.png",
-      height: 80,
-      width: 86,
+
       path: "/aftersales/module",
     },
     {
       title: "应用",
       url: "/sale-3.png",
-      height: 80,
-      width: 106,
+
       path: "/aftersales/application",
     },
     {
       title: "支持",
       url: "/sale-4.png",
-      height: 80,
-      width: 67,
+
       path: "/aftersales/support",
     },
   ]
@@ -44,8 +40,8 @@ function AfterSalesPd() {
                   <div className="lg:h-[168px] h-[100px] w-[168px] bg-[#F3F4F8] rounded-2xl flex flex-col justify-center items-center">
                     <Image
                       className="transition-transform hover:scale-110 cursor-pointer"
-                      height={item.height}
-                      width={item.width}
+                      height={80}
+                      width={80}
                       src={item.url}
                       alt=""
                     ></Image>
