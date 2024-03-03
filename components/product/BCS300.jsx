@@ -1,5 +1,6 @@
 "use client"
-import { useEffect, useRef } from "react"
+import { useEffect, useState, useRef } from "react"
+import SubMenuOverlay from "@/components/SubMenuOverlay"
 import Image from "next/image"
 import { Swiper, SwiperSlide } from "swiper/react"
 import { Autoplay } from "swiper/modules"
@@ -9,14 +10,29 @@ import { ScrollToPlugin } from "gsap/ScrollToPlugin"
 gsap.registerPlugin(ScrollToPlugin, ScrollTrigger)
 import "swiper/css"
 function BCS300() {
+  const modeul2VideoRef = useRef()
+  const modeul2VideoRef1 = useRef()
   const modeul4VideoRef = useRef()
-  let trigger1, trigger2, trigger3, trigger4, trigger5
+  const modeul8VideoRef = useRef()
+  const [moduleId, setModule] = useState('.module-2')
+  const videoRef = useRef(null)
+  const [isPlay, setIsPlay] = useState(false)
+  const showVideo = () => {
+    setIsPlay(true)
+  }
+  const hideVieo = (val) => {
+    setIsPlay(false)
+  }
+
   useEffect(() => {
+    if (videoRef && videoRef.current) {
+      videoRef.current.play()
+    }
     gsap.fromTo(
       ".logo-img",
       { opacity: 0 },
       {
-        duration: 1,
+        duration: 2,
         opacity: 1,
         y: -200,
       }
@@ -24,58 +40,88 @@ function BCS300() {
     const params = {
       scrub: true,
       start: "top top",
-      end: "+=100%",
+      end: "100%",
       pin: true,
     }
     // 第一二个模块
-    trigger1 = ScrollTrigger.create({
+    ScrollTrigger.create({
       trigger: ".module-2",
       ...params,
-      end: "+=2000",
-      scrubSpeed: 0.1,
-      onEnter() {
-        console.log(0)
-      },
-      animation: gsap
-        .timeline()
-        .to(".module-1", { yPercent: -100, ease: "steps(100)" })
-        .fromTo(
-          ".module-2-text",
-          { opacity: 0, transform: "scale(0.2)" },
-          { opacity: 1, transform: "scale(1)" }
-        ),
-    })
-    // 第三个模块无动画
-    // 第四个模块
-    trigger2 = ScrollTrigger.create({
-      trigger: ".module-4",
-      ...params,
+      start: "top top",
+      end: "100%",
+      pin: true,
       onUpdate: (self) => {
-        if (self.progress > 0.8) {
-          modeul4VideoRef.current.play()
+        if (self.progress > 0.5) {
+          setModule('.module-2')
+        }
+        if (self.progress > 0.6) {
+          modeul2VideoRef.current && modeul2VideoRef.current.play()
         } else {
-          modeul4VideoRef.current.pause()
+          modeul2VideoRef.current && modeul2VideoRef.current.pause()
+        }
+        if (self.progress > 0.4) {
+          modeul2VideoRef1.current && modeul2VideoRef1.current.play()
+        } else {
+          modeul2VideoRef1.current && modeul2VideoRef1.current.pause()
         }
       },
       animation: gsap
         .timeline()
         .fromTo(
-          ".module-4-center",
-          { height: "0px", width: "100vw", xPercent: -100 },
-          { height: "468px", width: "864px", xPercent: 0 },
-          "<"
-        )
+          ".module-2-text",
+          { opacity: 0.2, xPercent: 100},
+          { opacity: 1, xPercent: 0 }
+        ),
+    })
+    // 第三个模块无动画
+    ScrollTrigger.create({
+      trigger: ".module-3",
+      scrub: true,
+      onEnter() {
+        setModule('.module-3')
+      },
+      onEnterBack() {
+        setModule('.module-3')
+      }
+    })
+    // 第四个模块
+    ScrollTrigger.create({
+      trigger: ".module-4",
+      ...params,
+      onUpdate: (self) => {
+        if (self.progress > 0.4) {
+          setModule('.module-4')
+        }
+        if (self.progress > 0.8) {
+          modeul4VideoRef.current && modeul4VideoRef.current.play()
+        } else {
+          modeul4VideoRef.current && modeul4VideoRef.current.pause()
+        }
+      },
+      animation: gsap
+        .timeline()
         .fromTo(
           [".module-4-top", ".module-4-bottom"],
           { opacity: 0, xPercent: 100 },
           { opacity: 1, xPercent: 0 },
+        )
+        .fromTo(
+          ".module-4-center",
+          { height: "1px", width: "100vw", xPercent: -100 },
+          { height: "1px", width: "100vw", xPercent: 0 },
           "<"
-        ),
+        ).to('.module-4-center', { height: 486, width: 864})
+      
     })
     // 第五个模块
-    trigger3 = ScrollTrigger.create({
+    ScrollTrigger.create({
       trigger: ".module-5",
       ...params,
+      onUpdate: (self) => {
+        if (self.progress > 0.4) {
+          setModule('.module-5')
+        }
+      },
       animation: gsap
         .timeline()
         .fromTo(
@@ -88,6 +134,8 @@ function BCS300() {
           { height: "400px", opacity: 1 },
           { height: 0, opacity: 0 }
         )
+        .to('.module-5-video-one', { opacity: 0}, '<')
+        .to('.module-5-video-two', { opacity: 1}, '<')
         .fromTo(
           ".module-5-two",
           { height: "0", opacity: 0 },
@@ -95,10 +143,15 @@ function BCS300() {
           "<"
         ),
     })
-    // 第六七个模块无动画
-    trigger4 = ScrollTrigger.create({
+    // 第六个模块
+    ScrollTrigger.create({
       trigger: ".module-6",
       ...params,
+      onUpdate: (self) => {
+        if (self.progress > 0.4) {
+          setModule('.module-6')
+        }
+      },
       animation: gsap
         .timeline()
         .fromTo(
@@ -107,15 +160,35 @@ function BCS300() {
           { transform: "scale(1)" }
         ),
     })
+    // 第七个模块无动画
+    ScrollTrigger.create({
+      trigger: ".module-7",
+      scrub: true,
+      onEnter() {
+        setModule('.module-7')
+      },
+      onEnterBack() {
+        setModule('.module-7')
+      }
+    })
     // 第八个模块
-    trigger5 = ScrollTrigger.create({
+    ScrollTrigger.create({
       trigger: ".module-8",
       ...params,
+      onUpdate: (self) => {
+        if (self.progress > 0.4) {
+          setModule('.module-8')
+        }
+        if (self.progress > 0.2) {
+          modeul8VideoRef.current && modeul8VideoRef.current.play()
+        } else {
+          modeul8VideoRef.current && modeul8VideoRef.current.pause()
+        }
+      },
       animation: gsap
         .timeline()
-        .fromTo(
+        .to(
           ".module-8-video",
-          { height: "550px", width: "950px" },
           { height: "90vh", width: "80vw" },
           "<"
         )
@@ -126,10 +199,22 @@ function BCS300() {
           "<"
         ),
     })
-  }, [])
+    // 第9个模块
+    ScrollTrigger.create({
+      trigger: ".module-9",
+      scrub: true,
+      onEnter() {
+        setModule('.module-9')
+      },
+      onEnterBack() {
+        setModule('.module-9')
+      }
+    })
+  }, [videoRef])
   // 滚动条位置
-  const goScroll = () => {
-    gsap.to(window, { scrollTo: { y: ".module-3" } })
+  const goScroll = (module) => {
+    setModule(module)
+    gsap.to(window, { scrollTo: { y: module } })
   }
   const videoList = [
     {
@@ -182,58 +267,83 @@ function BCS300() {
       ],
     },
   ]
+  const slideList = [
+    {
+      id: '.module-2'
+    },
+    {
+      id: '.module-3'
+    },
+    {
+      id: '.module-4'
+    },
+    {
+      id: '.module-5'
+    },
+    {
+      id: '.module-6'
+    },
+    {
+      id: '.module-7'
+    },
+    {
+      id: '.module-8'
+    },
+    {
+      id: '.module-9'
+    }
+  ]
   return (
     <div className="w-[100%] relative text-[#fff]">
       {/* 右侧导航 */}
       <div className="fixed w-[40px] left-[10px] z-[99] top-[50%] translate-y-[-50%]">
-        <ul className="space-y-[20px]">
-          <li className="size-[10px] rounded-full bg-[#333] cursor-pointer"></li>
-          <li className="size-[10px] rounded-full bg-[#333] cursor-pointer"></li>
-          <li
-            className="size-[10px] rounded-full bg-[#333] cursor-pointer"
-            onClick={() => goScroll()}
-          ></li>
+        <ul className="space-y-[15px]">
+          {
+            slideList.map(item => (<li  onClick={() => goScroll(item.id)} key={item.id} className={`size-[10px] rounded-full hover:bg-[#999] cursor-pointer ${item.id === moduleId ? 'bg-[#999] animate-bounce' : 'bg-[#333]'}`}></li>))
+          }
         </ul>
       </div>
       {/* 模块一 */}
-      <div className="module-1 w-[100%] absolute h-[100vh] bg-[#000] top-0 left-0 z-[9] overflow-hidden">
-        <div className="absolute z-[6] top-[50%] left-[10%] logo-img flex flex-col items-center justify-center">
-          <Image
-            width={200}
-            height={567}
-            className="h-[200px] w-[567px]"
-            src="https://res.insta360.com/static/infr_base/9cdc48888befe0bda8ad0aec7b6085c3/Insta360%20X3_Logo&Slogan_Online_White_SC.svg"
-            alt=""
-          />
-          <div className="w-[300px] h-[56px] rounded-[30px] overflow-hidden">
-            <div className="absolute z-[99] w-[300px] h-[56px] text-[24px] text-white flex justify-center items-center cursor-pointer">
-              介绍视频
+      <div className="module-1 w-[100%] absolute h-[100vh] bg-[#000] left-0 z-[9]">
+        <div className="max-container h-[100vh] relative  flex items-end justify-center">
+          <div className="absolute z-[6] top-[50%] left-0 logo-img flex flex-col items-center justify-center opacity-0">
+            <Image
+              width={200}
+              height={567}
+              className="h-[200px] w-[567px]"
+              src="https://res.insta360.com/static/infr_base/9cdc48888befe0bda8ad0aec7b6085c3/Insta360%20X3_Logo&Slogan_Online_White_SC.svg"
+              alt=""
+            />
+            <div className="w-[300px] h-[56px] rounded-[30px] overflow-hidden">
+              <div onClick={() => showVideo()} className="absolute z-[99] w-[300px] h-[56px] text-[24px] text-white flex justify-center items-center cursor-pointer">
+                介绍视频
+              </div>
+              <video
+                className="rounded-[30px]"
+                src="https://media.insta360.com/static/infr_base/6f2cdbb854314d0c60ac84371a9ead63/preview3.mp4"
+                autoPlay
+                loop
+                muted
+              ></video>
             </div>
-            <video
-              className="rounded-[30px]"
-              src="https://media.insta360.com/static/infr_base/6f2cdbb854314d0c60ac84371a9ead63/preview3.mp4"
-              autoPlay
-              loop
-              muted
-            ></video>
           </div>
+          <video
+            className="w-[1440px] h-[800px] object-fill"
+            src="https://media.insta360.com/static/799499c95da727e1f88d156290987e5f/X3K2V-169.mp4"
+            autoPlay
+            muted
+          ></video>
         </div>
-        <video
-          className="w-[85vw] object-fill translate-x-[200px]"
-          src="https://media.insta360.com/static/799499c95da727e1f88d156290987e5f/X3K2V-169.mp4"
-          autoPlay
-          muted
-        ></video>
       </div>
       {/* 模块二 */}
       <div className="module-2 w-[100%] h-[100vh] bg-[#000] overflow-hidden">
         <div className="flex w-[100%] h-[100vh]">
-          <div className="w-[600px] h-[100vh] object-fill border-[#222] border-r">
+          <div className="w-[600px] h-[100vh] object-fill border-[#222] border-r flex items-center">
             <video
               className="w-full h-[800px] object-fill"
               src="https://media.insta360.com/static/7020544279ac89700bfff6e9101459ed/c.mp4"
-              autoPlay
               muted
+              ref={modeul2VideoRef1}
             ></video>
           </div>
           <div className="flex-1 flex justify-center items-center">
@@ -247,9 +357,9 @@ function BCS300() {
               </div>
               <div className="pt-[20px]">
                 <video
+                   ref={modeul2VideoRef}
                   className="w-[560px] object-fill rounded-xl"
                   src="https://media.insta360.com/static/infr_base/09ff85fbdf363126a31edc95bc89c4b3/3pv.mp4"
-                  autoPlay
                   muted
                   loop
                 ></video>
@@ -297,10 +407,10 @@ function BCS300() {
       <div className="module-4 w-[100%] h-[100vh] bg-[#000] overflow-hidden">
         <div className="w-[100%] h-[100vh] flex items-center justify-center">
           <div className="space-y-[25px]">
-            <div className="text-[36px] w-[864px] mx-auto module-4-top">
+            <div className="text-[48px] font-bold w-[864px] mx-auto module-4-top">
               360° 水平矫正-4
             </div>
-            <div className="w-[864px] module-4-center h-[468px] mx-auto rounded-xl overflow-hidden">
+            <div className="w-[100vw] module-4-center h-[1px] mx-auto rounded-xl overflow-hidden">
               <video
                 autoPlay
                 muted
@@ -354,8 +464,15 @@ function BCS300() {
                 autoPlay
                 loop
                 muted
-                className="w-[250px] h-[520px] left-[48px] top-[80px] absolute z-[1] rounded-b-[32px] object-fill overflow-hidden"
+                className="module-5-video-one  w-[250px] h-[520px] left-[48px] top-[80px] absolute z-[1] rounded-b-[32px] object-fill overflow-hidden"
                 src="https://media.insta360.com/static/infr_base/bfbbfc52b290edf574994d13e9beff8e/Deep_track.mp4"
+              ></video>
+              <video
+                autoPlay
+                loop
+                muted
+                className="module-5-video-two opacity-0 w-[250px] h-[520px] left-[48px] top-[80px] absolute z-[1] rounded-b-[32px] object-fill overflow-hidden"
+                src="https://media.insta360.com/static/infr_base/d406a2bc468eddb7216660ac315da357/360_photo_am.mp4"
               ></video>
             </div>
           </div>
@@ -397,74 +514,72 @@ function BCS300() {
       </div>
       {/* 模块七 */}
       <div className="module-7 h-[100vh] w-[100%]  bg-[#000] overflow-hidden">
-        <div className="w-[100%] h-[100vh] flex justify-center items-center">
-          <div className="w-[80%] flex items-center">
-            <div className="w-[365px] space-y-[20px]">
-              <div className="text-[#5f98d6]">AI 创意库</div>
-              <div className="text-[48px] font-bold leading-[60px]">
-                指尖上的<br></br> 剪辑大师。
-              </div>
-              <div className="pt-[10px] text-[#c8c9cd]">
-                无穷的创作灵感，尽在AI创意库。按照教程拍摄相应素材，套用模板，即可一键生成令人赞不绝口的创意大片。你的社交媒体，从此更出彩。
-              </div>
+        <div className="w-[1440px] h-[100vh] mx-auto flex justify-center items-center">
+          <div className="w-[365px] space-y-[20px]">
+            <div className="text-[#5f98d6]">AI 创意库</div>
+            <div className="text-[48px] font-bold leading-[60px]">
+              指尖上的<br></br> 剪辑大师。
             </div>
-            <div className="flex-1 ml-[80px]">
-              <div className="w-[800px] h-[450px] rounded-xl overflow-hidden">
-                <Swiper
-                  modules={[Autoplay]}
-                  onSwiper={() => {
-                    gsap.fromTo(
-                      ".swiper-border",
-                      { width: 0, x: 0 },
-                      { width: "80px", duration: 6 }
-                    )
-                  }}
-                  onSlideChange={(item) => {
-                    let x = null
-                    if (item.activeIndex == 0) {
-                      x = 0
-                    } else if (item.activeIndex == 1) {
-                      x = 142
-                    } else if (item.activeIndex == 2) {
-                      x = 284
-                    }
-                    gsap.fromTo(
-                      ".swiper-border",
-                      { width: 0, x },
-                      { width: "80px", duration: 6 }
-                    )
-                  }}
-                  autoplay={{
-                    delay: 6000,
-                    disableOnInteraction: false,
-                  }}
-                >
-                  {videoList.map((k, i) => (
-                    <SwiperSlide className="w-full h-full" key={i}>
-                      <video
-                        muted
-                        autoPlay
-                        loop
-                        className="w-full h-full object-fill"
-                        src={k.src}
-                      ></video>
-                    </SwiperSlide>
-                  ))}
-                </Swiper>
+            <div className="pt-[10px] text-[#c8c9cd]">
+              无穷的创作灵感，尽在AI创意库。按照教程拍摄相应素材，套用模板，即可一键生成令人赞不绝口的创意大片。你的社交媒体，从此更出彩。
+            </div>
+          </div>
+          <div className="ml-[80px]">
+            <div className="w-[800px] h-[450px] rounded-xl overflow-hidden">
+              <Swiper
+                modules={[Autoplay]}
+                onSwiper={() => {
+                  gsap.fromTo(
+                    ".swiper-border",
+                    { width: 0, x: 0 },
+                    { width: "80px", duration: 6 }
+                  )
+                }}
+                onSlideChange={(item) => {
+                  let x = null
+                  if (item.activeIndex == 0) {
+                    x = 0
+                  } else if (item.activeIndex == 1) {
+                    x = 142
+                  } else if (item.activeIndex == 2) {
+                    x = 284
+                  }
+                  gsap.fromTo(
+                    ".swiper-border",
+                    { width: 0, x },
+                    { width: "80px", duration: 6 }
+                  )
+                }}
+                autoplay={{
+                  delay: 6000,
+                  disableOnInteraction: false,
+                }}
+              >
+                {videoList.map((k, i) => (
+                  <SwiperSlide className="w-full h-full" key={i}>
+                    <video
+                      muted
+                      autoPlay
+                      loop
+                      className="w-full h-full object-fill"
+                      src={k.src}
+                    ></video>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </div>
+            <div className="w-[800px]">
+              <div className="flex w-[363px] h-[40px] mx-auto mt-[15px] text-[20px] font-medium items-center">
+                <div className="flex-1 cursor-pointer">魔法天空</div>
+                <div className="flex-1 cursor-pointer text-center">
+                  骑行生物
+                </div>
+                <div className="flex-1 cursor-pointer text-right">
+                  光影飞逝
+                </div>
               </div>
-              <div className="w-[800px]">
-                <div className="flex w-[363px] h-[40px] mx-auto mt-[15px] text-[20px] font-medium items-center">
-                  <div className="flex-1 cursor-pointer">魔法天空</div>
-                  <div className="flex-1 cursor-pointer text-center">
-                    骑行生物
-                  </div>
-                  <div className="flex-1 cursor-pointer text-right">
-                    光影飞逝
-                  </div>
-                </div>
-                <div className="bg-[#646669] h-[1px] w-[363px] mx-auto">
-                  <div className="swiper-border bg-[#fff] h-[1px] w-[80px]"></div>
-                </div>
+              <div className="bg-[#646669] h-[1px] w-[363px] mx-auto">
+                <div className="swiper-border bg-[#fff] h-[1px] w-[80px]"></div>
               </div>
             </div>
           </div>
@@ -488,8 +603,8 @@ function BCS300() {
             </div>
             <video
               muted
-              autoPlay
               loop
+              ref={modeul8VideoRef}
               className="w-full h-full object-fill"
               src="https://media.insta360.com/static/infr_base/c046de75c04a5f5526b7aa72c6473bba/8K%20timelapse.mp4"
             ></video>
@@ -512,6 +627,20 @@ function BCS300() {
           ))}
         </div>
       </div>
+      {/* 弹出视频*/}
+      {isPlay ? (
+        <video
+          ref={videoRef}
+          autoPlay
+          muted
+          controls
+          src='https://media.insta360.com/static/infr_base/6f2cdbb854314d0c60ac84371a9ead63/preview3.mp4'
+          className="w-[960px] fixed translate-x-[-50%] translate-y-[-50%] z-[300] left-[50%] top-[50%]"
+        ></video>
+      ) : (
+        <></>
+      )}
+      {isPlay ? <SubMenuOverlay hideEvens={hideVieo} top="0px" /> : <></>}
     </div>
   )
 }

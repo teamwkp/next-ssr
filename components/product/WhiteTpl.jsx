@@ -1,15 +1,48 @@
 "use client"
-import { useEffect, useRef } from "react"
+import { useEffect, useState, useRef } from "react"
 import Image from "next/image"
+import SubMenuOverlay from "@/components/SubMenuOverlay"
 import { Swiper, SwiperSlide } from "swiper/react"
 import { Autoplay, EffectFade } from "swiper/modules"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { ScrollToPlugin } from "gsap/ScrollToPlugin"
 import "swiper/css"
 import "swiper/css/effect-fade"
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
 function WhiteTpl() {
-  useEffect(() => {}, [])
+  const videoRef = useRef(null)
+  const [isPlay, setIsPlay] = useState(false)
+  const showVideo = () => {
+    setIsPlay(true)
+  }
+  const hideVieo = (val) => {
+    setIsPlay(false)
+  }
+
+  useEffect(() => {
+    if (videoRef && videoRef.current) {
+      videoRef.current.play()
+    }
+    // 模块动画
+    ScrollTrigger.create({
+      trigger: ".module-5",
+      scrub: true,
+      start: "top 150px",
+      end: "bottom -400px",
+      pin: true,
+      onEnter() {
+        gsap.to('.module-5-img', {width: '1440px',height: '800px', borderRadius: 0, duration: .3})
+      },
+      onLeaveBack() {
+        gsap.to('.module-5-img', {width: '1200px',height: '700px', borderRadius: '16px', duration: .3})
+      },
+      onUpdate(item) {
+      },
+      animation: gsap
+        .timeline().to('.module-5-text', {opacity: 1}).to('.module-5-bg', {height: 0})
+    })
+  }, [videoRef])
   const bannerList = [
     "https://res.insta360.com/static/assets/storage/20201102/161326696c3c0a06ee7ae69d2c344c9a/kv01.jpg",
     "https://res.insta360.com/static/assets/storage/20201102/39d47f004961ca3403a228a5a1f91e34/kv02.jpg",
@@ -55,41 +88,63 @@ function WhiteTpl() {
       ],
     },
   ]
+  // 导航跳转
+  const goModule = (module) => {
+    gsap.to(window, { scrollTo: { y: module } })
+  }
   return (
     <div className="w-[100%] relative">
       {/* 模块一 */}
       <div className="module-1 w-[100%] sticky bg-[#fff] bg-opacity-20 h-[100vh] top-0 left-0 z-[-1]">
-        <div className="w-[1200px] h-[100vh] mx-auto">
-          <div className="absolute w-[334px] top-[50%] translate-y-[-50%] z-10">
+        <div className="w-[1200px] h-[100vh] mx-auto relative">
+          <div className="absolute w-[334px] top-[50%] translate-y-[-50%] z-[999]">
             <Image
               width={424}
               height={85}
               src="https://res.insta360.com/static/infr_base/5342dfd016b0f2fffdbe9b5f33f281c8/onex2_logoslogan.sc.svg"
               alt=""
             ></Image>
-            <div className="w-[334px] h-[116px] rounded-[24px] overflow-hidden mt-[30px]">
+            <div className="w-[334px] h-[116px] rounded-[24px] overflow-hidden mt-[30px] relative">
+              <div className="absolute w-full h-full z-10 top-0 left-0 flex items-center justify-center">
+                <div className="text-[24px] cursor-pointer text-white" onClick={() => showVideo()}>介绍视频</div>
+              </div>
               <video
                 autoPlay
                 muted
                 loop
+                className="object-fill"
                 src="https://media.insta360.com/static/assets/storage/20201028/e91dac9f51a13095f8547a4c8082ea91/01_preview.mp4"
               ></video>
             </div>
           </div>
           <Swiper
-            className="w-full h-full"
+            className="w-full h-full absolute"
             modules={[Autoplay, EffectFade]}
             effect={"fade"}
             onSwiper={() => {
               gsap.fromTo(
                 ".swiper-border",
-                { width: 0, x: 0 },
-                { width: "80px", duration: 3 }
+                { width: 0},
+                { width: "40px", duration: 4}
               )
             }}
-            onSlideChange={(item) => {}}
+            onSlideChange={(item) => {
+              let x = null
+              if (item.activeIndex == 0) {
+                x = 0
+              } else if (item.activeIndex == 1) {
+                x = 50
+              } else if (item.activeIndex == 2) {
+                x = 100
+              }
+              gsap.fromTo(
+                ".swiper-border",
+                { width: 0, x},
+                { width: "40px", duration: 4}
+              )
+            }}
             autoplay={{
-              delay: 6000,
+              delay: 4000,
               disableOnInteraction: false,
             }}
           >
@@ -105,6 +160,13 @@ function WhiteTpl() {
               </SwiperSlide>
             ))}
           </Swiper>
+          {/* swiper进度条 */}
+          <div className="w-[140px] flex justify-between h-[4px] absolute bottom-[100px] left-[50%] translate-x-[-50%] z-[99]">
+            <div className="w-[40px] h-[4px] rounded-sm bg-[#ccc]"></div>
+            <div className="w-[40px] h-[4px] rounded-sm bg-[#ccc]"></div>
+            <div className="w-[40px] h-[4px] rounded-sm bg-[#ccc]"></div>
+            <div className="swiper-border absolute w-[0px] h-[4px] bg-[#0fc8f3] rounded-sm"></div>
+          </div>
         </div>
       </div>
       <div className="w-[100%] h-[64px] bg-[#f8f9fc] flex items-center sticky z-[99] bottom-0 top-[64px]">
@@ -118,10 +180,10 @@ function WhiteTpl() {
             ></Image>
           </div>
           <ul className="flex space-x-[20px] text-[14px]">
-            <li>功能</li>
-            <li>配件</li>
-            <li>参数</li>
-            <li>立即购买</li>
+            <li className="cursor-pointer" onClick={() => { goModule('.module-2')}}>功能</li>
+            <li className="cursor-pointer" onClick={() => { goModule('.module-4')}}>搭配产品</li>
+            <li className="cursor-pointer" onClick={() => { goModule('.module-6')}}>素材</li>
+            <li className="cursor-pointer" onClick={() => { goModule('.module-7')}}>立即购买</li>
           </ul>
         </div>
       </div>
@@ -198,16 +260,19 @@ function WhiteTpl() {
         </div>
       </div>
       {/* 模块五 */}
-      <div className="module-5 h-[100vh] w-[100%]  bg-[#fff] overflow-hidden">
-        <div className="w-[100%] h-[100vh] flex justify-center items-center relative">
-          <div className="w-[1200px] h-[90%] relative">
+      <div className="module-5 h-[800px] w-[100%]  bg-[#fff] overflow-hidden">
+        <div className="w-[1200px] h-[700px] mx-auto flex justify-center items-center module-5-img relative overflow-hidden rounded-[16px]">
+          <div className="w-[1440px] h-[800px] relative  overflow-hidden">
             <Image
-              layout="fill"
+              width={1440}
+              height={800}
+              className="w-[1440px] h-[800px]"
               alt=""
               src="https://res.insta360.com/static/assets/storage/20201025/acf5a8d4695a40ae792b8d3eb751f175/off.jpg"
             ></Image>
+            <div className="absolute top-0 left-0 z-[8] w-full h-[100%] bg-[#000] bg-opacity-50 module-5-bg"></div>
           </div>
-          <div className="absolute z-[9] top-[150px] text-white text-center">
+          <div className="absolute z-[9] top-[150px] text-white text-center module-5-text opacity-0">
             <div>PureShot 纯净摄影</div>
             <div className="text-[42px] py-[20px] font-bold">
               清晰定格纯净夜色
@@ -219,8 +284,8 @@ function WhiteTpl() {
         </div>
       </div>
       {/* 模块六 */}
-      <div className="module-6  py-[50px] w-[100%] bg-[#fff] overflow-hidden">
-        <div className="w-[1224px] mx-auto">
+      <div className="module-6  py-[80px] w-[100%] bg-[#fff] overflow-hidden">
+        <div className="w-[1200px] mx-auto">
           <div className="text-[40px] font-bold text-center">ONE X2 影片</div>
           <div className="grid grid-cols-4 mt-[40px] gap-[40px]">
             {new Array(8).fill(1).map((k, i) => (
@@ -240,7 +305,7 @@ function WhiteTpl() {
       </div>
       {/* 模块七 */}
       <div className="module-7 w-[100%]  bg-[#fff] overflow-hidden">
-        <div className="w-[1220px] h-[725px]  mx-auto flex items-center">
+        <div className="w-[1200px] h-[725px]  mx-auto flex items-center">
           <div className="w-[424px] space-y-[50px] z-10">
             <Image
               width={424}
@@ -248,7 +313,7 @@ function WhiteTpl() {
               alt=""
               src="https://res.insta360.com/static/infr_base/5342dfd016b0f2fffdbe9b5f33f281c8/onex2_logoslogan.sc.svg"
             ></Image>
-            <div className="w-[232px] mx-auto h-[56px] bg-[#46e5ff] rounded-[50px] leading-[56px] text-center text-[#fff] font-bold">
+            <div className="w-[232px] mx-auto h-[56px] bg-[#46e5ff] rounded-[50px] cursor-pointer leading-[56px] text-center text-[#fff] font-bold">
               立即购买
             </div>
           </div>
@@ -279,6 +344,20 @@ function WhiteTpl() {
           ))}
         </div>
       </div>
+       {/* 弹出视频*/}
+       {isPlay ? (
+        <video
+          ref={videoRef}
+          autoPlay
+          muted
+          controls
+          src='https://media.insta360.com/static/assets/storage/20201028/e91dac9f51a13095f8547a4c8082ea91/01_preview.mp4'
+          className="w-[960px] fixed translate-x-[-50%] translate-y-[-50%] z-[300] left-[50%] top-[50%]"
+        ></video>
+      ) : (
+        <></>
+      )}
+      {isPlay ? <SubMenuOverlay hideEvens={hideVieo} top="0px" /> : <></>}
     </div>
   )
 }
