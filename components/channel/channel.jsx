@@ -1,10 +1,15 @@
 "use client"
 
 import { Card, Tabs, ConfigProvider, Input } from "antd"
+import { useRouter } from "next/navigation"
 
 const { Search } = Input
 
 function channel() {
+  const router = useRouter()
+  const goToUrl = () => {
+    window.open("https://uri.amap.com/marker?position=116.473195,39.993253")
+  }
   const onSearch = (value, _e, info) => console.log(info?.source, value)
   const shop = [1, 2, 3, 4]
   const items = [
@@ -23,7 +28,11 @@ function channel() {
           </div>
           <div className="flex flex-wrap justify-between">
             {shop.map((k, index) => (
-              <div className=" cursor-pointer w-[336px] h-[204px] mb-[32px] rounded-2xl bg-[#F7F7F8] flex flex-col justify-center items-center">
+              <div
+                key={index}
+                onClick={goToUrl}
+                className=" cursor-pointer w-[336px] h-[204px] mb-[32px] rounded-2xl bg-[#F7F7F8] flex flex-col justify-center items-center"
+              >
                 <div className="text-[#121217] text-[16px] font-bold">
                   iGPSPORT中国大陆售后服务中心
                 </div>
